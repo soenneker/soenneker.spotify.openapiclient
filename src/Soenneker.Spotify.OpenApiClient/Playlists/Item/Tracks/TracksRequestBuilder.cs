@@ -46,11 +46,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteResponse?> DeleteAsTracksDeleteResponseAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteResponse?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteResponse> DeleteAsTracksDeleteResponseAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteResponse> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -62,36 +62,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// **Deprecated:** Use [Remove Playlist Items](/documentation/web-api/reference/remove-items-playlist) instead.Remove one or more items from a user&apos;s playlist.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error">When receiving a 429 status code</exception>
-        [Obsolete("This method is obsolete. Use DeleteAsTracksDeleteResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Deprecated:** Use [Get Playlist Items](/documentation/web-api/reference/get-playlists-items) instead.Get full details of the items of a playlist owned by a Spotify user.
@@ -134,11 +104,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostResponse?> PostAsTracksPostResponseAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostResponse?> PostAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostResponse> PostAsTracksPostResponseAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostResponse> PostAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -150,36 +120,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// **Deprecated:** Use [Add Items to Playlist](/documentation/web-api/reference/add-items-to-playlist) instead.Add one or more items to a user&apos;s playlist.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error">When receiving a 429 status code</exception>
-        [Obsolete("This method is obsolete. Use PostAsTracksPostResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse?> PostAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse> PostAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Deprecated:** Use [Update Playlist Items](/documentation/web-api/reference/reorder-or-replace-playlists-items) instead.Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.
@@ -194,11 +134,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutResponse?> PutAsTracksPutResponseAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutResponse?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutResponse> PutAsTracksPutResponseAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutResponse> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -210,36 +150,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// **Deprecated:** Use [Update Playlist Items](/documentation/web-api/reference/reorder-or-replace-playlists-items) instead.Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error">When receiving a 429 status code</exception>
-        [Obsolete("This method is obsolete. Use PutAsTracksPutResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// **Deprecated:** Use [Remove Playlist Items](/documentation/web-api/reference/remove-items-playlist) instead.Remove one or more items from a user&apos;s playlist.
@@ -341,14 +251,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
             return new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TracksRequestBuilderDeleteRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
-        }
-        /// <summary>
         /// **Deprecated:** Use [Get Playlist Items](/documentation/web-api/reference/get-playlists-items) instead.Get full details of the items of a playlist owned by a Spotify user.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -387,14 +289,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
             public int? Offset { get; set; }
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TracksRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderGetQueryParameters>
-        {
-        }
-        /// <summary>
         /// **Deprecated:** Use [Add Items to Playlist](/documentation/web-api/reference/add-items-to-playlist) instead.Add one or more items to a user&apos;s playlist.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -413,14 +307,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
 #endif
         }
         /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TracksRequestBuilderPostRequestConfiguration : RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPostQueryParameters>
-        {
-        }
-        /// <summary>
         /// **Deprecated:** Use [Update Playlist Items](/documentation/web-api/reference/reorder-or-replace-playlists-items) instead.Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
@@ -435,14 +321,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks
             [QueryParameter("uris")]
             public string Uris { get; set; }
 #endif
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TracksRequestBuilderPutRequestConfiguration : RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder.TracksRequestBuilderPutQueryParameters>
-        {
         }
     }
 }

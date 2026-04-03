@@ -45,11 +45,11 @@ namespace Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsGetResponse?> GetAsRelatedArtistsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsGetResponse> GetAsRelatedArtistsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,34 +60,6 @@ namespace Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists429Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsGetResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get Spotify catalog information about artists similar to a given artist. Similarity is based on analysis of the Spotify community&apos;s listening history.
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists429Error">When receiving a 429 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsRelatedArtistsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.RelatedArtists429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Spotify catalog information about artists similar to a given artist. Similarity is based on analysis of the Spotify community&apos;s listening history.
@@ -118,14 +90,6 @@ namespace Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists
         public global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class RelatedArtistsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }

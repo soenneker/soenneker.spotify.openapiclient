@@ -59,11 +59,11 @@ namespace Soenneker.Spotify.OpenApiClient.Browse.Categories
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesGetResponse?> GetAsCategoriesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesGetResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesGetResponse> GetAsCategoriesGetResponseAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesGetResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -74,34 +74,6 @@ namespace Soenneker.Spotify.OpenApiClient.Browse.Categories
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.Categories429Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesGetResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Categories401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Categories403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Categories429Error">When receiving a 429 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsCategoriesGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Categories401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Categories403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Categories429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of categories used to tag items in Spotify (on, for example, the Spotify player’s “Browse” tab).
@@ -152,14 +124,6 @@ namespace Soenneker.Spotify.OpenApiClient.Browse.Categories
 #endif
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class CategoriesRequestBuilderGetRequestConfiguration : RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder.CategoriesRequestBuilderGetQueryParameters>
-        {
         }
     }
 }

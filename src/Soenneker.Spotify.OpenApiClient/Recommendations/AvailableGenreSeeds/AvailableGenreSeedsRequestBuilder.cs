@@ -45,11 +45,11 @@ namespace Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsGetResponse?> GetAsAvailableGenreSeedsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsGetResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsGetResponse> GetAsAvailableGenreSeedsGetResponseAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsGetResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
@@ -60,34 +60,6 @@ namespace Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds429Error.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsGetResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/get-recommendations).
-        /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsResponse"/></returns>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds429Error">When receiving a 429 status code</exception>
-        [Obsolete("This method is obsolete. Use GetAsAvailableGenreSeedsGetResponseAsync instead.")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsResponse?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsResponse> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.AvailableGenreSeeds429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Retrieve a list of available genres seed parameter values for [recommendations](/documentation/web-api/reference/get-recommendations).
@@ -118,14 +90,6 @@ namespace Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds
         public global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Recommendations.AvailableGenreSeeds.AvailableGenreSeedsRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Configuration for the request such as headers, query parameters, and middleware options.
-        /// </summary>
-        [Obsolete("This class is deprecated. Please use the generic RequestConfiguration class generated by the generator.")]
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AvailableGenreSeedsRequestBuilderGetRequestConfiguration : RequestConfiguration<DefaultQueryParameters>
-        {
         }
     }
 }
