@@ -2,7 +2,7 @@
   "descriptionHash": "41A6E134D16E646CB1314DF30972D941C946B3354AE087CAC7EB10F2B8F308996031D2E1B48D2CD0151321B7DD704AAF8B46FA0969D0B44318B349AB5C958CDB",
   "descriptionLocation": "../../openapi.yaml",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.31.0",
+  "kiotaVersion": "1.31.1",
   "clientClassName": "SpotifyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Spotify.OpenApiClient",
