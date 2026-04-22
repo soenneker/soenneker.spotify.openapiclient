@@ -1,16 +1,15 @@
-using Soenneker.Tests.FixturedUnit;
-using Xunit;
+using Soenneker.Tests.HostedUnit;
 
 namespace Soenneker.Spotify.OpenApiClient.Tests;
 
-[Collection("Collection")]
-public sealed class SpotifyOpenApiClientTests : FixturedUnitTest
+[ClassDataSource<Host>(Shared = SharedType.PerTestSession)]
+public sealed class SpotifyOpenApiClientTests : HostedUnitTest
 {
-    public SpotifyOpenApiClientTests(Fixture fixture, ITestOutputHelper output) : base(fixture, output)
+    public SpotifyOpenApiClientTests(Host host) : base(host)
     {
     }
 
-    [Fact]
+    [Test]
     public void Default()
     {
 
