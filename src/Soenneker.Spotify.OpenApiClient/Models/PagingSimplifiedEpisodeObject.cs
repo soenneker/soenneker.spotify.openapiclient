@@ -12,14 +12,6 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class PagingSimplifiedEpisodeObject : global::Soenneker.Spotify.OpenApiClient.Models.PagingObject, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The items property</summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject>? Items { get; set; }
-#nullable restore
-#else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject> Items { get; set; }
-#endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
@@ -38,7 +30,6 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
-                { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject.CreateFromDiscriminatorValue)?.AsList(); } },
             };
         }
         /// <summary>
@@ -49,7 +40,6 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             base.Serialize(writer);
-            writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject>("items", Items);
         }
     }
 }
