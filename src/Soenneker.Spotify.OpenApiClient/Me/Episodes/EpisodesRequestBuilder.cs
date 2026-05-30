@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Spotify.OpenApiClient.Me.Episodes.Contains;
 using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,17 +17,12 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Episodes
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EpisodesRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The contains property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Me.Episodes.Contains.ContainsRequestBuilder Contains
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Me.Episodes.Contains.ContainsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EpisodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/episodes?ids={ids}{&limit*,market*,offset*}", pathParameters)
+        public EpisodesRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/episodes{?limit*,market*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,38 +30,8 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Episodes
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public EpisodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/episodes?ids={ids}{&limit*,market*,offset*}", rawUrl)
+        public EpisodesRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/episodes{?limit*,market*,offset*}", rawUrl)
         {
-        }
-        /// <summary>
-        /// Remove one or more episodes from the current user&apos;s library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Episodes401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Episodes403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Episodes429Error">When receiving a 429 status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<Stream> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Episodes401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Episodes403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Episodes429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the episodes saved in the current Spotify user&apos;s library.
@@ -97,59 +61,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Episodes
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedEpisodeObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedEpisodeObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Save one or more episodes to the current user&apos;s library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Episodes401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Episodes403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Episodes429Error">When receiving a 429 status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Episodes401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Episodes403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Episodes429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Remove one or more episodes from the current user&apos;s library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/episodes?ids={ids}", PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
-        }
-        /// <summary>
         /// Get a list of the episodes saved in the current Spotify user&apos;s library.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -163,32 +74,9 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Episodes
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/episodes{?limit*,market*,offset*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Save one or more episodes to the current user&apos;s library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderPutQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder.EpisodesRequestBuilderPutQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/episodes?ids={ids}", PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -199,22 +87,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Episodes
         public global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Me.Episodes.EpisodesRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Remove one or more episodes from the current user&apos;s library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EpisodesRequestBuilderDeleteQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ids")]
-            public string? Ids { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ids")]
-            public string Ids { get; set; }
-#endif
         }
         /// <summary>
         /// Get a list of the episodes saved in the current Spotify user&apos;s library.
@@ -235,22 +107,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Episodes
 #endif
             [QueryParameter("offset")]
             public int? Offset { get; set; }
-        }
-        /// <summary>
-        /// Save one or more episodes to the current user&apos;s library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class EpisodesRequestBuilderPutQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ids")]
-            public string? Ids { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ids")]
-            public string Ids { get; set; }
-#endif
         }
     }
 }

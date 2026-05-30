@@ -8,20 +8,14 @@ using Microsoft.Kiota.Serialization.Multipart;
 using Microsoft.Kiota.Serialization.Text;
 using Soenneker.Spotify.OpenApiClient.Albums;
 using Soenneker.Spotify.OpenApiClient.Artists;
-using Soenneker.Spotify.OpenApiClient.AudioAnalysis;
-using Soenneker.Spotify.OpenApiClient.AudioFeatures;
 using Soenneker.Spotify.OpenApiClient.Audiobooks;
-using Soenneker.Spotify.OpenApiClient.Browse;
 using Soenneker.Spotify.OpenApiClient.Chapters;
 using Soenneker.Spotify.OpenApiClient.Episodes;
-using Soenneker.Spotify.OpenApiClient.Markets;
 using Soenneker.Spotify.OpenApiClient.Me;
 using Soenneker.Spotify.OpenApiClient.Playlists;
-using Soenneker.Spotify.OpenApiClient.Recommendations;
 using Soenneker.Spotify.OpenApiClient.Search;
 using Soenneker.Spotify.OpenApiClient.Shows;
 using Soenneker.Spotify.OpenApiClient.Tracks;
-using Soenneker.Spotify.OpenApiClient.Users;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -44,25 +38,10 @@ namespace Soenneker.Spotify.OpenApiClient
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Artists.ArtistsRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The audioAnalysis property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.AudioAnalysis.AudioAnalysisRequestBuilder AudioAnalysis
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.AudioAnalysis.AudioAnalysisRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The audiobooks property</summary>
         public global::Soenneker.Spotify.OpenApiClient.Audiobooks.AudiobooksRequestBuilder Audiobooks
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Audiobooks.AudiobooksRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The audioFeatures property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.AudioFeatures.AudioFeaturesRequestBuilder AudioFeatures
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.AudioFeatures.AudioFeaturesRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The browse property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Browse.BrowseRequestBuilder Browse
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Browse.BrowseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The chapters property</summary>
         public global::Soenneker.Spotify.OpenApiClient.Chapters.ChaptersRequestBuilder Chapters
@@ -74,11 +53,6 @@ namespace Soenneker.Spotify.OpenApiClient
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Episodes.EpisodesRequestBuilder(PathParameters, RequestAdapter);
         }
-        /// <summary>The markets property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Markets.MarketsRequestBuilder Markets
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Markets.MarketsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The me property</summary>
         public global::Soenneker.Spotify.OpenApiClient.Me.MeRequestBuilder Me
         {
@@ -88,11 +62,6 @@ namespace Soenneker.Spotify.OpenApiClient
         public global::Soenneker.Spotify.OpenApiClient.Playlists.PlaylistsRequestBuilder Playlists
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Playlists.PlaylistsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The recommendations property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Recommendations.RecommendationsRequestBuilder Recommendations
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Recommendations.RecommendationsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The search property</summary>
         public global::Soenneker.Spotify.OpenApiClient.Search.SearchRequestBuilder Search
@@ -108,11 +77,6 @@ namespace Soenneker.Spotify.OpenApiClient
         public global::Soenneker.Spotify.OpenApiClient.Tracks.TracksRequestBuilder Tracks
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Tracks.TracksRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The users property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Users.UsersRequestBuilder Users
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Users.UsersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.SpotifyOpenApiClient"/> and sets the default values.

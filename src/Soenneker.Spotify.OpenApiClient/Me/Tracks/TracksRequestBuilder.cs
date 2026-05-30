@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Spotify.OpenApiClient.Me.Tracks.Contains;
 using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,17 +17,12 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Tracks
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TracksRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The contains property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Me.Tracks.Contains.ContainsRequestBuilder Contains
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Me.Tracks.Contains.ContainsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TracksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/tracks?ids={ids}{&limit*,market*,offset*}", pathParameters)
+        public TracksRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/tracks{?limit*,market*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,38 +30,8 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Tracks
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public TracksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/tracks?ids={ids}{&limit*,market*,offset*}", rawUrl)
+        public TracksRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/tracks{?limit*,market*,offset*}", rawUrl)
         {
-        }
-        /// <summary>
-        /// Remove one or more tracks from the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error">When receiving a 429 status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder.TracksRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<Stream> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder.TracksRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the songs saved in the current Spotify user&apos;s &apos;Your Music&apos; library.
@@ -97,59 +61,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Tracks
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedTrackObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedTrackObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Save one or more tracks to the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error">When receiving a 429 status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Tracks401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Tracks403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Tracks429Error.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Remove one or more tracks from the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder.TracksRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder.TracksRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/tracks?ids={ids}", PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
-        }
-        /// <summary>
         /// Get a list of the songs saved in the current Spotify user&apos;s &apos;Your Music&apos; library.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -163,32 +74,9 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Tracks
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder.TracksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/tracks{?limit*,market*,offset*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Save one or more tracks to the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksPutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/tracks", PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -199,22 +87,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Tracks
         public global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Me.Tracks.TracksRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Remove one or more tracks from the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class TracksRequestBuilderDeleteQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ids")]
-            public string? Ids { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ids")]
-            public string Ids { get; set; }
-#endif
         }
         /// <summary>
         /// Get a list of the songs saved in the current Spotify user&apos;s &apos;Your Music&apos; library.

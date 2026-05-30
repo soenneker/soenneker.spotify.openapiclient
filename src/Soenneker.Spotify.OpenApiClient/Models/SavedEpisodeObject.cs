@@ -12,17 +12,17 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class SavedEpisodeObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time the episode was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.</summary>
+        /// <summary>&quot;The date and time the episode was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.&quot;</summary>
         public DateTimeOffset? AddedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject? Episode { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode? Episode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject Episode { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode Episode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "episode", n => { Episode = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject.CreateFromDiscriminatorValue); } },
+                { "episode", n => { Episode = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode>(global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject>("episode", Episode);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode>("episode", Episode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

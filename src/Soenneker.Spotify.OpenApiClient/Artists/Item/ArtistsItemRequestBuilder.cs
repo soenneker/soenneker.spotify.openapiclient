@@ -4,8 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Spotify.OpenApiClient.Artists.Item.Albums;
-using Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists;
-using Soenneker.Spotify.OpenApiClient.Artists.Item.TopTracks;
 using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -24,16 +22,6 @@ namespace Soenneker.Spotify.OpenApiClient.Artists.Item
         public global::Soenneker.Spotify.OpenApiClient.Artists.Item.Albums.AlbumsRequestBuilder Albums
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Artists.Item.Albums.AlbumsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The relatedArtists property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsRequestBuilder RelatedArtists
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The topTracks property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Artists.Item.TopTracks.TopTracksRequestBuilder TopTracks
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Artists.Item.TopTracks.TopTracksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Artists.Item.ArtistsItemRequestBuilder"/> and sets the default values.

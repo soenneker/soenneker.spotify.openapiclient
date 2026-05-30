@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Spotify.OpenApiClient.Models
 {
-    /// <summary>The object type: &quot;track&quot;.</summary>
+    /// <summary>&quot;The object type: \&quot;track\&quot;.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum TrackObject_type
     {

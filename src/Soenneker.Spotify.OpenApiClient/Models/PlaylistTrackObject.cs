@@ -12,15 +12,15 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class PlaylistTrackObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._</summary>
+        /// <summary>&quot;The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._&quot;</summary>
         public DateTimeOffset? AddedAt { get; set; }
-        /// <summary>The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._</summary>
+        /// <summary>&quot;The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObject? AddedBy { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by? AddedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObject AddedBy { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by AddedBy { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -69,7 +69,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "added_by", n => { AddedBy = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObject>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObject.CreateFromDiscriminatorValue); } },
+                { "added_by", n => { AddedBy = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by.CreateFromDiscriminatorValue); } },
                 { "is_local", n => { IsLocal = n.GetBoolValue(); } },
                 { "item", n => { Item = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item.CreateFromDiscriminatorValue); } },
                 { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track.CreateFromDiscriminatorValue); } },
@@ -83,7 +83,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObject>("added_by", AddedBy);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by>("added_by", AddedBy);
             writer.WriteBoolValue("is_local", IsLocal);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item>("item", Item);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track>("track", Track);

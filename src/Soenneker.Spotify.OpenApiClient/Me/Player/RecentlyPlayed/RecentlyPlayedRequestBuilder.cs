@@ -34,7 +34,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.RecentlyPlayed
         {
         }
         /// <summary>
-        /// Get tracks from the current user&apos;s recently played tracks._**Note**: Currently doesn&apos;t support podcast episodes._
+        /// &quot;Get tracks from the current user&apos;s recently played tracks._**Note**: Currently doesn&apos;t support podcast episodes._&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingPlayHistoryObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.RecentlyPlayed
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingPlayHistoryObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingPlayHistoryObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get tracks from the current user&apos;s recently played tracks._**Note**: Currently doesn&apos;t support podcast episodes._
+        /// &quot;Get tracks from the current user&apos;s recently played tracks._**Note**: Currently doesn&apos;t support podcast episodes._&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -89,7 +89,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.RecentlyPlayed
             return new global::Soenneker.Spotify.OpenApiClient.Me.Player.RecentlyPlayed.RecentlyPlayedRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get tracks from the current user&apos;s recently played tracks._**Note**: Currently doesn&apos;t support podcast episodes._
+        /// &quot;Get tracks from the current user&apos;s recently played tracks._**Note**: Currently doesn&apos;t support podcast episodes._&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecentlyPlayedRequestBuilderGetQueryParameters 

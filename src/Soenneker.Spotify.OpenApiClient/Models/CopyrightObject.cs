@@ -22,7 +22,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Text { get; set; }
 #endif
-        /// <summary>The type of copyright: `C` = the copyright, `P` = the sound recording (performance) copyright.</summary>
+        /// <summary>&quot;The type of copyright: `C` = the copyright, `P` = the sound recording (performance) copyright.&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

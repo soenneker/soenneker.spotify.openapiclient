@@ -36,6 +36,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Next
         /// <summary>
         /// Skips to next track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.
         /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
         /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Next401Error">When receiving a 401 status code</exception>
@@ -43,11 +44,11 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Next
         /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Next429Error">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Next.NextRequestBuilder.NextRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PostAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Next.NextRequestBuilder.NextRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Next.NextRequestBuilder.NextRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PostAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Next.NextRequestBuilder.NextRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToPostRequestInformation(requestConfiguration);
@@ -57,7 +58,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Next
                 { "403", global::Soenneker.Spotify.OpenApiClient.Models.Next403Error.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.Next429Error.CreateFromDiscriminatorValue },
             };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Skips to next track in the user’s queue. This API only works for users who have Spotify Premium. The order of execution is not guaranteed when you use this API with other Player API endpoints.

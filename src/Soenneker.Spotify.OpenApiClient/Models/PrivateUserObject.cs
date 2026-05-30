@@ -12,6 +12,14 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class PrivateUserObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
+        /// <summary>A public, immutable, pseudoanonymous identifier for the user&apos;s account. Use this field for account linking rather than the `id` field, as it is stable and will not change over the lifetime of the account.</summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public string? AccountId { get; set; }
+#nullable restore
+#else
+        public string AccountId { get; set; }
+#endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The country of the user, as set in the user&apos;s account profile. An [ISO 3166-1 alpha-2 country code](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _This field is only available when the current user has granted access to the [user-read-private](/documentation/web-api/concepts/scopes/#list-of-scopes) scope._</summary>
@@ -44,27 +52,27 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ExplicitContentSettingsObject? ExplicitContent { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_explicit_content? ExplicitContent { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ExplicitContentSettingsObject ExplicitContent { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_explicit_content ExplicitContent { get; set; }
 #endif
         /// <summary>Known external URLs for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_external_urls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_external_urls ExternalUrls { get; set; }
 #endif
         /// <summary>Information about the followers of the user.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.FollowersObject? Followers { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_followers? Followers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.FollowersObject Followers { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_followers Followers { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -74,7 +82,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Href { get; set; }
 #endif
-        /// <summary>The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for the user.</summary>
+        /// <summary>The [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids) for the user. Do not use this field for account linking — use `account_id` instead, which is immutable.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Id { get; set; }
@@ -90,7 +98,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject> Images { get; set; }
 #endif
-        /// <summary>The user&apos;s Spotify subscription level: &quot;premium&quot;, &quot;free&quot;, etc. (The subscription level &quot;open&quot; can be considered the same as &quot;free&quot;.) _This field is only available when the current user has granted access to the [user-read-private](/documentation/web-api/concepts/scopes/#list-of-scopes) scope._</summary>
+        /// <summary>&quot;The user&apos;s Spotify subscription level: \&quot;premium\&quot;, \&quot;free\&quot;, etc. (The subscription level \&quot;open\&quot; can be considered the same as \&quot;free\&quot;.) _This field is only available when the current user has granted access to the [user-read-private](/documentation/web-api/concepts/scopes/#list-of-scopes) scope._&quot;</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -99,7 +107,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Product { get; set; }
 #endif
-        /// <summary>The object type: &quot;user&quot;</summary>
+        /// <summary>&quot;The object type: \&quot;user\&quot;&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }
@@ -140,12 +148,13 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
+                { "account_id", n => { AccountId = n.GetStringValue(); } },
                 { "country", n => { Country = n.GetStringValue(); } },
                 { "display_name", n => { DisplayName = n.GetStringValue(); } },
                 { "email", n => { Email = n.GetStringValue(); } },
-                { "explicit_content", n => { ExplicitContent = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ExplicitContentSettingsObject>(global::Soenneker.Spotify.OpenApiClient.Models.ExplicitContentSettingsObject.CreateFromDiscriminatorValue); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject>(global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject.CreateFromDiscriminatorValue); } },
-                { "followers", n => { Followers = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.FollowersObject>(global::Soenneker.Spotify.OpenApiClient.Models.FollowersObject.CreateFromDiscriminatorValue); } },
+                { "explicit_content", n => { ExplicitContent = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_explicit_content>(global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_explicit_content.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "followers", n => { Followers = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_followers>(global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_followers.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>(global::Soenneker.Spotify.OpenApiClient.Models.ImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
@@ -161,12 +170,13 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            writer.WriteStringValue("account_id", AccountId);
             writer.WriteStringValue("country", Country);
             writer.WriteStringValue("display_name", DisplayName);
             writer.WriteStringValue("email", Email);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ExplicitContentSettingsObject>("explicit_content", ExplicitContent);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject>("external_urls", ExternalUrls);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.FollowersObject>("followers", Followers);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_explicit_content>("explicit_content", ExplicitContent);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObject_followers>("followers", Followers);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>("images", Images);

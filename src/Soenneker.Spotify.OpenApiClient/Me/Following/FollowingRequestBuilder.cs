@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Spotify.OpenApiClient.Me.Following.Contains;
 using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -18,17 +17,12 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class FollowingRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The contains property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Me.Following.Contains.ContainsRequestBuilder Contains
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Me.Following.Contains.ContainsRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/following?ids={ids}&type={type}{&after*,limit*}", pathParameters)
+        public FollowingRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/following?type={type}{&after*,limit*}", pathParameters)
         {
         }
         /// <summary>
@@ -36,37 +30,8 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public FollowingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/following?ids={ids}&type={type}{&after*,limit*}", rawUrl)
+        public FollowingRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/following?type={type}{&after*,limit*}", rawUrl)
         {
-        }
-        /// <summary>
-        /// Remove the current user as a follower of one or more artists or other Spotify users.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Following401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Following403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Following429Error">When receiving a 429 status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Following401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Following403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Following429Error.CreateFromDiscriminatorValue },
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the current user&apos;s followed artists.
@@ -96,58 +61,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingGetResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingGetResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Add the current user as a follower of one or more artists or other Spotify users.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        /// <param name="body">The request body</param>
-        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Following401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Following403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Following429Error">When receiving a 429 status code</exception>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public async Task PutAsync(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#nullable restore
-#else
-        public async Task PutAsync(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Following401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Following403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Following429Error.CreateFromDiscriminatorValue },
-            };
-            await RequestAdapter.SendNoContentAsync(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
-        }
-        /// <summary>
-        /// Remove the current user as a follower of one or more artists or other Spotify users.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingDeleteRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/following?ids={ids}&type={type}", PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
-            return requestInfo;
-        }
-        /// <summary>
         /// Get the current user&apos;s followed artists.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -161,32 +74,9 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, "{+baseurl}/me/following?type={type}{&after*,limit*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
-            return requestInfo;
-        }
-        /// <summary>
-        /// Add the current user as a follower of one or more artists or other Spotify users.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        /// <returns>A <see cref="RequestInformation"/></returns>
-        /// <param name="body">The request body</param>
-        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        [Obsolete("")]
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderPutQueryParameters>>? requestConfiguration = default)
-        {
-#nullable restore
-#else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderPutQueryParameters>> requestConfiguration = default)
-        {
-#endif
-            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/following?ids={ids}&type={type}", PathParameters);
-            requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
-            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
         /// <summary>
@@ -197,24 +87,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
         public global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Remove the current user as a follower of one or more artists or other Spotify users.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FollowingRequestBuilderDeleteQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ids")]
-            public string? Ids { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ids")]
-            public string Ids { get; set; }
-#endif
-            [QueryParameter("type")]
-            public global::Soenneker.Spotify.OpenApiClient.Me.Following.DeleteTypeQueryParameterType? Type { get; set; }
         }
         /// <summary>
         /// Get the current user&apos;s followed artists.
@@ -235,24 +107,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
             public int? Limit { get; set; }
             [QueryParameter("type")]
             public global::Soenneker.Spotify.OpenApiClient.Me.Following.GetTypeQueryParameterType? Type { get; set; }
-        }
-        /// <summary>
-        /// Add the current user as a follower of one or more artists or other Spotify users.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class FollowingRequestBuilderPutQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("ids")]
-            public string? Ids { get; set; }
-#nullable restore
-#else
-            [QueryParameter("ids")]
-            public string Ids { get; set; }
-#endif
-            [QueryParameter("type")]
-            public global::Soenneker.Spotify.OpenApiClient.Me.Following.PutTypeQueryParameterType? Type { get; set; }
         }
     }
 }

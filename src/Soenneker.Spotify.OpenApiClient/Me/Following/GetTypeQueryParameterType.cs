@@ -3,7 +3,7 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Spotify.OpenApiClient.Me.Following
 {
-    /// <summary>The ID type: currently only `artist` is supported.</summary>
+    /// <summary>&quot;The ID type: currently only `artist` is supported.&quot;</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public enum GetTypeQueryParameterType
     {

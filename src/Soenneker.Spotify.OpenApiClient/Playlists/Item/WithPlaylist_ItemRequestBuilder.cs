@@ -4,10 +4,8 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Spotify.OpenApiClient.Models;
-using Soenneker.Spotify.OpenApiClient.Playlists.Item.Followers;
 using Soenneker.Spotify.OpenApiClient.Playlists.Item.Images;
 using Soenneker.Spotify.OpenApiClient.Playlists.Item.Items;
-using Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -21,11 +19,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPlaylist_ItemRequestBuilder : BaseRequestBuilder
     {
-        /// <summary>The followers property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Followers.FollowersRequestBuilder Followers
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Followers.FollowersRequestBuilder(PathParameters, RequestAdapter);
-        }
         /// <summary>The images property</summary>
         public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Images.ImagesRequestBuilder Images
         {
@@ -35,11 +28,6 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item
         public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder Items
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
-        }
-        /// <summary>The tracks property</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder Tracks
-        {
-            get => new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_ItemRequestBuilder"/> and sets the default values.
@@ -96,11 +84,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item
         /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.WithPlaylist_429Error">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_PutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ChangePlaylistDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_PutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ChangePlaylistDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -140,11 +128,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_PutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.ChangePlaylistDetails body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_PutRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.ChangePlaylistDetails body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

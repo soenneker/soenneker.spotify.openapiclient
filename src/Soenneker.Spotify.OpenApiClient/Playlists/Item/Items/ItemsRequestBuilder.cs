@@ -45,11 +45,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Items429Error">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteResponse?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteResponse?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylist body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteResponse> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteResponse> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylist body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -63,7 +63,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.
+        /// &quot;Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PagingPlaylistTrackObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
@@ -101,11 +101,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Items429Error">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostResponse?> PostAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostResponse?> PostAsync(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylist body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostResponse> PostAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostResponse> PostAsync(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylist body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -119,7 +119,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
-        /// Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.
+        /// &quot;Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.&quot;
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutResponse"/></returns>
         /// <param name="body">The request body</param>
@@ -130,11 +130,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Items429Error">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutResponse?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutResponse?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItems body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutResponse> PutAsync(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutResponse> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItems body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -155,11 +155,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylist body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsDeleteRequestBody body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylist body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -170,7 +170,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             return requestInfo;
         }
         /// <summary>
-        /// Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.
+        /// &quot;Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
@@ -196,11 +196,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylist body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPostRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPostRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPostRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylist body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -211,18 +211,18 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             return requestInfo;
         }
         /// <summary>
-        /// Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.
+        /// &quot;Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.&quot;
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItems body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsPutRequestBody body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItems body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
@@ -242,7 +242,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             return new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder(rawUrl, RequestAdapter);
         }
         /// <summary>
-        /// Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.
+        /// &quot;Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderGetQueryParameters 
@@ -298,7 +298,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
 #endif
         }
         /// <summary>
-        /// Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.
+        /// &quot;Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.&quot;
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class ItemsRequestBuilderPutQueryParameters 

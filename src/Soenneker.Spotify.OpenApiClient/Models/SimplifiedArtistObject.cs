@@ -17,10 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Known external URLs for this artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject_external_urls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject_external_urls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -81,7 +81,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject>(global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject_external_urls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
@@ -96,7 +96,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ExternalUrlObject>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject_external_urls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);

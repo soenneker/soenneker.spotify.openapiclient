@@ -15,20 +15,20 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Allows to update the user interface based on which playback actions are available within the current context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.DisallowsObject? Actions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_actions? Actions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.DisallowsObject Actions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_actions Actions { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A Context Object. Can be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ContextObject? Context { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_context? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ContextObject Context { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_context Context { get; set; }
 #endif
         /// <summary>The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -41,10 +41,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The device that is currently active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.DeviceObject? Device { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_device? Device { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.DeviceObject Device { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_device Device { get; set; }
 #endif
         /// <summary>If something is currently playing, return `true`.</summary>
         public bool? IsPlaying { get; set; }
@@ -95,10 +95,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.DisallowsObject>(global::Soenneker.Spotify.OpenApiClient.Models.DisallowsObject.CreateFromDiscriminatorValue); } },
-                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ContextObject>(global::Soenneker.Spotify.OpenApiClient.Models.ContextObject.CreateFromDiscriminatorValue); } },
+                { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_actions>(global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_actions.CreateFromDiscriminatorValue); } },
+                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_context>(global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_context.CreateFromDiscriminatorValue); } },
                 { "currently_playing_type", n => { CurrentlyPlayingType = n.GetStringValue(); } },
-                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.DeviceObject>(global::Soenneker.Spotify.OpenApiClient.Models.DeviceObject.CreateFromDiscriminatorValue); } },
+                { "device", n => { Device = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_device>(global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_device.CreateFromDiscriminatorValue); } },
                 { "is_playing", n => { IsPlaying = n.GetBoolValue(); } },
                 { "item", n => { Item = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject.CurrentlyPlayingContextObject_item>(global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject.CurrentlyPlayingContextObject_item.CreateFromDiscriminatorValue); } },
                 { "progress_ms", n => { ProgressMs = n.GetIntValue(); } },
@@ -114,10 +114,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.DisallowsObject>("actions", Actions);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ContextObject>("context", Context);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_actions>("actions", Actions);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_context>("context", Context);
             writer.WriteStringValue("currently_playing_type", CurrentlyPlayingType);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.DeviceObject>("device", Device);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject_device>("device", Device);
             writer.WriteBoolValue("is_playing", IsPlaying);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject.CurrentlyPlayingContextObject_item>("item", Item);
             writer.WriteIntValue("progress_ms", ProgressMs);

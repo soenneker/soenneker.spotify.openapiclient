@@ -12,17 +12,17 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class SavedTrackObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>The date and time the track was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object.</summary>
+        /// <summary>&quot;The date and time the track was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object.&quot;</summary>
         public DateTimeOffset? AddedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject? Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track? Track { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track Track { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObject.CreateFromDiscriminatorValue); } },
+                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track>(global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>("track", Track);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track>("track", Track);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
