@@ -19,10 +19,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Information about the show.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObject_show? Show { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObjectShow? Show { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObject_show Show { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObjectShow Show { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObject"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "show", n => { Show = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObject_show>(global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObject_show.CreateFromDiscriminatorValue); } },
+                { "show", n => { Show = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObjectShow>(global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObjectShow.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObject_show>("show", Show);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedShowObjectShow>("show", Show);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

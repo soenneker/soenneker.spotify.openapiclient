@@ -19,10 +19,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Information about the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObject_album? Album { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum? Album { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObject_album Album { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum Album { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObject"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "album", n => { Album = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObject_album>(global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObject_album.CreateFromDiscriminatorValue); } },
+                { "album", n => { Album = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum>(global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObject_album>("album", Album);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum>("album", Album);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

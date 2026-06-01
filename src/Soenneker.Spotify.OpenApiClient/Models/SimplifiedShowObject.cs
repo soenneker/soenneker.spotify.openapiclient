@@ -44,10 +44,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>External URLs for this show.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the show.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -119,7 +119,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The total number of episodes in the show.</summary>
         public int? TotalEpisodes { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the show.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -157,7 +157,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "copyrights", n => { Copyrights = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.CopyrightObject>(global::Soenneker.Spotify.OpenApiClient.Models.CopyrightObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "explicit", n => { Explicit = n.GetBoolValue(); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "html_description", n => { HtmlDescription = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -168,7 +168,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "total_episodes", n => { TotalEpisodes = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -183,7 +183,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.CopyrightObject>("copyrights", Copyrights);
             writer.WriteStringValue("description", Description);
             writer.WriteBoolValue("explicit", Explicit);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("html_description", HtmlDescription);
             writer.WriteStringValue("id", Id);
@@ -194,7 +194,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteIntValue("total_episodes", TotalEpisodes);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

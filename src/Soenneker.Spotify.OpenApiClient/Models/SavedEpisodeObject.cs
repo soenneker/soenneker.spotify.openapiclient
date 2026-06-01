@@ -19,10 +19,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Information about the episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode? Episode { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode? Episode { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode Episode { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode Episode { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "episode", n => { Episode = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode>(global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode.CreateFromDiscriminatorValue); } },
+                { "episode", n => { Episode = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode>(global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObject_episode>("episode", Episode);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode>("episode", Episode);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

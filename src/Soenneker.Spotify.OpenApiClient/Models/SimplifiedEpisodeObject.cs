@@ -38,10 +38,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>External URLs for this episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,25 +113,25 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public string ReleaseDate { get; set; }
 #endif
         /// <summary>The precision with which `release_date` value is known.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_release_date_precision? ReleaseDatePrecision { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectReleaseDatePrecision? ReleaseDatePrecision { get; set; }
         /// <summary>Included in the response when a content restriction is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_restrictions? Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions? Restrictions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_restrictions Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions Restrictions { get; set; }
 #endif
         /// <summary>The user&apos;s most recent position in the episode. Set if the supplied access token is a user token and has the scope &apos;user-read-playback-position&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_resume_point? ResumePoint { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint? ResumePoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_resume_point ResumePoint { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint ResumePoint { get; set; }
 #endif
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -169,7 +169,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "explicit", n => { Explicit = n.GetBoolValue(); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "html_description", n => { HtmlDescription = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -180,10 +180,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "release_date", n => { ReleaseDate = n.GetStringValue(); } },
-                { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_release_date_precision>(); } },
-                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_restrictions>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_restrictions.CreateFromDiscriminatorValue); } },
-                { "resume_point", n => { ResumePoint = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_resume_point>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_resume_point.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_type>(); } },
+                { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectReleaseDatePrecision>(); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions.CreateFromDiscriminatorValue); } },
+                { "resume_point", n => { ResumePoint = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -198,7 +198,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteBoolValue("explicit", Explicit);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("html_description", HtmlDescription);
             writer.WriteStringValue("id", Id);
@@ -209,10 +209,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("release_date", ReleaseDate);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_release_date_precision>("release_date_precision", ReleaseDatePrecision);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_restrictions>("restrictions", Restrictions);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_resume_point>("resume_point", ResumePoint);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedEpisodeObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectReleaseDatePrecision>("release_date_precision", ReleaseDatePrecision);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions>("restrictions", Restrictions);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint>("resume_point", ResumePoint);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

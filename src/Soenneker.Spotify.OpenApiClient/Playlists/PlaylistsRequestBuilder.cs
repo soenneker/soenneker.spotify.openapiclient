@@ -17,14 +17,14 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists
     {
         /// <summary>Gets an item from the Soenneker.Spotify.OpenApiClient.playlists.item collection</summary>
         /// <param name="position">Unique identifier of the item</param>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_ItemRequestBuilder"/></returns>
-        public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_ItemRequestBuilder this[string position]
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylistItemRequestBuilder"/></returns>
+        public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylistItemRequestBuilder this[string position]
         {
             get
             {
                 var urlTplParams = new Dictionary<string, object>(PathParameters);
-                urlTplParams.Add("playlist_id", position);
-                return new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylist_ItemRequestBuilder(urlTplParams, RequestAdapter);
+                urlTplParams.Add("playlistId", position);
+                return new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylistItemRequestBuilder(urlTplParams, RequestAdapter);
             }
         }
         /// <summary>

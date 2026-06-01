@@ -34,10 +34,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The chapters of the audiobook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_chapters? Chapters { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObjectAllOf2Chapters? Chapters { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_chapters Chapters { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObjectAllOf2Chapters Chapters { get; set; }
 #endif
         /// <summary>The copyright statements of the audiobook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -68,10 +68,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>External URLs for this audiobook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the audiobook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -149,7 +149,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The number of chapters in this audiobook.</summary>
         public int? TotalChapters { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the audiobook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -185,12 +185,12 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             {
                 { "authors", n => { Authors = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.AuthorObject>(global::Soenneker.Spotify.OpenApiClient.Models.AuthorObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "available_markets", n => { AvailableMarkets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "chapters", n => { Chapters = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_chapters>(global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_chapters.CreateFromDiscriminatorValue); } },
+                { "chapters", n => { Chapters = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObjectAllOf2Chapters>(global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObjectAllOf2Chapters.CreateFromDiscriminatorValue); } },
                 { "copyrights", n => { Copyrights = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.CopyrightObject>(global::Soenneker.Spotify.OpenApiClient.Models.CopyrightObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "edition", n => { Edition = n.GetStringValue(); } },
                 { "explicit", n => { Explicit = n.GetBoolValue(); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "html_description", n => { HtmlDescription = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -201,7 +201,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "narrators", n => { Narrators = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.NarratorObject>(global::Soenneker.Spotify.OpenApiClient.Models.NarratorObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "total_chapters", n => { TotalChapters = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -214,12 +214,12 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.AuthorObject>("authors", Authors);
             writer.WriteCollectionOfPrimitiveValues<string>("available_markets", AvailableMarkets);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_chapters>("chapters", Chapters);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObjectAllOf2Chapters>("chapters", Chapters);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.CopyrightObject>("copyrights", Copyrights);
             writer.WriteStringValue("description", Description);
             writer.WriteStringValue("edition", Edition);
             writer.WriteBoolValue("explicit", Explicit);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("html_description", HtmlDescription);
             writer.WriteStringValue("id", Id);
@@ -230,7 +230,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.NarratorObject>("narrators", Narrators);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteIntValue("total_chapters", TotalChapters);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

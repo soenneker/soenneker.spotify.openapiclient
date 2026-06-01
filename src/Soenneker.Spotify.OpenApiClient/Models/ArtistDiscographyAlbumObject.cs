@@ -16,9 +16,9 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>This field describes the relationship between the artist and the album.</summary>
         [Obsolete("")]
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_album_group? AlbumGroup { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObjectAlbumGroup? AlbumGroup { get; set; }
         /// <summary>The type of the album.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_album_type? AlbumType { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseAlbumType? AlbumType { get; set; }
         /// <summary>The artists of the album. Each artist object includes a link in `href` to more detailed information about the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -39,10 +39,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Known external URLs for this album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -85,19 +85,19 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public string ReleaseDate { get; set; }
 #endif
         /// <summary>The precision with which `release_date` value is known.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_release_date_precision? ReleaseDatePrecision { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseReleaseDatePrecision? ReleaseDatePrecision { get; set; }
         /// <summary>Included in the response when a content restriction is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_restrictions? Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions? Restrictions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_restrictions Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions Restrictions { get; set; }
 #endif
         /// <summary>The number of tracks in the album.</summary>
         public int? TotalTracks { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -131,20 +131,20 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "album_group", n => { AlbumGroup = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_album_group>(); } },
-                { "album_type", n => { AlbumType = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_album_type>(); } },
+                { "album_group", n => { AlbumGroup = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObjectAlbumGroup>(); } },
+                { "album_type", n => { AlbumType = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseAlbumType>(); } },
                 { "artists", n => { Artists = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "available_markets", n => { AvailableMarkets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>(global::Soenneker.Spotify.OpenApiClient.Models.ImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "release_date", n => { ReleaseDate = n.GetStringValue(); } },
-                { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_release_date_precision>(); } },
-                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_restrictions>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_restrictions.CreateFromDiscriminatorValue); } },
+                { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseReleaseDatePrecision>(); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions.CreateFromDiscriminatorValue); } },
                 { "total_tracks", n => { TotalTracks = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -155,20 +155,20 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_album_group>("album_group", AlbumGroup);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_album_type>("album_type", AlbumType);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObjectAlbumGroup>("album_group", AlbumGroup);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseAlbumType>("album_type", AlbumType);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>("artists", Artists);
             writer.WriteCollectionOfPrimitiveValues<string>("available_markets", AvailableMarkets);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>("images", Images);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("release_date", ReleaseDate);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_release_date_precision>("release_date_precision", ReleaseDatePrecision);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_restrictions>("restrictions", Restrictions);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseReleaseDatePrecision>("release_date_precision", ReleaseDatePrecision);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions>("restrictions", Restrictions);
             writer.WriteIntValue("total_tracks", TotalTracks);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistDiscographyAlbumObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

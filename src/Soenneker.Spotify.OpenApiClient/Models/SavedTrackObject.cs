@@ -19,10 +19,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Information about the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track? Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrack? Track { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrack Track { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject"/> and sets the default values.
@@ -50,7 +50,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track>(global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track.CreateFromDiscriminatorValue); } },
+                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrack>(global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrack.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -61,7 +61,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObject_track>("track", Track);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrack>("track", Track);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

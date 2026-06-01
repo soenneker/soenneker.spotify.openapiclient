@@ -17,10 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The audiobook for which the chapter belongs.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_audiobook? Audiobook { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectAllOf2Audiobook? Audiobook { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_audiobook Audiobook { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectAllOf2Audiobook Audiobook { get; set; }
 #endif
         /// <summary>A URL to a 30 second preview (MP3 format) of the chapter. `null` if not available.</summary>
         [Obsolete("")]
@@ -57,10 +57,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>External URLs for this chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -121,25 +121,25 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public string ReleaseDate { get; set; }
 #endif
         /// <summary>The precision with which `release_date` value is known.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_release_date_precision? ReleaseDatePrecision { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectReleaseDatePrecision? ReleaseDatePrecision { get; set; }
         /// <summary>Included in the response when a content restriction is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_restrictions? Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseRestrictions? Restrictions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_restrictions Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseRestrictions Restrictions { get; set; }
 #endif
         /// <summary>The user&apos;s most recent position in the chapter. Set if the supplied access token is a user token and has the scope &apos;user-read-playback-position&apos;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_resume_point? ResumePoint { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseResumePoint? ResumePoint { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_resume_point ResumePoint { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseResumePoint ResumePoint { get; set; }
 #endif
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the chapter.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -174,13 +174,13 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "audio_preview_url", n => { AudioPreviewUrl = n.GetStringValue(); } },
-                { "audiobook", n => { Audiobook = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_audiobook>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_audiobook.CreateFromDiscriminatorValue); } },
+                { "audiobook", n => { Audiobook = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectAllOf2Audiobook>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectAllOf2Audiobook.CreateFromDiscriminatorValue); } },
                 { "available_markets", n => { AvailableMarkets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "chapter_number", n => { ChapterNumber = n.GetIntValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "explicit", n => { Explicit = n.GetBoolValue(); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "html_description", n => { HtmlDescription = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
@@ -189,10 +189,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "languages", n => { Languages = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "release_date", n => { ReleaseDate = n.GetStringValue(); } },
-                { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_release_date_precision>(); } },
-                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_restrictions>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_restrictions.CreateFromDiscriminatorValue); } },
-                { "resume_point", n => { ResumePoint = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_resume_point>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_resume_point.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_type>(); } },
+                { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectReleaseDatePrecision>(); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseRestrictions.CreateFromDiscriminatorValue); } },
+                { "resume_point", n => { ResumePoint = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseResumePoint>(global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseResumePoint.CreateFromDiscriminatorValue); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -203,14 +203,14 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_audiobook>("audiobook", Audiobook);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectAllOf2Audiobook>("audiobook", Audiobook);
             writer.WriteStringValue("audio_preview_url", AudioPreviewUrl);
             writer.WriteCollectionOfPrimitiveValues<string>("available_markets", AvailableMarkets);
             writer.WriteIntValue("chapter_number", ChapterNumber);
             writer.WriteStringValue("description", Description);
             writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteBoolValue("explicit", Explicit);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("html_description", HtmlDescription);
             writer.WriteStringValue("id", Id);
@@ -219,10 +219,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<string>("languages", Languages);
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("release_date", ReleaseDate);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_release_date_precision>("release_date_precision", ReleaseDatePrecision);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_restrictions>("restrictions", Restrictions);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_resume_point>("resume_point", ResumePoint);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectReleaseDatePrecision>("release_date_precision", ReleaseDatePrecision);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseRestrictions>("restrictions", Restrictions);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseResumePoint>("resume_point", ResumePoint);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ChapterObjectType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

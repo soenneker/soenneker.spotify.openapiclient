@@ -40,25 +40,25 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Play
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Play401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Play403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.Play429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlayback body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlayback body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.Play401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.Play403Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.Play429Error.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -70,11 +70,11 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Play
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlayback body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlayback body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Play.PlayRequestBuilder.PlayRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));

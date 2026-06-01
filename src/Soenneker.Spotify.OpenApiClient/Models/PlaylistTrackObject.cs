@@ -17,10 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>&quot;The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by? AddedBy { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy? AddedBy { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by AddedBy { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy AddedBy { get; set; }
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
@@ -29,19 +29,19 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Information about the track or episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item? Item { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem? Item { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item Item { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem Item { get; set; }
 #endif
         /// <summary>**Deprecated:** Use `item` instead. Information about the track or episode.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track? Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack? Track { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack Track { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject"/> and sets the default values.
@@ -69,10 +69,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return new Dictionary<string, Action<IParseNode>>
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
-                { "added_by", n => { AddedBy = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by.CreateFromDiscriminatorValue); } },
+                { "added_by", n => { AddedBy = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy.CreateFromDiscriminatorValue); } },
                 { "is_local", n => { IsLocal = n.GetBoolValue(); } },
-                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item.CreateFromDiscriminatorValue); } },
-                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track.CreateFromDiscriminatorValue); } },
+                { "item", n => { Item = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem.CreateFromDiscriminatorValue); } },
+                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -83,161 +83,11 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteDateTimeOffsetValue("added_at", AddedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject_added_by>("added_by", AddedBy);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy>("added_by", AddedBy);
             writer.WriteBoolValue("is_local", IsLocal);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item>("item", Item);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track>("track", Track);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem>("item", Item);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack>("track", Track);
             writer.WriteAdditionalData(AdditionalData);
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/>, <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObject"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PlaylistTrackObject_item : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject? EpisodeObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject EpisodeObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject? TrackObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject TrackObject { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_item();
-                if("EpisodeObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EpisodeObject = new global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject();
-                }
-                else if("TrackObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TrackObject = new global::Soenneker.Spotify.OpenApiClient.Models.TrackObject();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EpisodeObject != null)
-                {
-                    return EpisodeObject.GetFieldDeserializers();
-                }
-                else if(TrackObject != null)
-                {
-                    return TrackObject.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EpisodeObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject>(null, EpisodeObject);
-                }
-                else if(TrackObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>(null, TrackObject);
-                }
-            }
-        }
-        /// <summary>
-        /// Composed type wrapper for classes <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/>, <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObject"/>
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class PlaylistTrackObject_track : IComposedTypeWrapper, IParsable
-        {
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject? EpisodeObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject EpisodeObject { get; set; }
-#endif
-            /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject? TrackObject { get; set; }
-#nullable restore
-#else
-            public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject TrackObject { get; set; }
-#endif
-            /// <summary>
-            /// Creates a new instance of the appropriate class based on discriminator value
-            /// </summary>
-            /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track"/></returns>
-            /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-            public static global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track CreateFromDiscriminatorValue(IParseNode parseNode)
-            {
-                if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-                var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
-                var result = new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject.PlaylistTrackObject_track();
-                if("EpisodeObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.EpisodeObject = new global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject();
-                }
-                else if("TrackObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
-                {
-                    result.TrackObject = new global::Soenneker.Spotify.OpenApiClient.Models.TrackObject();
-                }
-                return result;
-            }
-            /// <summary>
-            /// The deserialization information for the current model
-            /// </summary>
-            /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-            public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
-            {
-                if(EpisodeObject != null)
-                {
-                    return EpisodeObject.GetFieldDeserializers();
-                }
-                else if(TrackObject != null)
-                {
-                    return TrackObject.GetFieldDeserializers();
-                }
-                return new Dictionary<string, Action<IParseNode>>();
-            }
-            /// <summary>
-            /// Serializes information the current object
-            /// </summary>
-            /// <param name="writer">Serialization writer to use to serialize this model</param>
-            public virtual void Serialize(ISerializationWriter writer)
-            {
-                if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-                if(EpisodeObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject>(null, EpisodeObject);
-                }
-                else if(TrackObject != null)
-                {
-                    writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>(null, TrackObject);
-                }
-            }
         }
     }
 }

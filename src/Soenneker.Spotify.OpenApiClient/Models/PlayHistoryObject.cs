@@ -17,20 +17,20 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The context the track was played from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_context? Context { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext? Context { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_context Context { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext Context { get; set; }
 #endif
         /// <summary>The date and time the track was played.</summary>
         public DateTimeOffset? PlayedAt { get; set; }
         /// <summary>The track the user listened to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_track? Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack? Track { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_track Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack Track { get; set; }
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject"/> and sets the default values.
@@ -57,9 +57,9 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_context>(global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_context.CreateFromDiscriminatorValue); } },
+                { "context", n => { Context = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext>(global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext.CreateFromDiscriminatorValue); } },
                 { "played_at", n => { PlayedAt = n.GetDateTimeOffsetValue(); } },
-                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_track>(global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_track.CreateFromDiscriminatorValue); } },
+                { "track", n => { Track = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack>(global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack.CreateFromDiscriminatorValue); } },
             };
         }
         /// <summary>
@@ -69,9 +69,9 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_context>("context", Context);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext>("context", Context);
             writer.WriteDateTimeOffsetValue("played_at", PlayedAt);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject_track>("track", Track);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack>("track", Track);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

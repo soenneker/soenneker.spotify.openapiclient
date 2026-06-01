@@ -17,19 +17,19 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Known external URLs for this artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>Information about the followers of the artist.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_followers? Followers { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers? Followers { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_followers Followers { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers Followers { get; set; }
 #endif
         /// <summary>A list of the genres the artist is associated with. If not yet classified, the array is empty.</summary>
         [Obsolete("")]
@@ -76,7 +76,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         [Obsolete("")]
         public int? Popularity { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -110,15 +110,15 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_external_urls.CreateFromDiscriminatorValue); } },
-                { "followers", n => { Followers = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_followers>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_followers.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls.CreateFromDiscriminatorValue); } },
+                { "followers", n => { Followers = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers.CreateFromDiscriminatorValue); } },
                 { "genres", n => { Genres = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>(global::Soenneker.Spotify.OpenApiClient.Models.ImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "popularity", n => { Popularity = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -129,15 +129,15 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_external_urls>("external_urls", ExternalUrls);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_followers>("followers", Followers);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers>("followers", Followers);
             writer.WriteCollectionOfPrimitiveValues<string>("genres", Genres);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>("images", Images);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("popularity", Popularity);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

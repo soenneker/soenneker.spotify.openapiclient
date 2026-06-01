@@ -27,10 +27,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Known external URLs for this playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -59,10 +59,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>A collection containing a link ( `href` ) to the Web API endpoint where full details of the playlist&apos;s items can be retrieved, along with the `total` number of items in the playlist. Note, a track object may be `null`. This can happen if a track is no longer available.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_items? Items { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectItems? Items { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_items Items { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectItems Items { get; set; }
 #endif
         /// <summary>The name of the playlist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,10 +75,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The user who owns the playlist</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_owner? Owner { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectOwner? Owner { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_owner Owner { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectOwner Owner { get; set; }
 #endif
         /// <summary>&quot;The playlist&apos;s public/private status (if it is added to the user&apos;s profile): `true` the playlist is public, `false` the playlist is private, `null` the playlist status is not relevant. For more about public/private status, see [Working with Playlists](/documentation/web-api/concepts/playlists)&quot;</summary>
         public bool? Public { get; set; }
@@ -94,10 +94,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_tracks? Tracks { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectTracks? Tracks { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_tracks Tracks { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectTracks Tracks { get; set; }
 #endif
         /// <summary>&quot;The object type: \&quot;playlist\&quot;&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -142,16 +142,16 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             {
                 { "collaborative", n => { Collaborative = n.GetBoolValue(); } },
                 { "description", n => { Description = n.GetStringValue(); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>(global::Soenneker.Spotify.OpenApiClient.Models.ImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
-                { "items", n => { Items = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_items>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_items.CreateFromDiscriminatorValue); } },
+                { "items", n => { Items = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectItems>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectItems.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_owner>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_owner.CreateFromDiscriminatorValue); } },
+                { "owner", n => { Owner = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectOwner>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectOwner.CreateFromDiscriminatorValue); } },
                 { "public", n => { Public = n.GetBoolValue(); } },
                 { "snapshot_id", n => { SnapshotId = n.GetStringValue(); } },
-                { "tracks", n => { Tracks = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_tracks>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_tracks.CreateFromDiscriminatorValue); } },
+                { "tracks", n => { Tracks = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectTracks>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectTracks.CreateFromDiscriminatorValue); } },
                 { "type", n => { Type = n.GetStringValue(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
@@ -165,16 +165,16 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("collaborative", Collaborative);
             writer.WriteStringValue("description", Description);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>("images", Images);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_items>("items", Items);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectItems>("items", Items);
             writer.WriteStringValue("name", Name);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_owner>("owner", Owner);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectOwner>("owner", Owner);
             writer.WriteBoolValue("public", Public);
             writer.WriteStringValue("snapshot_id", SnapshotId);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObject_tracks>("tracks", Tracks);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectTracks>("tracks", Tracks);
             writer.WriteStringValue("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);

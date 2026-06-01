@@ -17,10 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The cursors used to find the next set of items.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingSimplifiedArtistObject_cursors? Cursors { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingObjectCursors? Cursors { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingSimplifiedArtistObject_cursors Cursors { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingObjectCursors Cursors { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint returning the full result of the request.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -75,7 +75,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "cursors", n => { Cursors = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingSimplifiedArtistObject_cursors>(global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingSimplifiedArtistObject_cursors.CreateFromDiscriminatorValue); } },
+                { "cursors", n => { Cursors = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingObjectCursors>(global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingObjectCursors.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "items", n => { Items = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "limit", n => { Limit = n.GetIntValue(); } },
@@ -90,7 +90,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingSimplifiedArtistObject_cursors>("cursors", Cursors);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagingObjectCursors>("cursors", Cursors);
             writer.WriteStringValue("href", Href);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject>("items", Items);
             writer.WriteIntValue("limit", Limit);

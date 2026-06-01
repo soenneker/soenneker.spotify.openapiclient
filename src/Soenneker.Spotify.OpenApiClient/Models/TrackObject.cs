@@ -17,10 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The album on which the track appears. The album object includes a link in `href` to full information about the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_album? Album { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum? Album { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_album Album { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum Album { get; set; }
 #endif
         /// <summary>The artists who performed the track. Each artist object includes a link in `href` to more detailed information about the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -48,18 +48,18 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Known external IDs for the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_ids? ExternalIds { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds? ExternalIds { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_ids ExternalIds { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds ExternalIds { get; set; }
 #endif
         /// <summary>Known external URLs for this track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_urls? ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls? ExternalUrls { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_urls ExternalUrls { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls ExternalUrls { get; set; }
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -82,13 +82,12 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If `true`, the track is playable in the given market. Otherwise `false`.</summary>
         public bool? IsPlayable { get; set; }
         /// <summary>Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the `linked_from` object contains information about the originally requested track.</summary>
-        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_linked_from? LinkedFrom { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectLinkedFromProperty? LinkedFrom { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_linked_from LinkedFrom { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectLinkedFromProperty LinkedFrom { get; set; }
 #endif
         /// <summary>The name of the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -113,15 +112,15 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Included in the response when a content restriction is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_restrictions? Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions? Restrictions { get; set; }
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_restrictions Restrictions { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions Restrictions { get; set; }
 #endif
         /// <summary>The number of the track. If an album has several discs, the track number is the number on the specified disc.</summary>
         public int? TrackNumber { get; set; }
         /// <summary>&quot;The object type: \&quot;track\&quot;.&quot;</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_type? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -155,25 +154,25 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         {
             return new Dictionary<string, Action<IParseNode>>
             {
-                { "album", n => { Album = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_album>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_album.CreateFromDiscriminatorValue); } },
+                { "album", n => { Album = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum.CreateFromDiscriminatorValue); } },
                 { "artists", n => { Artists = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "available_markets", n => { AvailableMarkets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },
                 { "disc_number", n => { DiscNumber = n.GetIntValue(); } },
                 { "duration_ms", n => { DurationMs = n.GetIntValue(); } },
                 { "explicit", n => { Explicit = n.GetBoolValue(); } },
-                { "external_ids", n => { ExternalIds = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_ids>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_ids.CreateFromDiscriminatorValue); } },
-                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_urls>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_urls.CreateFromDiscriminatorValue); } },
+                { "external_ids", n => { ExternalIds = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds.CreateFromDiscriminatorValue); } },
+                { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "is_local", n => { IsLocal = n.GetBoolValue(); } },
                 { "is_playable", n => { IsPlayable = n.GetBoolValue(); } },
-                { "linked_from", n => { LinkedFrom = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_linked_from>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_linked_from.CreateFromDiscriminatorValue); } },
+                { "linked_from", n => { LinkedFrom = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectLinkedFromProperty>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectLinkedFromProperty.CreateFromDiscriminatorValue); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "popularity", n => { Popularity = n.GetIntValue(); } },
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
-                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_restrictions>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_restrictions.CreateFromDiscriminatorValue); } },
+                { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions.CreateFromDiscriminatorValue); } },
                 { "track_number", n => { TrackNumber = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_type>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -184,25 +183,25 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public virtual void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_album>("album", Album);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum>("album", Album);
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>("artists", Artists);
             writer.WriteCollectionOfPrimitiveValues<string>("available_markets", AvailableMarkets);
             writer.WriteIntValue("disc_number", DiscNumber);
             writer.WriteIntValue("duration_ms", DurationMs);
             writer.WriteBoolValue("explicit", Explicit);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_ids>("external_ids", ExternalIds);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_external_urls>("external_urls", ExternalUrls);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds>("external_ids", ExternalIds);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteBoolValue("is_local", IsLocal);
             writer.WriteBoolValue("is_playable", IsPlayable);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_linked_from>("linked_from", LinkedFrom);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectLinkedFromProperty>("linked_from", LinkedFrom);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("popularity", Popularity);
             writer.WriteStringValue("preview_url", PreviewUrl);
-            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_restrictions>("restrictions", Restrictions);
+            writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions>("restrictions", Restrictions);
             writer.WriteIntValue("track_number", TrackNumber);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject_type>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

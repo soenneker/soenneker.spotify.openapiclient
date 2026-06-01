@@ -45,11 +45,11 @@ namespace Soenneker.Spotify.OpenApiClient.Audiobooks.Item
         /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject400Error">When receiving a 400 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject401Error">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject403Error">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject404Error">When receiving a 404 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject429Error">When receiving a 429 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.BadRequestResponse">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.NotFoundResponse">When receiving a 404 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Audiobooks.Item.AudiobooksItemRequestBuilder.AudiobooksItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -62,11 +62,11 @@ namespace Soenneker.Spotify.OpenApiClient.Audiobooks.Item
             var requestInfo = ToGetRequestInformation(requestConfiguration);
             var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
             {
-                { "400", global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject400Error.CreateFromDiscriminatorValue },
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject401Error.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject403Error.CreateFromDiscriminatorValue },
-                { "404", global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject404Error.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject429Error.CreateFromDiscriminatorValue },
+                { "400", global::Soenneker.Spotify.OpenApiClient.Models.BadRequestResponse.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "404", global::Soenneker.Spotify.OpenApiClient.Models.NotFoundResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
