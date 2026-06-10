@@ -22,7 +22,7 @@ namespace Soenneker.Spotify.OpenApiClient.Search
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search?q={q}&type={type}{&include_external*,limit*,market*,offset*}", pathParameters)
+        public SearchRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search?q={q}&type={type}{&include_external*,limit*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,35 +30,26 @@ namespace Soenneker.Spotify.OpenApiClient.Search
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search?q={q}&type={type}{&include_external*,limit*,market*,offset*}", rawUrl)
+        public SearchRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/search?q={q}&type={type}{&include_external*,limit*,offset*}", rawUrl)
         {
         }
         /// <summary>
         /// Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooksthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SearchItemsResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.SearchItemsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.SearchItemsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Search.SearchRequestBuilder.SearchRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.SearchItemsResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.SearchItemsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Spotify catalog information about albums, artists, playlists, tracks, shows, episodes or audiobooksthat match a keyword string. Audiobooks are only available within the US, UK, Canada, Ireland, New Zealand and Australia markets.
@@ -76,7 +67,6 @@ namespace Soenneker.Spotify.OpenApiClient.Search
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -98,15 +88,6 @@ namespace Soenneker.Spotify.OpenApiClient.Search
             public global::Soenneker.Spotify.OpenApiClient.Models.SearchIncludeExternalParameter? IncludeExternal { get; set; }
             [QueryParameter("limit")]
             public int? Limit { get; set; }
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("market")]
-            public string? Market { get; set; }
-#nullable restore
-#else
-            [QueryParameter("market")]
-            public string Market { get; set; }
-#endif
             [QueryParameter("offset")]
             public int? Offset { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

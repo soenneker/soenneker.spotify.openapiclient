@@ -3,7 +3,6 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
-using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -22,7 +21,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Top.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/top/{type}{?limit*,offset*,time_range*}", pathParameters)
+        public WithTypeItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/top/{type}{?time_range*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,35 +29,26 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Top.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public WithTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/top/{type}{?limit*,offset*,time_range*}", rawUrl)
+        public WithTypeItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/top/{type}{?time_range*}", rawUrl)
         {
         }
         /// <summary>
         /// Get the current user&apos;s top artists or tracks based on calculated affinity.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponse"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Top.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Top.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Top.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Top.Item.WithTypeItemRequestBuilder.WithTypeItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the current user&apos;s top artists or tracks based on calculated affinity.
@@ -76,7 +66,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Top.Item
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -94,10 +83,6 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Top.Item
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class WithTypeItemRequestBuilderGetQueryParameters 
         {
-            [QueryParameter("limit")]
-            public int? Limit { get; set; }
-            [QueryParameter("offset")]
-            public int? Offset { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
             [QueryParameter("time_range")]

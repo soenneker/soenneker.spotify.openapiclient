@@ -4,7 +4,6 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Spotify.OpenApiClient.Albums.Item.Tracks;
-using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -28,7 +27,7 @@ namespace Soenneker.Spotify.OpenApiClient.Albums.Item
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlbumsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/albums/{id}{?market*}", pathParameters)
+        public AlbumsItemRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/albums/{id}", pathParameters)
         {
         }
         /// <summary>
@@ -36,35 +35,26 @@ namespace Soenneker.Spotify.OpenApiClient.Albums.Item
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public AlbumsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/albums/{id}{?market*}", rawUrl)
+        public AlbumsItemRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/albums/{id}", rawUrl)
         {
         }
         /// <summary>
         /// Get Spotify catalog information for a single album.
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.AlbumObject"/></returns>
+        /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
-        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.AlbumObject?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Albums.Item.AlbumsItemRequestBuilder.AlbumsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream?> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.AlbumObject> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Albums.Item.AlbumsItemRequestBuilder.AlbumsItemRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<Stream> GetAsync(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
-            {
-                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
-                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
-                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
-            };
-            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.AlbumObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.AlbumObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get Spotify catalog information for a single album.
@@ -73,16 +63,15 @@ namespace Soenneker.Spotify.OpenApiClient.Albums.Item
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Albums.Item.AlbumsItemRequestBuilder.AlbumsItemRequestBuilderGetQueryParameters>>? requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default)
         {
 #nullable restore
 #else
-        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Albums.Item.AlbumsItemRequestBuilder.AlbumsItemRequestBuilderGetQueryParameters>> requestConfiguration = default)
+        public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
-            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -93,22 +82,6 @@ namespace Soenneker.Spotify.OpenApiClient.Albums.Item
         public global::Soenneker.Spotify.OpenApiClient.Albums.Item.AlbumsItemRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Albums.Item.AlbumsItemRequestBuilder(rawUrl, RequestAdapter);
-        }
-        /// <summary>
-        /// Get Spotify catalog information for a single album.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-        public partial class AlbumsItemRequestBuilderGetQueryParameters 
-        {
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-            [QueryParameter("market")]
-            public string? Market { get; set; }
-#nullable restore
-#else
-            [QueryParameter("market")]
-            public string Market { get; set; }
-#endif
         }
     }
 }
