@@ -4,6 +4,7 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Spotify.OpenApiClient.Me.Library.Contains;
+using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -44,6 +45,10 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Library
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ErrorObject">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Library.LibraryRequestBuilder.LibraryRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -54,7 +59,14 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Library
         {
 #endif
             var requestInfo = ToDeleteRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Spotify.OpenApiClient.Models.ErrorObject.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add one or more items to the current user&apos;s library. Accepts Spotify URIs for tracks, albums, episodes, shows, audiobooks, users, and playlists.
@@ -62,6 +74,10 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Library
         /// <returns>A <see cref="Stream"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ErrorObject">When receiving a 400 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public async Task<Stream?> PutAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Library.LibraryRequestBuilder.LibraryRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
@@ -72,7 +88,14 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Library
         {
 #endif
             var requestInfo = ToPutRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "400", global::Soenneker.Spotify.OpenApiClient.Models.ErrorObject.CreateFromDiscriminatorValue },
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove one or more items from the current user&apos;s library. Accepts Spotify URIs for tracks, albums, episodes, shows, audiobooks, users, and playlists.

@@ -36,20 +36,29 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
         /// <summary>
         /// Get the current user&apos;s followed artists.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.CursorPagedArtistsResponse"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagedArtistsResponse?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagedArtistsResponse> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Following.FollowingRequestBuilder.FollowingRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.CursorPagedArtistsResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.CursorPagedArtistsResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get the current user&apos;s followed artists.
@@ -67,6 +76,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Following
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>

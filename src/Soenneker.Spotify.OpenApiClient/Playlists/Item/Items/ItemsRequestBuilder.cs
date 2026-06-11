@@ -22,7 +22,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/playlists/{playlistId}/items{?fields*,position*,uris*}", pathParameters)
+        public ItemsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/playlists/{playlistId}/items{?additional_types*,fields*,limit*,market*,offset*,position*,uris*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,85 +30,122 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/playlists/{playlistId}/items{?fields*,position*,uris*}", rawUrl)
+        public ItemsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/playlists/{playlistId}/items{?additional_types*,fields*,limit*,market*,offset*,position*,uris*}", rawUrl)
         {
         }
         /// <summary>
         /// Remove one or more items from a user&apos;s playlist.
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylistRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylistRequest body, Action<RequestConfiguration<DefaultQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylistRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveItemsPlaylistRequest body, Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Get full details of the items of a playlist owned by a Spotify user.**Note**: This endpoint is only accessible for playlists owned by the current user or playlists the user is a collaborator of. A `403 Forbidden` status code will be returned if the user is neither the owner nor a collaborator of the playlist.&quot;
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PagingPlaylistTrackObject"/></returns>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PagingPlaylistTrackObject?> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PagingPlaylistTrackObject> GetAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderGetQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             var requestInfo = ToGetRequestInformation(requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingPlaylistTrackObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingPlaylistTrackObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Add one or more items to a user&apos;s playlist.
         /// </summary>
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task PostAsync(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylistRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse?> PostAsync(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylistRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task PostAsync(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylistRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse> PostAsync(global::Soenneker.Spotify.OpenApiClient.Models.AddItemsToPlaylistRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPostQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPostRequestInformation(body, requestConfiguration);
-            await RequestAdapter.SendNoContentAsync(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// &quot;Either reorder or replace items in a playlist depending on the request&apos;s parameters.To reorder items, include `range_start`, `insert_before`, `range_length` and `snapshot_id` in the request&apos;s body.To replace items, include `uris` as either a query parameter or in the request&apos;s body.Replacing items in a playlist will overwrite its existing items. This operation can be used for replacing or clearing items in a playlist.&lt;br/&gt;**Note**: Replace and reorder are mutually exclusive operations which share the same endpoint, but have different parameters.These operations can&apos;t be applied together in a single request.&quot;
         /// </summary>
-        /// <returns>A <see cref="Stream"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse"/></returns>
         /// <param name="body">The request body</param>
         /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
         /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItemsRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItemsRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #nullable restore
 #else
-        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItemsRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        public async Task<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.ReorderOrReplacePlaylistsItemsRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder.ItemsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
         {
 #endif
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = ToPutRequestInformation(body, requestConfiguration);
-            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, default, cancellationToken).ConfigureAwait(false);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PlaylistSnapshotIdResponse.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Remove one or more items from a user&apos;s playlist.
@@ -128,6 +165,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.DELETE, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -147,6 +185,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
 #endif
             var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
         }
         /// <summary>
@@ -167,6 +206,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.POST, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -188,6 +228,7 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
             var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
             requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
             return requestInfo;
         }
@@ -208,6 +249,15 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            [QueryParameter("additional_types")]
+            public string? AdditionalTypes { get; set; }
+#nullable restore
+#else
+            [QueryParameter("additional_types")]
+            public string AdditionalTypes { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
             [QueryParameter("fields")]
             public string? Fields { get; set; }
 #nullable restore
@@ -215,6 +265,19 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item.Items
             [QueryParameter("fields")]
             public string Fields { get; set; }
 #endif
+            [QueryParameter("limit")]
+            public int? Limit { get; set; }
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("market")]
+            public string? Market { get; set; }
+#nullable restore
+#else
+            [QueryParameter("market")]
+            public string Market { get; set; }
+#endif
+            [QueryParameter("offset")]
+            public int? Offset { get; set; }
         }
         /// <summary>
         /// Add one or more items to a user&apos;s playlist.
