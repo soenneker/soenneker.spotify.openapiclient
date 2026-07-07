@@ -4701,11 +4701,6 @@
           "uri"
         ],
         "type": "object",
-        "allOf": [
-          {
-            "type": "object"
-          }
-        ],
         "properties": {
           "audio_preview_url": {
             "type": "string",
@@ -5180,11 +5175,6 @@
           "uri"
         ],
         "type": "object",
-        "allOf": [
-          {
-            "type": "object"
-          }
-        ],
         "properties": {
           "available_markets": {
             "type": "array",
@@ -5536,11 +5526,6 @@
           "uri"
         ],
         "type": "object",
-        "allOf": [
-          {
-            "type": "object"
-          }
-        ],
         "properties": {
           "authors": {
             "type": "array",
@@ -6045,11 +6030,6 @@
           "uri"
         ],
         "type": "object",
-        "allOf": [
-          {
-            "type": "object"
-          }
-        ],
         "properties": {
           "audio_preview_url": {
             "type": "string",
