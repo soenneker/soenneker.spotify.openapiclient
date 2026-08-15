@@ -149,7 +149,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The number of chapters in this audiobook.</summary>
         public int? TotalChapters { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudiobookType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the audiobook.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -201,7 +201,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "narrators", n => { Narrators = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.NarratorObject>(global::Soenneker.Spotify.OpenApiClient.Models.NarratorObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "total_chapters", n => { TotalChapters = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -230,7 +230,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.NarratorObject>("narrators", Narrators);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteIntValue("total_chapters", TotalChapters);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookBaseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

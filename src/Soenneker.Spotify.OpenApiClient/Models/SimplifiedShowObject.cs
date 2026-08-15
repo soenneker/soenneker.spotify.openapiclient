@@ -119,7 +119,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The total number of episodes in the show.</summary>
         public int? TotalEpisodes { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ShowType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the show.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -168,7 +168,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "publisher", n => { Publisher = n.GetStringValue(); } },
                 { "total_episodes", n => { TotalEpisodes = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -194,7 +194,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("name", Name);
             writer.WriteStringValue("publisher", Publisher);
             writer.WriteIntValue("total_episodes", TotalEpisodes);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowBaseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ShowType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

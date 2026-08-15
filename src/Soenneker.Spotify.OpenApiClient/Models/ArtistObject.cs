@@ -76,7 +76,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         [Obsolete("")]
         public int? Popularity { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -118,7 +118,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>(global::Soenneker.Spotify.OpenApiClient.Models.ImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "popularity", n => { Popularity = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -137,7 +137,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>("images", Images);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("popularity", Popularity);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

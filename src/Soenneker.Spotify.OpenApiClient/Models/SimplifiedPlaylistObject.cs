@@ -48,7 +48,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;Images for the playlist. The array may be empty or contain up to three images. The images are returned by size in descending order. See [Working with Playlists](/documentation/web-api/concepts/playlists). _**Note**: If returned, the source URL for the image (`url`) is temporary and will expire in less than a day._&quot;</summary>
+        /// <summary>Images for the playlist. The array may be empty or contain up to three images. The images are returned by size in descending order. See [Working with Playlists](/documentation/web-api/concepts/playlists). _**Note**: If returned, the source URL for the image (`url`) is temporary and will expire in less than a day._</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>? Images { get; set; }
@@ -80,7 +80,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectOwner Owner { get; set; }
 #endif
-        /// <summary>&quot;The playlist&apos;s public/private status (if it is added to the user&apos;s profile): `true` the playlist is public, `false` the playlist is private, `null` the playlist status is not relevant. For more about public/private status, see [Working with Playlists](/documentation/web-api/concepts/playlists)&quot;</summary>
+        /// <summary>The playlist&apos;s public/private status (if it is added to the user&apos;s profile): `true` the playlist is public, `false` the playlist is private, `null` the playlist status is not relevant. For more about public/private status, see [Working with Playlists](/documentation/web-api/concepts/playlists)</summary>
         public bool? Public { get; set; }
         /// <summary>The version identifier for the current playlist. Can be supplied in other requests to target a specific playlist version</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -99,7 +99,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedPlaylistObjectTracks Tracks { get; set; }
 #endif
-        /// <summary>&quot;The object type: \&quot;playlist\&quot;&quot;</summary>
+        /// <summary>The object type: &quot;playlist&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

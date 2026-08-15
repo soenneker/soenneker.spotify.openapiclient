@@ -22,7 +22,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string ContextUri { get; set; }
 #endif
-        /// <summary>&quot;Optional. Indicates from where in the context playback should start. Only available when context_uri corresponds to an album or playlist object\&quot;position\&quot; is zero based and can’t be negative. Example: `\&quot;offset\&quot;: {\&quot;position\&quot;: 5}`\&quot;uri\&quot; is a string representing the uri of the item to start at. Example: `\&quot;offset\&quot;: {\&quot;uri\&quot;: \&quot;spotify:track:1301WleyT98MSxVHPZCA6M\&quot;}`&quot;</summary>
+        /// <summary>Optional. Indicates from where in the context playback should start. Only available when context_uri corresponds to an album or playlist object&quot;position&quot; is zero based and can’t be negative. Example: `&quot;offset&quot;: {&quot;position&quot;: 5}`&quot;uri&quot; is a string representing the uri of the item to start at. Example: `&quot;offset&quot;: {&quot;uri&quot;: &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? Offset { get; set; }
@@ -32,7 +32,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #endif
         /// <summary>integer</summary>
         public int? PositionMs { get; set; }
-        /// <summary>&quot;Optional. A JSON array of the Spotify track URIs to play.For example: `{\&quot;uris\&quot;: [\&quot;spotify:track:4iV5W9uYEdYUVa79Axb7Rh\&quot;, \&quot;spotify:track:1301WleyT98MSxVHPZCA6M\&quot;]}`&quot;</summary>
+        /// <summary>Optional. A JSON array of the Spotify track URIs to play.For example: `{&quot;uris&quot;: [&quot;spotify:track:4iV5W9uYEdYUVa79Axb7Rh&quot;, &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;]}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? Uris { get; set; }

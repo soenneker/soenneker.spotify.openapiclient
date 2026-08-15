@@ -95,7 +95,7 @@ namespace Soenneker.Spotify.OpenApiClient.Search
         public partial class SearchRequestBuilderGetQueryParameters 
         {
             [QueryParameter("include_external")]
-            public global::Soenneker.Spotify.OpenApiClient.Models.SearchIncludeExternalParameter? IncludeExternal { get; set; }
+            public global::Soenneker.Spotify.OpenApiClient.Models.AudioIncludeExternal? IncludeExternal { get; set; }
             [QueryParameter("limit")]
             public int? Limit { get; set; }
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER

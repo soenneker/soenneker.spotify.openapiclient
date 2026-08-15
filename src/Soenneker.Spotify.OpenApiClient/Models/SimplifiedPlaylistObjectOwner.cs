@@ -48,7 +48,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public string Id { get; set; }
 #endif
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObjectType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.UserType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for this user.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -86,7 +86,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObjectExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObjectExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObjectType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.UserType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -101,7 +101,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObjectExternalUrls>("external_urls", ExternalUrls);
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistUserObjectType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.UserType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

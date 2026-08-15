@@ -47,7 +47,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public string Name { get; set; }
 #endif
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObjectType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -85,7 +85,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "href", n => { Href = n.GetStringValue(); } },
                 { "id", n => { Id = n.GetStringValue(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObjectType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -100,7 +100,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("href", Href);
             writer.WriteStringValue("id", Id);
             writer.WriteStringValue("name", Name);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObjectType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

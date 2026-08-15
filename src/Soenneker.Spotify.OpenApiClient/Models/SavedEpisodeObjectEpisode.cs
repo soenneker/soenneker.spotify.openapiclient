@@ -140,7 +140,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectAllOf2Show Show { get; set; }
 #endif
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -193,7 +193,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions.CreateFromDiscriminatorValue); } },
                 { "resume_point", n => { ResumePoint = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint.CreateFromDiscriminatorValue); } },
                 { "show", n => { Show = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectAllOf2Show>(global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectAllOf2Show.CreateFromDiscriminatorValue); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -223,7 +223,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseRestrictions>("restrictions", Restrictions);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint>("resume_point", ResumePoint);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectAllOf2Show>("show", Show);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObjectType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

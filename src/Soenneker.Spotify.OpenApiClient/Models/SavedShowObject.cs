@@ -12,7 +12,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class SavedShowObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The date and time the show was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object.&quot;</summary>
+        /// <summary>The date and time the show was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object.</summary>
         public DateTimeOffset? AddedAt { get; set; }
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }

@@ -4,8 +4,10 @@ using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
 using Soenneker.Spotify.OpenApiClient.Models;
+using Soenneker.Spotify.OpenApiClient.Playlists.Item.Followers;
 using Soenneker.Spotify.OpenApiClient.Playlists.Item.Images;
 using Soenneker.Spotify.OpenApiClient.Playlists.Item.Items;
+using Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks;
 using System.Collections.Generic;
 using System.IO;
 using System.Threading.Tasks;
@@ -19,6 +21,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class WithPlaylistItemRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The followers property</summary>
+        public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Followers.FollowersRequestBuilder Followers
+        {
+            get => new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Followers.FollowersRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>The images property</summary>
         public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Images.ImagesRequestBuilder Images
         {
@@ -28,6 +35,11 @@ namespace Soenneker.Spotify.OpenApiClient.Playlists.Item
         public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder Items
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Items.ItemsRequestBuilder(PathParameters, RequestAdapter);
+        }
+        /// <summary>The tracks property</summary>
+        public global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder Tracks
+        {
+            get => new global::Soenneker.Spotify.OpenApiClient.Playlists.Item.Tracks.TracksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Playlists.Item.WithPlaylistItemRequestBuilder"/> and sets the default values.

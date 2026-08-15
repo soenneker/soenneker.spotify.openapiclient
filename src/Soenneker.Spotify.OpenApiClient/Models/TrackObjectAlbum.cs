@@ -25,7 +25,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject> Artists { get; set; }
 #endif
-        /// <summary>&quot;The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._&quot;</summary>
+        /// <summary>The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -95,7 +95,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The number of tracks in the album.</summary>
         public int? TotalTracks { get; set; }
         /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseType? Type { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AlbumType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -141,7 +141,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "release_date_precision", n => { ReleaseDatePrecision = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseReleaseDatePrecision>(); } },
                 { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions.CreateFromDiscriminatorValue); } },
                 { "total_tracks", n => { TotalTracks = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -164,7 +164,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseReleaseDatePrecision>("release_date_precision", ReleaseDatePrecision);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseRestrictions>("restrictions", Restrictions);
             writer.WriteIntValue("total_tracks", TotalTracks);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

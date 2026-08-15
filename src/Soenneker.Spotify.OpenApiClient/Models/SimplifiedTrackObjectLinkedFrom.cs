@@ -40,7 +40,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Id { get; set; }
 #endif
-        /// <summary>&quot;The object type: \&quot;track\&quot;.&quot;</summary>
+        /// <summary>The object type: &quot;track&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

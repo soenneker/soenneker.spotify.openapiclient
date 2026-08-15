@@ -98,7 +98,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.&lt;br/&gt;The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.&lt;br/&gt;Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._&quot;</summary>
+        /// <summary>The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.&lt;br/&gt;The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.&lt;br/&gt;Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._</summary>
         [Obsolete("")]
         public int? Popularity { get; set; }
         /// <summary>A link to a 30 second preview (MP3 format) of the track. Can be `null`</summary>
@@ -120,8 +120,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #endif
         /// <summary>The number of the track. If an album has several discs, the track number is the number on the specified disc.</summary>
         public int? TrackNumber { get; set; }
-        /// <summary>&quot;The object type: \&quot;track\&quot;.&quot;</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectType? Type { get; set; }
+        /// <summary>The object type: &quot;track&quot;.</summary>
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackType? Type { get; set; }
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -173,7 +173,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
                 { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions.CreateFromDiscriminatorValue); } },
                 { "track_number", n => { TrackNumber = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectType>(); } },
+                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackType>(); } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -202,7 +202,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("preview_url", PreviewUrl);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions>("restrictions", Restrictions);
             writer.WriteIntValue("track_number", TrackNumber);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectType>("type", Type);
+            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackType>("type", Type);
             writer.WriteStringValue("uri", Uri);
             writer.WriteAdditionalData(AdditionalData);
         }

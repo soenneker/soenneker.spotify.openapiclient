@@ -14,7 +14,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;A JSON array containing the ID of the device on which playback should be started/transferred.&lt;br/&gt;For example:`{device_ids:[\&quot;74ASZWbe4lXaubB36ztrGX\&quot;]}`&lt;br/&gt;_**Note**: Although an array is accepted, only a single device_id is currently supported. Supplying more than one will return `400 Bad Request`_&quot;</summary>
+        /// <summary>A JSON array containing the ID of the device on which playback should be started/transferred.&lt;br/&gt;For example:`{device_ids:[&quot;74ASZWbe4lXaubB36ztrGX&quot;]}`&lt;br/&gt;_**Note**: Although an array is accepted, only a single device_id is currently supported. Supplying more than one will return `400 Bad Request`_</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public List<string>? DeviceIds { get; set; }
@@ -22,7 +22,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public List<string> DeviceIds { get; set; }
 #endif
-        /// <summary>&quot;**true**: ensure playback happens on new device.&lt;br/&gt;**false** or not provided: keep the current playback state.&quot;</summary>
+        /// <summary>**true**: ensure playback happens on new device.&lt;br/&gt;**false** or not provided: keep the current playback state.</summary>
         public bool? Play { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TransferAUsersPlaybackRequest"/> and sets the default values.

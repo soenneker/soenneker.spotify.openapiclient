@@ -14,7 +14,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     {
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
-        /// <summary>&quot;If `true`, the playlist will become collaborative and other users will be able to modify the playlist in their Spotify client. &lt;br/&gt;_**Note**: You can only set `collaborative` to `true` on non-public playlists._&quot;</summary>
+        /// <summary>If `true`, the playlist will become collaborative and other users will be able to modify the playlist in their Spotify client. &lt;br/&gt;_**Note**: You can only set `collaborative` to `true` on non-public playlists._</summary>
         public bool? Collaborative { get; set; }
         /// <summary>Value for playlist description as displayed in Spotify Clients and in the Web API.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
@@ -32,7 +32,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Name { get; set; }
 #endif
-        /// <summary>&quot;The playlist&apos;s public/private status (if it should be added to the user&apos;s profile or not): `true` the playlist will be public, `false` the playlist will be private, `null` the playlist status is not relevant. For more about public/private status, see [Working with Playlists](/documentation/web-api/concepts/playlists)&quot;</summary>
+        /// <summary>The playlist&apos;s public/private status (if it should be added to the user&apos;s profile or not): `true` the playlist will be public, `false` the playlist will be private, `null` the playlist status is not relevant. For more about public/private status, see [Working with Playlists](/documentation/web-api/concepts/playlists)</summary>
         public bool? Public { get; set; }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.ChangePlaylistDetailsRequest"/> and sets the default values.

@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Spotify.OpenApiClient.Me.Albums.Contains;
 using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,6 +18,11 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Albums
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class AlbumsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The contains property</summary>
+        public global::Soenneker.Spotify.OpenApiClient.Me.Albums.Contains.ContainsRequestBuilder Contains
+        {
+            get => new global::Soenneker.Spotify.OpenApiClient.Me.Albums.Contains.ContainsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder"/> and sets the default values.
         /// </summary>
@@ -32,6 +38,36 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Albums
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
         public AlbumsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/albums{?limit*,market*,offset*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Remove one or more albums from the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<Stream?> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<Stream> DeleteAsync(global::Soenneker.Spotify.OpenApiClient.Models.RemoveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToDeleteRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of the albums saved in the current Spotify user&apos;s &apos;Your Music&apos; library.
@@ -61,6 +97,59 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Albums
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedAlbumObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedAlbumObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Save one or more albums to the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<Stream?> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.SaveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<Stream> PutAsync(global::Soenneker.Spotify.OpenApiClient.Models.SaveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = ToPutRequestInformation(body, requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Remove one or more albums from the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.RemoveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.RemoveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/albums?ids={ids}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Get a list of the albums saved in the current Spotify user&apos;s &apos;Your Music&apos; library.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -80,6 +169,29 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Albums
             return requestInfo;
         }
         /// <summary>
+        /// Save one or more albums to the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="body">The request body</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.SaveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(global::Soenneker.Spotify.OpenApiClient.Models.SaveAlbumsUserRequest body, Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder.AlbumsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            if(ReferenceEquals(body, null)) throw new ArgumentNullException(nameof(body));
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/albums?ids={ids}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            requestInfo.SetContentFromParsable(RequestAdapter, "application/json", body);
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder"/></returns>
@@ -87,6 +199,22 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Albums
         public global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Me.Albums.AlbumsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Remove one or more albums from the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AlbumsRequestBuilderDeleteQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
         }
         /// <summary>
         /// Get a list of the albums saved in the current Spotify user&apos;s &apos;Your Music&apos; library.
@@ -107,6 +235,22 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Albums
 #endif
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+        }
+        /// <summary>
+        /// Save one or more albums to the current user&apos;s &apos;Your Music&apos; library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class AlbumsRequestBuilderPutQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
         }
     }
 }

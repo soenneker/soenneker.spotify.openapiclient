@@ -98,7 +98,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject> Images { get; set; }
 #endif
-        /// <summary>&quot;The user&apos;s Spotify subscription level: \&quot;premium\&quot;, \&quot;free\&quot;, etc. (The subscription level \&quot;open\&quot; can be considered the same as \&quot;free\&quot;.) _This field is only available when the current user has granted access to the [user-read-private](/documentation/web-api/concepts/scopes/#list-of-scopes) scope._&quot;</summary>
+        /// <summary>The user&apos;s Spotify subscription level: &quot;premium&quot;, &quot;free&quot;, etc. (The subscription level &quot;open&quot; can be considered the same as &quot;free&quot;.) _This field is only available when the current user has granted access to the [user-read-private](/documentation/web-api/concepts/scopes/#list-of-scopes) scope._</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -107,7 +107,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #else
         public string Product { get; set; }
 #endif
-        /// <summary>&quot;The object type: \&quot;user\&quot;&quot;</summary>
+        /// <summary>The object type: &quot;user&quot;</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

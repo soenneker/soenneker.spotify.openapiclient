@@ -101,7 +101,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #endif
         /// <summary>The number of the track. If an album has several discs, the track number is the number on the specified disc.</summary>
         public int? TrackNumber { get; set; }
-        /// <summary>&quot;The object type: \&quot;track\&quot;.&quot;</summary>
+        /// <summary>The object type: &quot;track&quot;.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public string? Type { get; set; }

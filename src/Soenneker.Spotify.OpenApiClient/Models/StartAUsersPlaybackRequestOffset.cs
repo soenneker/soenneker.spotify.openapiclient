@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Spotify.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;Optional. Indicates from where in the context playback should start. Only available when context_uri corresponds to an album or playlist object\&quot;position\&quot; is zero based and can’t be negative. Example: `\&quot;offset\&quot;: {\&quot;position\&quot;: 5}`\&quot;uri\&quot; is a string representing the uri of the item to start at. Example: `\&quot;offset\&quot;: {\&quot;uri\&quot;: \&quot;spotify:track:1301WleyT98MSxVHPZCA6M\&quot;}`&quot;
+    /// Optional. Indicates from where in the context playback should start. Only available when context_uri corresponds to an album or playlist object&quot;position&quot; is zero based and can’t be negative. Example: `&quot;offset&quot;: {&quot;position&quot;: 5}`&quot;uri&quot; is a string representing the uri of the item to start at. Example: `&quot;offset&quot;: {&quot;uri&quot;: &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;}`
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class StartAUsersPlaybackRequestOffset : IAdditionalDataHolder, IParsable

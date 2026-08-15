@@ -3,6 +3,7 @@
 using Microsoft.Kiota.Abstractions.Extensions;
 using Microsoft.Kiota.Abstractions.Serialization;
 using Microsoft.Kiota.Abstractions;
+using Soenneker.Spotify.OpenApiClient.Me.Shows.Contains;
 using Soenneker.Spotify.OpenApiClient.Models;
 using System.Collections.Generic;
 using System.IO;
@@ -17,12 +18,17 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class ShowsRequestBuilder : BaseRequestBuilder
     {
+        /// <summary>The contains property</summary>
+        public global::Soenneker.Spotify.OpenApiClient.Me.Shows.Contains.ContainsRequestBuilder Contains
+        {
+            get => new global::Soenneker.Spotify.OpenApiClient.Me.Shows.Contains.ContainsRequestBuilder(PathParameters, RequestAdapter);
+        }
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder"/> and sets the default values.
         /// </summary>
         /// <param name="pathParameters">Path parameters for the request</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/shows{?limit*,offset*}", pathParameters)
+        public ShowsRequestBuilder(Dictionary<string, object> pathParameters, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/shows{?limit*,market*,offset*}", pathParameters)
         {
         }
         /// <summary>
@@ -30,8 +36,36 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
         /// </summary>
         /// <param name="rawUrl">The raw URL to use for the request builder.</param>
         /// <param name="requestAdapter">The request adapter to use to execute the requests.</param>
-        public ShowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/shows{?limit*,offset*}", rawUrl)
+        public ShowsRequestBuilder(string rawUrl, IRequestAdapter requestAdapter) : base(requestAdapter, "{+baseurl}/me/shows{?limit*,market*,offset*}", rawUrl)
         {
+        }
+        /// <summary>
+        /// Delete one or more shows from current Spotify user&apos;s library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<Stream?> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<Stream> DeleteAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderDeleteQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToDeleteRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
         /// Get a list of shows saved in the current Spotify user&apos;s library. Optional parameters can be used to limit the number of shows returned.
@@ -61,6 +95,54 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedShowObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingSavedShowObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
         /// <summary>
+        /// Save one or more shows to current Spotify user&apos;s library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="Stream"/></returns>
+        /// <param name="cancellationToken">Cancellation token to use when cancelling requests</param>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse">When receiving a 401 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse">When receiving a 403 status code</exception>
+        /// <exception cref="global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse">When receiving a 429 status code</exception>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public async Task<Stream?> PutAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderPutQueryParameters>>? requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#nullable restore
+#else
+        public async Task<Stream> PutAsync(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderPutQueryParameters>> requestConfiguration = default, CancellationToken cancellationToken = default)
+        {
+#endif
+            var requestInfo = ToPutRequestInformation(requestConfiguration);
+            var errorMapping = new Dictionary<string, ParsableFactory<IParsable>>
+            {
+                { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
+                { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
+                { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+            };
+            return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
+        }
+        /// <summary>
+        /// Delete one or more shows from current Spotify user&apos;s library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderDeleteQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/shows?ids={ids}{&market*}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Get a list of shows saved in the current Spotify user&apos;s library. Optional parameters can be used to limit the number of shows returned.
         /// </summary>
         /// <returns>A <see cref="RequestInformation"/></returns>
@@ -80,6 +162,26 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
             return requestInfo;
         }
         /// <summary>
+        /// Save one or more shows to current Spotify user&apos;s library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
+        /// </summary>
+        /// <returns>A <see cref="RequestInformation"/></returns>
+        /// <param name="requestConfiguration">Configuration for the request such as headers, query parameters, and middleware options.</param>
+        [Obsolete("")]
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderPutQueryParameters>>? requestConfiguration = default)
+        {
+#nullable restore
+#else
+        public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderPutQueryParameters>> requestConfiguration = default)
+        {
+#endif
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/shows?ids={ids}", PathParameters);
+            requestInfo.Configure(requestConfiguration);
+            requestInfo.Headers.TryAdd("Accept", "application/json");
+            return requestInfo;
+        }
+        /// <summary>
         /// Returns a request builder with the provided arbitrary URL. Using this method means any other path or query parameters are ignored.
         /// </summary>
         /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder"/></returns>
@@ -87,6 +189,31 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
         public global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder WithUrl(string rawUrl)
         {
             return new global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder(rawUrl, RequestAdapter);
+        }
+        /// <summary>
+        /// Delete one or more shows from current Spotify user&apos;s library.**Note:** This endpoint is deprecated. Use [Remove Items from Library](/documentation/web-api/reference/remove-library-items) instead.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ShowsRequestBuilderDeleteQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("market")]
+            public string? Market { get; set; }
+#nullable restore
+#else
+            [QueryParameter("market")]
+            public string Market { get; set; }
+#endif
         }
         /// <summary>
         /// Get a list of shows saved in the current Spotify user&apos;s library. Optional parameters can be used to limit the number of shows returned.
@@ -98,6 +225,22 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
             public int? Limit { get; set; }
             [QueryParameter("offset")]
             public int? Offset { get; set; }
+        }
+        /// <summary>
+        /// Save one or more shows to current Spotify user&apos;s library.**Note:** This endpoint is deprecated. Use [Save Items to Library](/documentation/web-api/reference/save-library-items) instead.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
+        public partial class ShowsRequestBuilderPutQueryParameters 
+        {
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+            [QueryParameter("ids")]
+            public string? Ids { get; set; }
+#nullable restore
+#else
+            [QueryParameter("ids")]
+            public string Ids { get; set; }
+#endif
         }
     }
 }

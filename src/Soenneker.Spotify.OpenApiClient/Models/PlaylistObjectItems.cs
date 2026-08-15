@@ -8,7 +8,7 @@ using System;
 namespace Soenneker.Spotify.OpenApiClient.Models
 {
     /// <summary>
-    /// &quot;The items of the playlist. _**Note**: This field is only available for playlists owned by the current user or playlists the user is a collaborator of._&quot;
+    /// The items of the playlist. _**Note**: This field is only available for playlists owned by the current user or playlists the user is a collaborator of._
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlaylistObjectItems : IAdditionalDataHolder, IParsable

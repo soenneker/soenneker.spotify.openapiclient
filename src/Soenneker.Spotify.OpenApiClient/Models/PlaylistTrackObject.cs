@@ -12,9 +12,9 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     public partial class PlaylistTrackObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
     {
-        /// <summary>&quot;The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._&quot;</summary>
+        /// <summary>The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._</summary>
         public DateTimeOffset? AddedAt { get; set; }
-        /// <summary>&quot;The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._&quot;</summary>
+        /// <summary>The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy? AddedBy { get; set; }
