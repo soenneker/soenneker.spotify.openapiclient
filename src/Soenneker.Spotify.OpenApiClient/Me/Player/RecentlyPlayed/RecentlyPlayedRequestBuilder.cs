@@ -95,7 +95,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.RecentlyPlayed
         public partial class RecentlyPlayedRequestBuilderGetQueryParameters 
         {
             [QueryParameter("after")]
-            public int? After { get; set; }
+            public long? After { get; set; }
             [QueryParameter("before")]
             public int? Before { get; set; }
             [QueryParameter("limit")]

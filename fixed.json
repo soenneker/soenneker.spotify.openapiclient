@@ -4744,6 +4744,7 @@
               "title": "After",
               "type": "integer",
               "description": "A Unix timestamp in milliseconds. Returns all items\nafter (but not including) this cursor position. If \u0060after\u0060 is specified, \u0060before\u0060\nmust not be specified.\n",
+              "format": "int64",
               "example": 1484811043508
             }
           },
