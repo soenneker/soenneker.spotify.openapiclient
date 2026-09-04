@@ -9642,6 +9642,9 @@
         "description": "The Spotify user who added the track or episode. _**Note**: some very old playlists may return \u0060null\u0060 in this field._\n"
       },
       "PlaylistTrackObjectItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -9791,6 +9794,9 @@
           },
           "show": {
             "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "Information about the track or episode.",
@@ -9804,6 +9810,9 @@
         "x-spotify-docs-type": "TrackObject | EpisodeObject"
       },
       "PlaylistTrackObjectTrack": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -9953,6 +9962,9 @@
           },
           "show": {
             "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "**Deprecated:** Use \u0060item\u0060 instead. Information about the track or episode.\n",
@@ -9967,6 +9979,9 @@
         "x-spotify-docs-type": "TrackObject | EpisodeObject"
       },
       "QueueObjectCurrentlyPlaying": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -10116,6 +10131,9 @@
           },
           "show": {
             "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The currently playing track or episode. Can be \u0060null\u0060.",
@@ -10129,6 +10147,9 @@
         "x-spotify-docs-type": "TrackObject | EpisodeObject"
       },
       "QueueObjectQueueItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -10278,6 +10299,9 @@
           },
           "show": {
             "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "discriminator": {
@@ -10356,6 +10380,9 @@
         "description": "A Context Object. Can be \u0060null\u0060."
       },
       "CurrentlyPlayingContextObjectItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -10505,6 +10532,9 @@
           },
           "show": {
             "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "description": "The currently playing track or episode. Can be \u0060null\u0060.",
@@ -12396,6 +12426,9 @@
         }
       },
       "PagingArtistOrTrackObjectResponseAllOf2ItemsItem": {
+        "required": [
+          "type"
+        ],
         "type": "object",
         "oneOf": [
           {
@@ -12506,6 +12539,9 @@
           "is_local": {
             "type": "boolean",
             "description": "Whether or not the track is from a local file.\n"
+          },
+          "type": {
+            "type": "string"
           }
         },
         "discriminator": {

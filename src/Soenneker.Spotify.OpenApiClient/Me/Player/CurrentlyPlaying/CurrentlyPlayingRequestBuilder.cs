@@ -96,21 +96,29 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.CurrentlyPlaying
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("additional_types")]
             public string? AdditionalTypes { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("additional_types")]
             public string AdditionalTypes { get; set; }
+            #pragma warning restore CS1591
 #endif
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("market")]
             public string? Market { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("market")]
             public string Market { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }

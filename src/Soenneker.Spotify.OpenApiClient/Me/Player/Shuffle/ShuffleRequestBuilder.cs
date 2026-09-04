@@ -95,15 +95,21 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Shuffle
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("device_id")]
             public string? DeviceId { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("device_id")]
             public string DeviceId { get; set; }
+            #pragma warning restore CS1591
 #endif
+            #pragma warning disable CS1591
             [QueryParameter("state")]
             public bool? State { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

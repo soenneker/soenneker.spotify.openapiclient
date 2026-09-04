@@ -94,12 +94,18 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.RecentlyPlayed
         [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
         public partial class RecentlyPlayedRequestBuilderGetQueryParameters 
         {
+            #pragma warning disable CS1591
             [QueryParameter("after")]
             public long? After { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("before")]
             public int? Before { get; set; }
+            #pragma warning restore CS1591
+            #pragma warning disable CS1591
             [QueryParameter("limit")]
             public int? Limit { get; set; }
+            #pragma warning restore CS1591
         }
     }
 }

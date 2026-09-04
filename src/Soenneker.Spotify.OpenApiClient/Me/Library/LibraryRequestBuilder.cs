@@ -152,12 +152,16 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Library
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("uris")]
             public string? Uris { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("uris")]
             public string Uris { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
         /// <summary>
@@ -168,12 +172,16 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Library
         {
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
+            #pragma warning disable CS1591
             [QueryParameter("uris")]
             public string? Uris { get; set; }
+            #pragma warning restore CS1591
 #nullable restore
 #else
+            #pragma warning disable CS1591
             [QueryParameter("uris")]
             public string Uris { get; set; }
+            #pragma warning restore CS1591
 #endif
         }
     }
