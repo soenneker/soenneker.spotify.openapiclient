@@ -1136,9 +1136,6 @@
         "operationId": "GetPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
@@ -1153,6 +1150,14 @@
           },
           {
             "$ref": "#/components/parameters/QueryAdditionalTypes"
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1185,7 +1190,12 @@
         "operationId": "ChangePlaylistDetails",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1232,9 +1242,6 @@
         "operationId": "GetPlaylistsTracks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
@@ -1255,6 +1262,14 @@
           },
           {
             "$ref": "#/components/parameters/QueryAdditionalTypes"
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1290,9 +1305,6 @@
         "operationId": "AddTracksToPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "name": "position",
             "in": "query",
             "schema": {
@@ -1310,6 +1322,14 @@
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to add, can be track or episode URIs. For example:\u003Cbr/\u003E\u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh, spotify:track:1301WleyT98MSxVHPZCA6M, spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be added in one request. \u003Cbr/\u003E\n_**Note**: it is likely that passing a large number of item URIs as a query parameter will exceed the maximum length of the request URI. When adding a large number of items, it is recommended to pass them in the request body, see below._\n",
               "example": "spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M"
+            }
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -1356,15 +1376,20 @@
         "operationId": "ReorderOrReplacePlaylistsTracks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "name": "uris",
             "in": "query",
             "schema": {
               "title": "Spotify Track URIs",
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to set, can be track or episode URIs. For example: \u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be set in one request.\n"
+            }
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -1411,7 +1436,12 @@
         "operationId": "RemoveTracksPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -1459,9 +1489,6 @@
         "operationId": "GetPlaylistsItems",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
@@ -1482,6 +1509,14 @@
           },
           {
             "$ref": "#/components/parameters/QueryAdditionalTypes"
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -1516,9 +1551,6 @@
         "operationId": "AddItemsToPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "name": "position",
             "in": "query",
             "schema": {
@@ -1536,6 +1568,14 @@
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to add, can be track or episode URIs. For example:\u003Cbr/\u003E\u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh, spotify:track:1301WleyT98MSxVHPZCA6M, spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be added in one request. \u003Cbr/\u003E\n_**Note**: it is likely that passing a large number of item URIs as a query parameter will exceed the maximum length of the request URI. When adding a large number of items, it is recommended to pass them in the request body, see below._\n",
               "example": "spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M"
+            }
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -1581,15 +1621,20 @@
         "operationId": "ReorderOrReplacePlaylistsItems",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "name": "uris",
             "in": "query",
             "schema": {
               "title": "Spotify Track URIs",
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to set, can be track or episode URIs. For example: \u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be set in one request.\n"
+            }
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -1635,7 +1680,12 @@
         "operationId": "RemoveItemsPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2673,7 +2723,12 @@
         "operationId": "GetUsersProfile",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathUserId"
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -2709,9 +2764,6 @@
         "operationId": "GetListUsersPlaylists",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathUserId"
-          },
-          {
             "$ref": "#/components/parameters/QueryLimit"
           },
           {
@@ -2723,6 +2775,14 @@
               "description": "The index of the first playlist to return. Default:\n0 (the first object). Maximum offset: 100.000\\. Use with \u0060limit\u0060 to get the\nnext set of playlists.\n",
               "default": 0,
               "example": 5
+            }
+          },
+          {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
@@ -2760,7 +2820,12 @@
         "operationId": "CreatePlaylistForUser",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathUserId"
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2808,7 +2873,12 @@
         "operationId": "FollowPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -2854,7 +2924,12 @@
         "operationId": "UnfollowPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3091,7 +3166,12 @@
         "operationId": "GetPlaylistCover",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "responses": {
@@ -3123,7 +3203,12 @@
         "operationId": "UploadCustomPlaylistCover",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
+            }
           }
         ],
         "requestBody": {
@@ -3454,9 +3539,6 @@
         "operationId": "CheckIfUserFollowsPlaylist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathPlaylistId"
-          },
-          {
             "name": "ids",
             "in": "query",
             "schema": {
@@ -3464,6 +3546,14 @@
               "type": "string",
               "description": "**Deprecated** A single item list containing current user\u0027s [Spotify Username](/documentation/web-api/concepts/spotify-uris-ids). Maximum: 1 id.\n",
               "example": "jmperezperez"
+            }
+          },
+          {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "type": "string"
             }
           }
         ],
