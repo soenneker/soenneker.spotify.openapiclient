@@ -50,7 +50,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/albums": {
@@ -88,7 +91,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/albums/{id}/tracks": {
@@ -132,7 +138,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/artists/{id}": {
@@ -166,7 +175,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/artists": {
@@ -209,7 +221,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/artists/{id}/albums": {
@@ -266,7 +281,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/artists/{id}/top-tracks": {
@@ -305,7 +323,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/artists/{id}/related-artists": {
@@ -340,7 +361,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/shows/{id}": {
@@ -379,7 +403,10 @@
               "user-read-playback-position"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/shows": {
@@ -417,7 +444,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/shows/{id}/episodes": {
@@ -463,7 +493,10 @@
               "user-read-playback-position"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/episodes/{id}": {
@@ -510,7 +543,10 @@
               "user-read-playback-position"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/episodes": {
@@ -558,7 +594,10 @@
               "user-read-playback-position"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/audiobooks/{id}": {
@@ -601,7 +640,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/audiobooks": {
@@ -639,7 +681,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/audiobooks/{id}/chapters": {
@@ -683,7 +728,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/me/audiobooks": {
@@ -870,7 +918,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/chapters": {
@@ -908,7 +959,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataPolicyList"
+        }
       }
     },
     "/tracks/{id}": {
@@ -953,7 +1007,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataWithMachineLearningPolicyList"
+        }
       }
     },
     "/tracks": {
@@ -999,7 +1056,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataWithMachineLearningPolicyList"
+        }
       }
     },
     "/search": {
@@ -1091,6 +1151,11 @@
           {
             "oauth_2_0": []
           }
+        ],
+        "x-spotify-policy-list": [
+          {
+            "$ref": "#/components/x-spotify-policy/policies/MachineLearning"
+          }
         ]
       }
     },
@@ -1178,7 +1243,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataWithMachineLearningPolicyList"
+        }
       },
       "put": {
         "tags": [
@@ -1293,7 +1361,10 @@
               "playlist-read-private"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataWithMachineLearningPolicyList"
+        }
       },
       "post": {
         "tags": [
@@ -1539,7 +1610,10 @@
               "playlist-read-private"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataWithMachineLearningPolicyList"
+        }
       },
       "post": {
         "tags": [
@@ -3002,6 +3076,11 @@
           {
             "oauth_2_0": []
           }
+        ],
+        "x-spotify-policy-list": [
+          {
+            "$ref": "#/components/x-spotify-policy/policies/MultipleIntegrations"
+          }
         ]
       }
     },
@@ -3192,7 +3271,10 @@
           {
             "oauth_2_0": []
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/metadataWithMachineLearningPolicyList"
+        }
       },
       "put": {
         "tags": [
@@ -3279,6 +3361,11 @@
         "security": [
           {
             "oauth_2_0": []
+          }
+        ],
+        "x-spotify-policy-list": [
+          {
+            "$ref": "#/components/x-spotify-policy/policies/MultipleIntegrations"
           }
         ]
       }
@@ -3619,6 +3706,11 @@
           {
             "oauth_2_0": []
           }
+        ],
+        "x-spotify-policy-list": [
+          {
+            "$ref": "#/components/x-spotify-policy/policies/MachineLearning"
+          }
         ]
       }
     },
@@ -3661,6 +3753,11 @@
         "security": [
           {
             "oauth_2_0": []
+          }
+        ],
+        "x-spotify-policy-list": [
+          {
+            "$ref": "#/components/x-spotify-policy/policies/MachineLearning"
           }
         ]
       }
@@ -4225,6 +4322,11 @@
           {
             "oauth_2_0": []
           }
+        ],
+        "x-spotify-policy-list": [
+          {
+            "$ref": "#/components/x-spotify-policy/policies/MachineLearning"
+          }
         ]
       }
     },
@@ -4297,7 +4399,10 @@
               "user-read-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       },
       "put": {
         "tags": [
@@ -4335,7 +4440,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/devices": {
@@ -4405,7 +4513,10 @@
               "user-read-currently-playing"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/play": {
@@ -4457,7 +4568,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/pause": {
@@ -4500,7 +4614,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/next": {
@@ -4543,7 +4660,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/previous": {
@@ -4586,7 +4706,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/seek": {
@@ -4640,7 +4763,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/repeat": {
@@ -4868,7 +4994,10 @@
               "user-read-recently-played"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/me/player/queue": {
@@ -4900,7 +5029,10 @@
               "user-read-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       },
       "post": {
         "tags": [
@@ -4952,7 +5084,10 @@
               "user-modify-playback-state"
             ]
           }
-        ]
+        ],
+        "x-spotify-policy-list": {
+          "$ref": "#/components/x-spotify-policy/playerPolicyList"
+        }
       }
     },
     "/markets": {
@@ -14578,6 +14713,53 @@
             }
           }
         }
+      }
+    },
+    "x-spotify-policy": {
+      "policies": {
+        "$ref": "../policies.yaml"
+      },
+      "metadataPolicyList": [
+        {
+          "$ref": "#/components/x-spotify-policy/policies/Downloading"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/VisualAlteration"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/Attribution"
+        }
+      ],
+      "metadataWithMachineLearningPolicyList": [
+        {
+          "$ref": "#/components/x-spotify-policy/policies/Downloading"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/VisualAlteration"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/Attribution"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/MachineLearning"
+        }
+      ],
+      "playerPolicyList": [
+        {
+          "$ref": "#/components/x-spotify-policy/policies/CommercialStreaming"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/ContentAlteration"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/Synchronization"
+        },
+        {
+          "$ref": "#/components/x-spotify-policy/policies/Broadcasting"
+        }
+      ],
+      "downloading": {
+        "$ref": "#/components/x-spotify-policy/policies/Downloading"
       }
     }
   },
