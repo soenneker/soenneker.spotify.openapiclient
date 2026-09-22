@@ -5742,60 +5742,38 @@
           }
         }
       },
-      "TooManyRequestsResponse": {
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ErrorObject"
-          }
-        }
+      "TimeSignature": {
+        "maximum": 7,
+        "minimum": 3,
+        "type": "integer",
+        "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022.",
+        "example": 4
       },
-      "BadRequestResponse": {
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ErrorObject"
-          }
-        }
+      "Tempo": {
+        "type": "number",
+        "description": "The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.\n",
+        "format": "float",
+        "example": 118.211,
+        "x-spotify-docs-type": "Float"
       },
-      "NotFoundResponse": {
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ErrorObject"
-          }
-        }
+      "Loudness": {
+        "type": "number",
+        "description": "The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.\n",
+        "format": "float",
+        "example": -5.883,
+        "x-spotify-docs-type": "Float"
       },
-      "ForbiddenResponse": {
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ErrorObject"
-          }
-        }
+      "Key": {
+        "maximum": 11,
+        "minimum": -1,
+        "type": "integer",
+        "description": "The key the track is in. Integers map to pitches using standard [Pitch Class notation](https://en.wikipedia.org/wiki/Pitch_class). E.g. 0 = C, 1 = C\u266F/D\u266D, 2 = D, and so on. If no key was detected, the value is -1.\n",
+        "example": 9
       },
-      "UnauthorizedResponse": {
-        "required": [
-          "error"
-        ],
-        "type": "object",
-        "properties": {
-          "error": {
-            "$ref": "#/components/schemas/ErrorObject"
-          }
-        }
+      "Mode": {
+        "type": "integer",
+        "description": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.\n",
+        "example": 0
       },
       "AudioFeaturesObject": {
         "type": "object",
@@ -9401,6 +9379,61 @@
           }
         },
         "x-spotify-docs-type": "ExplicitContentSettingsObject"
+      },
+      "UnauthorizedResponse": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorObject"
+          }
+        }
+      },
+      "ForbiddenResponse": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorObject"
+          }
+        }
+      },
+      "NotFoundResponse": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorObject"
+          }
+        }
+      },
+      "BadRequestResponse": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorObject"
+          }
+        }
+      },
+      "TooManyRequestsResponse": {
+        "required": [
+          "error"
+        ],
+        "type": "object",
+        "properties": {
+          "error": {
+            "$ref": "#/components/schemas/ErrorObject"
+          }
+        }
       },
       "ManyAlbumsResponse": {
         "required": [
