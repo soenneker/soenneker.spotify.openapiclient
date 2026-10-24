@@ -10,6 +10,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     /// <summary>
     /// Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the `linked_from` object contains information about the originally requested track.
     /// </summary>
+    [Obsolete("")]
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class PlayHistoryObjectTrackLinkedFrom : IAdditionalDataHolder, IParsable
     {

@@ -26,7 +26,15 @@
         "operationId": "GetAnAlbum",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathAlbumId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Album ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the album.\n",
+              "example": "4aawyAB9vmqN3uQ7FjRGTy"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -108,7 +116,15 @@
         "operationId": "GetAnAlbumsTracks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathAlbumId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Album ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the album.\n",
+              "example": "4aawyAB9vmqN3uQ7FjRGTy"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -154,7 +170,15 @@
         "operationId": "GetAnArtist",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathArtistId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Artist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.\n",
+              "example": "0TnOYISbd1XYRBk9myaseg"
+            }
           }
         ],
         "responses": {
@@ -238,7 +262,15 @@
         "operationId": "GetAnArtistsAlbums",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathArtistId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Artist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.\n",
+              "example": "0TnOYISbd1XYRBk9myaseg"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryIncludeGroups"
@@ -298,7 +330,15 @@
         "operationId": "GetAnArtistsTopTracks",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathArtistId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Artist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.\n",
+              "example": "0TnOYISbd1XYRBk9myaseg"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -339,7 +379,15 @@
         "operationId": "GetAnArtistsRelatedArtists",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathArtistId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Artist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the artist.\n",
+              "example": "0TnOYISbd1XYRBk9myaseg"
+            }
           }
         ],
         "responses": {
@@ -380,7 +428,15 @@
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
-            "$ref": "#/components/parameters/PathShowId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Show ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)\nfor the show.\n",
+              "example": "38bS44xjbVVZ3No3ByF1dJ"
+            }
           }
         ],
         "responses": {
@@ -461,7 +517,15 @@
         "operationId": "GetAShowsEpisodes",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathShowId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Show ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)\nfor the show.\n",
+              "example": "38bS44xjbVVZ3No3ByF1dJ"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -610,7 +674,15 @@
         "operationId": "GetAnAudiobook",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathAudiobookId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Audiobook ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)\nfor the audiobook.\n",
+              "example": "7iHfbu1YPACw6oZPAFJtqe"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -698,7 +770,15 @@
         "operationId": "GetAudiobookChapters",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathAudiobookId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Audiobook ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)\nfor the audiobook.\n",
+              "example": "7iHfbu1YPACw6oZPAFJtqe"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -894,7 +974,15 @@
         "operationId": "GetAChapter",
         "parameters": [
           {
-            "$ref": "#/components/parameters/PathChapterId"
+            "name": "id",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Spotify Chapter ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids)\nfor the chapter.\n",
+              "example": "0D5wENdkdwbqlrHoaJ9g29"
+            }
           },
           {
             "$ref": "#/components/parameters/QueryMarket"
@@ -1201,6 +1289,17 @@
         "operationId": "GetPlaylist",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
@@ -1215,14 +1314,6 @@
           },
           {
             "$ref": "#/components/parameters/QueryAdditionalTypes"
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1262,7 +1353,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -1310,6 +1404,17 @@
         "operationId": "GetPlaylistsTracks",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
@@ -1330,14 +1435,6 @@
           },
           {
             "$ref": "#/components/parameters/QueryAdditionalTypes"
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1376,6 +1473,17 @@
         "operationId": "AddTracksToPlaylist",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "name": "position",
             "in": "query",
             "schema": {
@@ -1393,14 +1501,6 @@
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to add, can be track or episode URIs. For example:\u003Cbr/\u003E\u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh, spotify:track:1301WleyT98MSxVHPZCA6M, spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be added in one request. \u003Cbr/\u003E\n_**Note**: it is likely that passing a large number of item URIs as a query parameter will exceed the maximum length of the request URI. When adding a large number of items, it is recommended to pass them in the request body, see below._\n",
               "example": "spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M"
-            }
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -1447,20 +1547,23 @@
         "operationId": "ReorderOrReplacePlaylistsTracks",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "name": "uris",
             "in": "query",
             "schema": {
               "title": "Spotify Track URIs",
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to set, can be track or episode URIs. For example: \u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be set in one request.\n"
-            }
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -1511,7 +1614,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -1560,6 +1666,17 @@
         "operationId": "GetPlaylistsItems",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "$ref": "#/components/parameters/QueryMarket"
           },
           {
@@ -1580,14 +1697,6 @@
           },
           {
             "$ref": "#/components/parameters/QueryAdditionalTypes"
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
-            }
           }
         ],
         "responses": {
@@ -1625,6 +1734,17 @@
         "operationId": "AddItemsToPlaylist",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "name": "position",
             "in": "query",
             "schema": {
@@ -1642,14 +1762,6 @@
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to add, can be track or episode URIs. For example:\u003Cbr/\u003E\u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh, spotify:track:1301WleyT98MSxVHPZCA6M, spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be added in one request. \u003Cbr/\u003E\n_**Note**: it is likely that passing a large number of item URIs as a query parameter will exceed the maximum length of the request URI. When adding a large number of items, it is recommended to pass them in the request body, see below._\n",
               "example": "spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M"
-            }
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -1695,20 +1807,23 @@
         "operationId": "ReorderOrReplacePlaylistsItems",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "name": "uris",
             "in": "query",
             "schema": {
               "title": "Spotify Track URIs",
               "type": "string",
               "description": "A comma-separated list of [Spotify URIs](/documentation/web-api/concepts/spotify-uris-ids) to set, can be track or episode URIs. For example: \u0060uris=spotify:track:4iV5W9uYEdYUVa79Axb7Rh,spotify:track:1301WleyT98MSxVHPZCA6M,spotify:episode:512ojhOuo1ktJprKbVcKyQ\u0060\u003Cbr/\u003EA maximum of 100 items can be set in one request.\n"
-            }
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -1758,7 +1873,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -2801,7 +2919,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "User ID",
+              "type": "string",
+              "description": "The user\u0027s [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids).\n",
+              "example": "smedjan"
             }
           }
         ],
@@ -2838,6 +2959,17 @@
         "operationId": "GetListUsersPlaylists",
         "parameters": [
           {
+            "name": "userId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "User ID",
+              "type": "string",
+              "description": "The user\u0027s [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids).\n",
+              "example": "smedjan"
+            }
+          },
+          {
             "$ref": "#/components/parameters/QueryLimit"
           },
           {
@@ -2849,14 +2981,6 @@
               "description": "The index of the first playlist to return. Default:\n0 (the first object). Maximum offset: 100.000\\. Use with \u0060limit\u0060 to get the\nnext set of playlists.\n",
               "default": 0,
               "example": 5
-            }
-          },
-          {
-            "name": "userId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -2898,7 +3022,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "User ID",
+              "type": "string",
+              "description": "The user\u0027s [Spotify user ID](/documentation/web-api/concepts/spotify-uris-ids).\n",
+              "example": "smedjan"
             }
           }
         ],
@@ -2951,7 +3078,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -3002,7 +3132,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -3249,7 +3382,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -3289,7 +3425,10 @@
             "in": "path",
             "required": true,
             "schema": {
-              "type": "string"
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
             }
           }
         ],
@@ -3626,6 +3765,17 @@
         "operationId": "CheckIfUserFollowsPlaylist",
         "parameters": [
           {
+            "name": "playlistId",
+            "in": "path",
+            "required": true,
+            "schema": {
+              "title": "Playlist ID",
+              "type": "string",
+              "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) of the playlist.\n",
+              "example": "3cEYpjA9oz9GiPac4AsH4n"
+            }
+          },
+          {
             "name": "ids",
             "in": "query",
             "schema": {
@@ -3633,14 +3783,6 @@
               "type": "string",
               "description": "**Deprecated** A single item list containing current user\u0027s [Spotify Username](/documentation/web-api/concepts/spotify-uris-ids). Maximum: 1 id.\n",
               "example": "jmperezperez"
-            }
-          },
-          {
-            "name": "playlistId",
-            "in": "path",
-            "required": true,
-            "schema": {
-              "type": "string"
             }
           }
         ],
@@ -5209,6 +5351,10 @@
               "type": "string"
             },
             "description": "A list of the genres the artist is associated with. If not yet classified, the array is empty.\n",
+            "example": [
+              "Prog rock",
+              "Grunge"
+            ],
             "deprecated": true
           },
           "href": {
@@ -5673,7 +5819,8 @@
             "maximum": 7,
             "minimum": 3,
             "type": "integer",
-            "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022."
+            "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022.",
+            "example": 4
           },
           "time_signature_confidence": {
             "maximum": 1,
@@ -5731,14 +5878,24 @@
               "minimum": 0,
               "type": "number"
             },
-            "description": "Pitch content is given by a \u201Cchroma\u201D vector, corresponding to the 12 pitch classes C, C#, D to B, with values ranging from 0 to 1 that describe the relative dominance of every pitch in the chromatic scale. For example a C Major chord would likely be represented by large values of C, E and G (i.e. classes 0, 4, and 7).\n\nVectors are normalized to 1 by their strongest dimension, therefore noisy sounds are likely represented by values that are all close to 1, while pure tones are described by one value at 1 (the pitch) and others near 0.\nAs can be seen below, the 12 vector indices are a combination of low-power spectrum values at their respective pitch frequencies.\n![pitch vector](/assets/audio/Pitch_vector.png)\n"
+            "description": "Pitch content is given by a \u201Cchroma\u201D vector, corresponding to the 12 pitch classes C, C#, D to B, with values ranging from 0 to 1 that describe the relative dominance of every pitch in the chromatic scale. For example a C Major chord would likely be represented by large values of C, E and G (i.e. classes 0, 4, and 7).\n\nVectors are normalized to 1 by their strongest dimension, therefore noisy sounds are likely represented by values that are all close to 1, while pure tones are described by one value at 1 (the pitch) and others near 0.\nAs can be seen below, the 12 vector indices are a combination of low-power spectrum values at their respective pitch frequencies.\n![pitch vector](/assets/audio/Pitch_vector.png)\n",
+            "example": [
+              0.212,
+              0.141,
+              0.294
+            ]
           },
           "timbre": {
             "type": "array",
             "items": {
               "type": "number"
             },
-            "description": "Timbre is the quality of a musical note or sound that distinguishes different types of musical instruments, or voices. It is a complex notion also referred to as sound color, texture, or tone quality, and is derived from the shape of a segment\u2019s spectro-temporal surface, independently of pitch and loudness. The timbre feature is a vector that includes 12 unbounded values roughly centered around 0. Those values are high level abstractions of the spectral surface, ordered by degree of importance.\n\nFor completeness however, the first dimension represents the average loudness of the segment; second emphasizes brightness; third is more closely correlated to the flatness of a sound; fourth to sounds with a stronger attack; etc. See an image below representing the 12 basis functions (i.e. template segments).\n![timbre basis functions](/assets/audio/Timbre_basis_functions.png)\n\nThe actual timbre of the segment is best described as a linear combination of these 12 basis functions weighted by the coefficient values: timbre = c1 x b1 \u002B c2 x b2 \u002B ... \u002B c12 x b12, where c1 to c12 represent the 12 coefficients and b1 to b12 the 12 basis functions as displayed below. Timbre vectors are best used in comparison with each other.\n"
+            "description": "Timbre is the quality of a musical note or sound that distinguishes different types of musical instruments, or voices. It is a complex notion also referred to as sound color, texture, or tone quality, and is derived from the shape of a segment\u2019s spectro-temporal surface, independently of pitch and loudness. The timbre feature is a vector that includes 12 unbounded values roughly centered around 0. Those values are high level abstractions of the spectral surface, ordered by degree of importance.\n\nFor completeness however, the first dimension represents the average loudness of the segment; second emphasizes brightness; third is more closely correlated to the flatness of a sound; fourth to sounds with a stronger attack; etc. See an image below representing the 12 basis functions (i.e. template segments).\n![timbre basis functions](/assets/audio/Timbre_basis_functions.png)\n\nThe actual timbre of the segment is best described as a linear combination of these 12 basis functions weighted by the coefficient values: timbre = c1 x b1 \u002B c2 x b2 \u002B ... \u002B c12 x b12, where c1 to c12 represent the 12 coefficients and b1 to b12 the 12 basis functions as displayed below. Timbre vectors are best used in comparison with each other.\n",
+            "example": [
+              42.115,
+              64.373,
+              -0.233
+            ]
           }
         }
       },
@@ -5827,7 +5984,8 @@
             "maximum": 11,
             "minimum": -1,
             "type": "integer",
-            "description": "The key the track is in. Integers map to pitches using standard [Pitch Class notation](https://en.wikipedia.org/wiki/Pitch_class). E.g. 0 = C, 1 = C\u266F/D\u266D, 2 = D, and so on. If no key was detected, the value is -1.\n"
+            "description": "The key the track is in. Integers map to pitches using standard [Pitch Class notation](https://en.wikipedia.org/wiki/Pitch_class). E.g. 0 = C, 1 = C\u266F/D\u266D, 2 = D, and so on. If no key was detected, the value is -1.\n",
+            "example": 9
           },
           "liveness": {
             "type": "number",
@@ -5839,11 +5997,14 @@
           "loudness": {
             "type": "number",
             "description": "The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.\n",
-            "format": "float"
+            "format": "float",
+            "example": -5.883,
+            "x-spotify-docs-type": "Float"
           },
           "mode": {
             "type": "integer",
-            "description": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.\n"
+            "description": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.\n",
+            "example": 0
           },
           "speechiness": {
             "type": "number",
@@ -5855,13 +6016,16 @@
           "tempo": {
             "type": "number",
             "description": "The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.\n",
-            "format": "float"
+            "format": "float",
+            "example": 118.211,
+            "x-spotify-docs-type": "Float"
           },
           "time_signature": {
             "maximum": 7,
             "minimum": 3,
             "type": "integer",
-            "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022."
+            "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022.",
+            "example": 4
           },
           "track_href": {
             "type": "string",
@@ -7499,7 +7663,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -7626,7 +7794,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -7750,7 +7922,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -8510,6 +8686,11 @@
               "type": "string"
             },
             "description": "The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._\n",
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ],
             "deprecated": true
           },
           "external_urls": {
@@ -8588,6 +8769,11 @@
               "type": "string"
             },
             "description": "The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._\n",
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ],
             "deprecated": true
           },
           "external_urls": {
@@ -8675,6 +8861,11 @@
               "type": "string"
             },
             "description": "The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._\n",
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ],
             "deprecated": true
           },
           "external_urls": {
@@ -8828,7 +9019,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -8958,7 +9153,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -9085,7 +9284,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the chapter, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -9154,6 +9357,11 @@
               "type": "string"
             },
             "description": "The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._\n",
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ],
             "deprecated": true
           },
           "external_urls": {
@@ -9576,7 +9784,11 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "example": [
+              "alternative",
+              "samba"
+            ]
           }
         }
       },
@@ -9696,13 +9908,20 @@
         "type": "array",
         "items": {
           "type": "boolean"
-        }
+        },
+        "example": [
+          false,
+          true
+        ]
       },
       "SingletonArrayOfBooleanResponse": {
         "type": "array",
         "items": {
           "type": "boolean"
-        }
+        },
+        "example": [
+          true
+        ]
       },
       "PlaylistSnapshotIdResponse": {
         "type": "object",
@@ -9903,7 +10122,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TrackObject"
@@ -9913,146 +10131,6 @@
           }
         ],
         "properties": {
-          "album": {
-            "$ref": "#/components/schemas/TrackObjectAlbum"
-          },
-          "artists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SimplifiedArtistObject"
-            },
-            "description": "The artists who performed the track. Each artist object includes a link in \u0060href\u0060 to more detailed information about the artist.\n"
-          },
-          "available_markets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.\n",
-            "deprecated": true
-          },
-          "disc_number": {
-            "type": "integer",
-            "description": "The disc number (usually \u00601\u0060 unless the album consists of more than one disc).\n"
-          },
-          "duration_ms": {
-            "type": "integer",
-            "description": "The track length in milliseconds.\n"
-          },
-          "explicit": {
-            "type": "boolean",
-            "description": "Whether or not the track has explicit lyrics ( \u0060true\u0060 = yes it does; \u0060false\u0060 = no it does not OR unknown).\n"
-          },
-          "external_ids": {
-            "$ref": "#/components/schemas/TrackObjectExternalIds"
-          },
-          "href": {
-            "type": "string",
-            "description": "A link to the Web API endpoint providing full details of the track.\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_playable": {
-            "type": "boolean",
-            "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If \u0060true\u0060, the track is playable in the given market. Otherwise \u0060false\u0060.\n"
-          },
-          "linked_from": {
-            "$ref": "#/components/schemas/TrackObjectLinkedFromProperty"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the track.\n"
-          },
-          "popularity": {
-            "type": "integer",
-            "description": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.\u003Cbr/\u003EThe popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.\u003Cbr/\u003EGenerally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._\n",
-            "deprecated": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "A link to a 30 second preview (MP3 format) of the track. Can be \u0060null\u0060\n",
-            "nullable": true,
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "track_number": {
-            "type": "integer",
-            "description": "The number of the track. If an album has several discs, the track number is the number on the specified disc.\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_local": {
-            "type": "boolean",
-            "description": "Whether or not the track is from a local file.\n"
-          },
-          "audio_preview_url": {
-            "type": "string",
-            "description": "A URL to a 30 second preview (MP3 format) of the episode. \u0060null\u0060 if not available.\n",
-            "nullable": true,
-            "example": "https://p.scdn.co/mp3-preview/2f37da1d4221f40b9d1a98cd191f4d6f1646ad17",
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of the episode. HTML tags are stripped away from this field, use \u0060html_description\u0060 field in case HTML tags are needed.\n",
-            "example": "A Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\n"
-          },
-          "html_description": {
-            "type": "string",
-            "description": "A description of the episode. This field may contain HTML tags.\n",
-            "example": "\u003Cp\u003EA Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\u003C/p\u003E\n"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ImageObject"
-            },
-            "description": "The cover art for the episode in various sizes, widest first.\n"
-          },
-          "is_externally_hosted": {
-            "type": "boolean",
-            "description": "True if the episode is hosted outside of Spotify\u0027s CDN.\n"
-          },
-          "language": {
-            "type": "string",
-            "description": "The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the \u0060languages\u0060 field instead.\n",
-            "example": "en",
-            "deprecated": true
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
-          },
-          "release_date": {
-            "type": "string",
-            "description": "The date the episode was first released, for example \u0060\u00221981-12-15\u0022\u0060. Depending on the precision, it might be shown as \u0060\u00221981\u0022\u0060 or \u0060\u00221981-12\u0022\u0060.\n",
-            "example": "1981-12-15"
-          },
-          "release_date_precision": {
-            "$ref": "#/components/schemas/EpisodeObjectReleaseDatePrecision"
-          },
-          "resume_point": {
-            "$ref": "#/components/schemas/EpisodeBaseResumePoint"
-          },
-          "show": {
-            "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
-          },
           "type": {
             "type": "string"
           }
@@ -10071,7 +10149,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TrackObject"
@@ -10081,146 +10158,6 @@
           }
         ],
         "properties": {
-          "album": {
-            "$ref": "#/components/schemas/TrackObjectAlbum"
-          },
-          "artists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SimplifiedArtistObject"
-            },
-            "description": "The artists who performed the track. Each artist object includes a link in \u0060href\u0060 to more detailed information about the artist.\n"
-          },
-          "available_markets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.\n",
-            "deprecated": true
-          },
-          "disc_number": {
-            "type": "integer",
-            "description": "The disc number (usually \u00601\u0060 unless the album consists of more than one disc).\n"
-          },
-          "duration_ms": {
-            "type": "integer",
-            "description": "The track length in milliseconds.\n"
-          },
-          "explicit": {
-            "type": "boolean",
-            "description": "Whether or not the track has explicit lyrics ( \u0060true\u0060 = yes it does; \u0060false\u0060 = no it does not OR unknown).\n"
-          },
-          "external_ids": {
-            "$ref": "#/components/schemas/TrackObjectExternalIds"
-          },
-          "href": {
-            "type": "string",
-            "description": "A link to the Web API endpoint providing full details of the track.\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_playable": {
-            "type": "boolean",
-            "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If \u0060true\u0060, the track is playable in the given market. Otherwise \u0060false\u0060.\n"
-          },
-          "linked_from": {
-            "$ref": "#/components/schemas/TrackObjectLinkedFromProperty"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the track.\n"
-          },
-          "popularity": {
-            "type": "integer",
-            "description": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.\u003Cbr/\u003EThe popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.\u003Cbr/\u003EGenerally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._\n",
-            "deprecated": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "A link to a 30 second preview (MP3 format) of the track. Can be \u0060null\u0060\n",
-            "nullable": true,
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "track_number": {
-            "type": "integer",
-            "description": "The number of the track. If an album has several discs, the track number is the number on the specified disc.\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_local": {
-            "type": "boolean",
-            "description": "Whether or not the track is from a local file.\n"
-          },
-          "audio_preview_url": {
-            "type": "string",
-            "description": "A URL to a 30 second preview (MP3 format) of the episode. \u0060null\u0060 if not available.\n",
-            "nullable": true,
-            "example": "https://p.scdn.co/mp3-preview/2f37da1d4221f40b9d1a98cd191f4d6f1646ad17",
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of the episode. HTML tags are stripped away from this field, use \u0060html_description\u0060 field in case HTML tags are needed.\n",
-            "example": "A Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\n"
-          },
-          "html_description": {
-            "type": "string",
-            "description": "A description of the episode. This field may contain HTML tags.\n",
-            "example": "\u003Cp\u003EA Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\u003C/p\u003E\n"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ImageObject"
-            },
-            "description": "The cover art for the episode in various sizes, widest first.\n"
-          },
-          "is_externally_hosted": {
-            "type": "boolean",
-            "description": "True if the episode is hosted outside of Spotify\u0027s CDN.\n"
-          },
-          "language": {
-            "type": "string",
-            "description": "The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the \u0060languages\u0060 field instead.\n",
-            "example": "en",
-            "deprecated": true
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
-          },
-          "release_date": {
-            "type": "string",
-            "description": "The date the episode was first released, for example \u0060\u00221981-12-15\u0022\u0060. Depending on the precision, it might be shown as \u0060\u00221981\u0022\u0060 or \u0060\u00221981-12\u0022\u0060.\n",
-            "example": "1981-12-15"
-          },
-          "release_date_precision": {
-            "$ref": "#/components/schemas/EpisodeObjectReleaseDatePrecision"
-          },
-          "resume_point": {
-            "$ref": "#/components/schemas/EpisodeBaseResumePoint"
-          },
-          "show": {
-            "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
-          },
           "type": {
             "type": "string"
           }
@@ -10240,7 +10177,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TrackObject"
@@ -10250,146 +10186,6 @@
           }
         ],
         "properties": {
-          "album": {
-            "$ref": "#/components/schemas/TrackObjectAlbum"
-          },
-          "artists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SimplifiedArtistObject"
-            },
-            "description": "The artists who performed the track. Each artist object includes a link in \u0060href\u0060 to more detailed information about the artist.\n"
-          },
-          "available_markets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.\n",
-            "deprecated": true
-          },
-          "disc_number": {
-            "type": "integer",
-            "description": "The disc number (usually \u00601\u0060 unless the album consists of more than one disc).\n"
-          },
-          "duration_ms": {
-            "type": "integer",
-            "description": "The track length in milliseconds.\n"
-          },
-          "explicit": {
-            "type": "boolean",
-            "description": "Whether or not the track has explicit lyrics ( \u0060true\u0060 = yes it does; \u0060false\u0060 = no it does not OR unknown).\n"
-          },
-          "external_ids": {
-            "$ref": "#/components/schemas/TrackObjectExternalIds"
-          },
-          "href": {
-            "type": "string",
-            "description": "A link to the Web API endpoint providing full details of the track.\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_playable": {
-            "type": "boolean",
-            "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If \u0060true\u0060, the track is playable in the given market. Otherwise \u0060false\u0060.\n"
-          },
-          "linked_from": {
-            "$ref": "#/components/schemas/TrackObjectLinkedFromProperty"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the track.\n"
-          },
-          "popularity": {
-            "type": "integer",
-            "description": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.\u003Cbr/\u003EThe popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.\u003Cbr/\u003EGenerally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._\n",
-            "deprecated": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "A link to a 30 second preview (MP3 format) of the track. Can be \u0060null\u0060\n",
-            "nullable": true,
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "track_number": {
-            "type": "integer",
-            "description": "The number of the track. If an album has several discs, the track number is the number on the specified disc.\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_local": {
-            "type": "boolean",
-            "description": "Whether or not the track is from a local file.\n"
-          },
-          "audio_preview_url": {
-            "type": "string",
-            "description": "A URL to a 30 second preview (MP3 format) of the episode. \u0060null\u0060 if not available.\n",
-            "nullable": true,
-            "example": "https://p.scdn.co/mp3-preview/2f37da1d4221f40b9d1a98cd191f4d6f1646ad17",
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of the episode. HTML tags are stripped away from this field, use \u0060html_description\u0060 field in case HTML tags are needed.\n",
-            "example": "A Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\n"
-          },
-          "html_description": {
-            "type": "string",
-            "description": "A description of the episode. This field may contain HTML tags.\n",
-            "example": "\u003Cp\u003EA Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\u003C/p\u003E\n"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ImageObject"
-            },
-            "description": "The cover art for the episode in various sizes, widest first.\n"
-          },
-          "is_externally_hosted": {
-            "type": "boolean",
-            "description": "True if the episode is hosted outside of Spotify\u0027s CDN.\n"
-          },
-          "language": {
-            "type": "string",
-            "description": "The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the \u0060languages\u0060 field instead.\n",
-            "example": "en",
-            "deprecated": true
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
-          },
-          "release_date": {
-            "type": "string",
-            "description": "The date the episode was first released, for example \u0060\u00221981-12-15\u0022\u0060. Depending on the precision, it might be shown as \u0060\u00221981\u0022\u0060 or \u0060\u00221981-12\u0022\u0060.\n",
-            "example": "1981-12-15"
-          },
-          "release_date_precision": {
-            "$ref": "#/components/schemas/EpisodeObjectReleaseDatePrecision"
-          },
-          "resume_point": {
-            "$ref": "#/components/schemas/EpisodeBaseResumePoint"
-          },
-          "show": {
-            "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
-          },
           "type": {
             "type": "string"
           }
@@ -10408,7 +10204,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TrackObject"
@@ -10418,146 +10213,6 @@
           }
         ],
         "properties": {
-          "album": {
-            "$ref": "#/components/schemas/TrackObjectAlbum"
-          },
-          "artists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SimplifiedArtistObject"
-            },
-            "description": "The artists who performed the track. Each artist object includes a link in \u0060href\u0060 to more detailed information about the artist.\n"
-          },
-          "available_markets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.\n",
-            "deprecated": true
-          },
-          "disc_number": {
-            "type": "integer",
-            "description": "The disc number (usually \u00601\u0060 unless the album consists of more than one disc).\n"
-          },
-          "duration_ms": {
-            "type": "integer",
-            "description": "The track length in milliseconds.\n"
-          },
-          "explicit": {
-            "type": "boolean",
-            "description": "Whether or not the track has explicit lyrics ( \u0060true\u0060 = yes it does; \u0060false\u0060 = no it does not OR unknown).\n"
-          },
-          "external_ids": {
-            "$ref": "#/components/schemas/TrackObjectExternalIds"
-          },
-          "href": {
-            "type": "string",
-            "description": "A link to the Web API endpoint providing full details of the track.\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_playable": {
-            "type": "boolean",
-            "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If \u0060true\u0060, the track is playable in the given market. Otherwise \u0060false\u0060.\n"
-          },
-          "linked_from": {
-            "$ref": "#/components/schemas/TrackObjectLinkedFromProperty"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the track.\n"
-          },
-          "popularity": {
-            "type": "integer",
-            "description": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.\u003Cbr/\u003EThe popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.\u003Cbr/\u003EGenerally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._\n",
-            "deprecated": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "A link to a 30 second preview (MP3 format) of the track. Can be \u0060null\u0060\n",
-            "nullable": true,
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "track_number": {
-            "type": "integer",
-            "description": "The number of the track. If an album has several discs, the track number is the number on the specified disc.\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_local": {
-            "type": "boolean",
-            "description": "Whether or not the track is from a local file.\n"
-          },
-          "audio_preview_url": {
-            "type": "string",
-            "description": "A URL to a 30 second preview (MP3 format) of the episode. \u0060null\u0060 if not available.\n",
-            "nullable": true,
-            "example": "https://p.scdn.co/mp3-preview/2f37da1d4221f40b9d1a98cd191f4d6f1646ad17",
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of the episode. HTML tags are stripped away from this field, use \u0060html_description\u0060 field in case HTML tags are needed.\n",
-            "example": "A Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\n"
-          },
-          "html_description": {
-            "type": "string",
-            "description": "A description of the episode. This field may contain HTML tags.\n",
-            "example": "\u003Cp\u003EA Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\u003C/p\u003E\n"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ImageObject"
-            },
-            "description": "The cover art for the episode in various sizes, widest first.\n"
-          },
-          "is_externally_hosted": {
-            "type": "boolean",
-            "description": "True if the episode is hosted outside of Spotify\u0027s CDN.\n"
-          },
-          "language": {
-            "type": "string",
-            "description": "The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the \u0060languages\u0060 field instead.\n",
-            "example": "en",
-            "deprecated": true
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
-          },
-          "release_date": {
-            "type": "string",
-            "description": "The date the episode was first released, for example \u0060\u00221981-12-15\u0022\u0060. Depending on the precision, it might be shown as \u0060\u00221981\u0022\u0060 or \u0060\u00221981-12\u0022\u0060.\n",
-            "example": "1981-12-15"
-          },
-          "release_date_precision": {
-            "$ref": "#/components/schemas/EpisodeObjectReleaseDatePrecision"
-          },
-          "resume_point": {
-            "$ref": "#/components/schemas/EpisodeBaseResumePoint"
-          },
-          "show": {
-            "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
-          },
           "type": {
             "type": "string"
           }
@@ -10641,7 +10296,6 @@
         "required": [
           "type"
         ],
-        "type": "object",
         "oneOf": [
           {
             "$ref": "#/components/schemas/TrackObject"
@@ -10651,146 +10305,6 @@
           }
         ],
         "properties": {
-          "album": {
-            "$ref": "#/components/schemas/TrackObjectAlbum"
-          },
-          "artists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SimplifiedArtistObject"
-            },
-            "description": "The artists who performed the track. Each artist object includes a link in \u0060href\u0060 to more detailed information about the artist.\n"
-          },
-          "available_markets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.\n",
-            "deprecated": true
-          },
-          "disc_number": {
-            "type": "integer",
-            "description": "The disc number (usually \u00601\u0060 unless the album consists of more than one disc).\n"
-          },
-          "duration_ms": {
-            "type": "integer",
-            "description": "The track length in milliseconds.\n"
-          },
-          "explicit": {
-            "type": "boolean",
-            "description": "Whether or not the track has explicit lyrics ( \u0060true\u0060 = yes it does; \u0060false\u0060 = no it does not OR unknown).\n"
-          },
-          "external_ids": {
-            "$ref": "#/components/schemas/TrackObjectExternalIds"
-          },
-          "href": {
-            "type": "string",
-            "description": "A link to the Web API endpoint providing full details of the track.\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_playable": {
-            "type": "boolean",
-            "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If \u0060true\u0060, the track is playable in the given market. Otherwise \u0060false\u0060.\n"
-          },
-          "linked_from": {
-            "$ref": "#/components/schemas/TrackObjectLinkedFromProperty"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the track.\n"
-          },
-          "popularity": {
-            "type": "integer",
-            "description": "The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.\u003Cbr/\u003EThe popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.\u003Cbr/\u003EGenerally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._\n",
-            "deprecated": true
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "A link to a 30 second preview (MP3 format) of the track. Can be \u0060null\u0060\n",
-            "nullable": true,
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "track_number": {
-            "type": "integer",
-            "description": "The number of the track. If an album has several discs, the track number is the number on the specified disc.\n"
-          },
-          "uri": {
-            "type": "string",
-            "description": "The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.\n"
-          },
-          "is_local": {
-            "type": "boolean",
-            "description": "Whether or not the track is from a local file.\n"
-          },
-          "audio_preview_url": {
-            "type": "string",
-            "description": "A URL to a 30 second preview (MP3 format) of the episode. \u0060null\u0060 if not available.\n",
-            "nullable": true,
-            "example": "https://p.scdn.co/mp3-preview/2f37da1d4221f40b9d1a98cd191f4d6f1646ad17",
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "description": {
-            "type": "string",
-            "description": "A description of the episode. HTML tags are stripped away from this field, use \u0060html_description\u0060 field in case HTML tags are needed.\n",
-            "example": "A Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\n"
-          },
-          "html_description": {
-            "type": "string",
-            "description": "A description of the episode. This field may contain HTML tags.\n",
-            "example": "\u003Cp\u003EA Spotify podcast sharing fresh insights on important topics of the moment\u2014in a way only Spotify can. You\u2019ll hear from experts in the music, podcast and tech industries as we discover and uncover stories about our work and the world around us.\u003C/p\u003E\n"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ImageObject"
-            },
-            "description": "The cover art for the episode in various sizes, widest first.\n"
-          },
-          "is_externally_hosted": {
-            "type": "boolean",
-            "description": "True if the episode is hosted outside of Spotify\u0027s CDN.\n"
-          },
-          "language": {
-            "type": "string",
-            "description": "The language used in the episode, identified by a [ISO 639](https://en.wikipedia.org/wiki/ISO_639) code. This field is deprecated and might be removed in the future. Please use the \u0060languages\u0060 field instead.\n",
-            "example": "en",
-            "deprecated": true
-          },
-          "languages": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
-          },
-          "release_date": {
-            "type": "string",
-            "description": "The date the episode was first released, for example \u0060\u00221981-12-15\u0022\u0060. Depending on the precision, it might be shown as \u0060\u00221981\u0022\u0060 or \u0060\u00221981-12\u0022\u0060.\n",
-            "example": "1981-12-15"
-          },
-          "release_date_precision": {
-            "$ref": "#/components/schemas/EpisodeObjectReleaseDatePrecision"
-          },
-          "resume_point": {
-            "$ref": "#/components/schemas/EpisodeBaseResumePoint"
-          },
-          "show": {
-            "$ref": "#/components/schemas/EpisodeObjectAllOf2Show"
-          },
           "type": {
             "type": "string"
           }
@@ -11203,6 +10717,11 @@
               "type": "string"
             },
             "description": "The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._\n",
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ],
             "deprecated": true
           },
           "external_urls": {
@@ -11477,7 +10996,11 @@
             "items": {
               "type": "string"
             },
-            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n"
+            "description": "A list of the languages used in the episode, identified by their [ISO 639-1](https://en.wikipedia.org/wiki/ISO_639) code.\n",
+            "example": [
+              "fr",
+              "en"
+            ]
           },
           "name": {
             "type": "string",
@@ -11615,6 +11138,7 @@
             "description": "The total number of episodes in the show.\n"
           }
         },
+        "x-spotify-docs-type": "SimplifiedShowObject",
         "description": "Information about the show."
       },
       "PlaylistObjectExternalUrls": {
@@ -11883,6 +11407,11 @@
               "type": "string"
             },
             "description": "The markets in which the album is available: [ISO 3166-1 alpha-2 country codes](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2). _**NOTE**: an album is considered available in a market when at least 1 of its tracks is available in that market._\n",
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ],
             "deprecated": true
           },
           "external_urls": {
@@ -12372,6 +11901,7 @@
             "description": "The total number of episodes in the show.\n"
           }
         },
+        "x-spotify-docs-type": "SimplifiedShowObject",
         "description": "The show on which the episode belongs.\n"
       },
       "ShowObjectAllOf2Episodes": {
@@ -12599,6 +12129,7 @@
             "description": "The number of chapters in this audiobook.\n"
           }
         },
+        "x-spotify-docs-type": "SimplifiedAudiobookObject",
         "description": "The audiobook for which the chapter belongs.\n"
       },
       "AlbumObjectAllOf2Tracks": {
@@ -12697,107 +12228,6 @@
           }
         ],
         "properties": {
-          "followers": {
-            "$ref": "#/components/schemas/ArtistObjectFollowers"
-          },
-          "genres": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the genres the artist is associated with. If not yet classified, the array is empty.\n",
-            "deprecated": true
-          },
-          "href": {
-            "type": "string",
-            "description": "A link to the Web API endpoint providing full details of the artist.\n"
-          },
-          "id": {
-            "type": "string",
-            "description": "The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the artist.\n"
-          },
-          "images": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/ImageObject"
-            },
-            "description": "Images of the artist in various sizes, widest first.\n"
-          },
-          "name": {
-            "type": "string",
-            "description": "The name of the artist.\n"
-          },
-          "popularity": {
-            "type": "integer",
-            "description": "The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist\u0027s popularity is calculated from the popularity of all the artist\u0027s tracks.\n",
-            "deprecated": true
-          },
-          "uri": {
-            "type": "string",
-            "description": "The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the artist.\n"
-          },
-          "album": {
-            "$ref": "#/components/schemas/TrackObjectAlbum"
-          },
-          "artists": {
-            "type": "array",
-            "items": {
-              "$ref": "#/components/schemas/SimplifiedArtistObject"
-            },
-            "description": "The artists who performed the track. Each artist object includes a link in \u0060href\u0060 to more detailed information about the artist.\n"
-          },
-          "available_markets": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            },
-            "description": "A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.\n",
-            "deprecated": true
-          },
-          "disc_number": {
-            "type": "integer",
-            "description": "The disc number (usually \u00601\u0060 unless the album consists of more than one disc).\n"
-          },
-          "duration_ms": {
-            "type": "integer",
-            "description": "The track length in milliseconds.\n"
-          },
-          "explicit": {
-            "type": "boolean",
-            "description": "Whether or not the track has explicit lyrics ( \u0060true\u0060 = yes it does; \u0060false\u0060 = no it does not OR unknown).\n"
-          },
-          "external_ids": {
-            "$ref": "#/components/schemas/TrackObjectExternalIds"
-          },
-          "is_playable": {
-            "type": "boolean",
-            "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If \u0060true\u0060, the track is playable in the given market. Otherwise \u0060false\u0060.\n"
-          },
-          "linked_from": {
-            "$ref": "#/components/schemas/TrackObjectLinkedFromProperty"
-          },
-          "restrictions": {
-            "$ref": "#/components/schemas/TrackObjectRestrictions"
-          },
-          "preview_url": {
-            "type": "string",
-            "description": "A link to a 30 second preview (MP3 format) of the track. Can be \u0060null\u0060\n",
-            "nullable": true,
-            "deprecated": true,
-            "x-spotify-policy-list": [
-              {
-                "$ref": "#/components/x-spotify-policy/policies/StandalonePreview"
-              }
-            ]
-          },
-          "track_number": {
-            "type": "integer",
-            "description": "The number of the track. If an album has several discs, the track number is the number on the specified disc.\n"
-          },
-          "is_local": {
-            "type": "boolean",
-            "description": "Whether or not the track is from a local file.\n"
-          },
           "type": {
             "type": "string"
           }
@@ -12900,12 +12330,16 @@
           "loudness": {
             "type": "number",
             "description": "The overall loudness of a track in decibels (dB). Loudness values are averaged across the entire track and are useful for comparing relative loudness of tracks. Loudness is the quality of a sound that is the primary psychological correlate of physical strength (amplitude). Values typically range between -60 and 0 db.\n",
-            "format": "float"
+            "format": "float",
+            "example": -5.883,
+            "x-spotify-docs-type": "Float"
           },
           "tempo": {
             "type": "number",
             "description": "The overall estimated tempo of a track in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.\n",
-            "format": "float"
+            "format": "float",
+            "example": 118.211,
+            "x-spotify-docs-type": "Float"
           },
           "tempo_confidence": {
             "maximum": 1,
@@ -12918,7 +12352,8 @@
             "maximum": 7,
             "minimum": 3,
             "type": "integer",
-            "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022."
+            "description": "An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of \u00223/4\u0022, to \u00227/4\u0022.",
+            "example": 4
           },
           "time_signature_confidence": {
             "maximum": 1,
@@ -12931,7 +12366,8 @@
             "maximum": 11,
             "minimum": -1,
             "type": "integer",
-            "description": "The key the track is in. Integers map to pitches using standard [Pitch Class notation](https://en.wikipedia.org/wiki/Pitch_class). E.g. 0 = C, 1 = C\u266F/D\u266D, 2 = D, and so on. If no key was detected, the value is -1.\n"
+            "description": "The key the track is in. Integers map to pitches using standard [Pitch Class notation](https://en.wikipedia.org/wiki/Pitch_class). E.g. 0 = C, 1 = C\u266F/D\u266D, 2 = D, and so on. If no key was detected, the value is -1.\n",
+            "example": 9
           },
           "key_confidence": {
             "maximum": 1,
@@ -12942,7 +12378,8 @@
           },
           "mode": {
             "type": "integer",
-            "description": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.\n"
+            "description": "Mode indicates the modality (major or minor) of a track, the type of scale from which its melodic content is derived. Major is represented by 1 and minor is 0.\n",
+            "example": 0
           },
           "mode_confidence": {
             "maximum": 1,
@@ -13403,7 +12840,12 @@
             "type": "array",
             "items": {
               "type": "string"
-            }
+            },
+            "example": [
+              "CA",
+              "BR",
+              "IT"
+            ]
           }
         }
       },
@@ -13414,7 +12856,8 @@
       "UploadCustomPlaylistCoverJpegRequestRequestBody": {
         "type": "string",
         "description": "Base64 encoded JPEG image data, maximum payload size is 256 KB.",
-        "format": "byte"
+        "format": "byte",
+        "example": "/9j/2wCEABoZGSccJz4lJT5CLy8vQkc9Ozs9R0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0cBHCcnMyYzPSYmPUc9Mj1HR0dEREdHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR0dHR//dAAQAAf/uAA5BZG9iZQBkwAAAAAH/wAARCAABAAEDACIAAREBAhEB/8QASwABAQAAAAAAAAAAAAAAAAAAAAYBAQAAAAAAAAAAAAAAAAAAAAAQAQAAAAAAAAAAAAAAAAAAAAARAQAAAAAAAAAAAAAAAAAAAAD/2gAMAwAAARECEQA/AJgAH//Z"
       },
       "ArrayOfImagesResponseContent": {
         "type": "array",
@@ -13426,25 +12869,35 @@
         "type": "array",
         "items": {
           "type": "boolean"
-        }
+        },
+        "example": [
+          false,
+          true
+        ]
       },
       "SingletonArrayOfBooleanResponseContent": {
         "type": "array",
         "items": {
           "type": "boolean"
-        }
+        },
+        "example": [
+          true
+        ]
       },
       "TrackObjectLinkedFromProperty": {
         "type": "object",
-        "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the \u0060linked_from\u0060 object contains information about the originally requested track.\n"
+        "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the \u0060linked_from\u0060 object contains information about the originally requested track.\n",
+        "deprecated": true
       },
       "PlayHistoryObjectTrackLinkedFrom": {
         "type": "object",
-        "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the \u0060linked_from\u0060 object contains information about the originally requested track.\n"
+        "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the \u0060linked_from\u0060 object contains information about the originally requested track.\n",
+        "deprecated": true
       },
       "SavedTrackObjectTrackLinkedFrom": {
         "type": "object",
-        "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the \u0060linked_from\u0060 object contains information about the originally requested track.\n"
+        "description": "Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the \u0060linked_from\u0060 object contains information about the originally requested track.\n",
+        "deprecated": true
       },
       "RemoveTracksPlaylistRequestTracksItem": {
         "type": "object",
@@ -13494,7 +12947,6 @@
           "explicit"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The reason for the restriction. Albums may be restricted if the content is not available in a given market, to the user\u0027s subscription type, or when the user\u0027s account is set to not play explicit content.\nAdditional reasons may be added in the future.\n",
         "x-ms-enum": {
           "name": "AlbumRestrictionObjectReason",
@@ -13520,7 +12972,6 @@
           "artist"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "ArtistType",
@@ -13538,7 +12989,6 @@
           "user"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "UserType",
@@ -13558,7 +13008,6 @@
           1
         ],
         "type": "number",
-        "additionalProperties": false,
         "description": "Indicates the modality (major or minor) of a section, the type of scale from which its melodic content is derived. This field will contain a 0 for \u0022minor\u0022, a 1 for \u0022major\u0022, or a -1 for no result. Note that the major key (e.g. C major) could more likely be confused with the minor key at 3 semitones lower (e.g. A minor) as both keys carry the same pitches."
       },
       "AudioFeaturesType": {
@@ -13566,7 +13015,6 @@
           "audio_features"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "AudioFeaturesType",
@@ -13584,7 +13032,6 @@
           "track"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type: \u0022track\u0022.\n",
         "x-ms-enum": {
           "name": "TrackType",
@@ -13604,7 +13051,6 @@
           "day"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The precision with which \u0060release_date\u0060 value is known.\n",
         "example": "day",
         "x-ms-enum": {
@@ -13631,7 +13077,6 @@
           "episode"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "EpisodeType",
@@ -13649,7 +13094,6 @@
           "show"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "ShowType",
@@ -13667,7 +13111,6 @@
           "audiobook"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "AudiobookType",
@@ -13687,7 +13130,6 @@
           "compilation"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of the album.\n",
         "example": "compilation",
         "x-ms-enum": {
@@ -13716,7 +13158,6 @@
           "day"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The precision with which \u0060release_date\u0060 value is known.\n",
         "example": "year",
         "x-ms-enum": {
@@ -13743,7 +13184,6 @@
           "album"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The object type.\n",
         "x-ms-enum": {
           "name": "AlbumType",
@@ -13764,7 +13204,6 @@
           "appears_on"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "This field describes the relationship between the artist and the album.\n",
         "example": "compilation",
         "deprecated": true,
@@ -13798,7 +13237,6 @@
           "day"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The precision with which \u0060release_date\u0060 value is known.\n",
         "example": "day",
         "x-ms-enum": {
@@ -13831,7 +13269,6 @@
           "audiobook"
         ],
         "type": "string",
-        "additionalProperties": false,
         "x-ms-enum": {
           "name": "SearchTypeParameterItem",
           "modelAsString": false,
@@ -13873,7 +13310,6 @@
           "audio"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "If \u0060include_external=audio\u0060 is specified it signals that the client can play externally hosted audio content, and marks\nthe content as playable in the response. By default externally hosted audio content is marked as unplayable in the response.\n",
         "x-ms-enum": {
           "name": "AudioIncludeExternal",
@@ -13893,7 +13329,6 @@
           "tracks"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The type of entity to return. Valid values: \u0060artists\u0060 or \u0060tracks\u0060\n",
         "x-ms-enum": {
           "name": "GetUsersTopArtistsAndTracksTypeParameter",
@@ -13917,7 +13352,6 @@
           "user"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The ID type.\n",
         "example": "artist",
         "x-ms-enum": {
@@ -13942,7 +13376,6 @@
           "user"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The ID type: either \u0060artist\u0060 or \u0060user\u0060.\n",
         "example": "artist",
         "x-ms-enum": {
@@ -13967,7 +13400,6 @@
           "user"
         ],
         "type": "string",
-        "additionalProperties": false,
         "description": "The ID type: either \u0060artist\u0060 or \u0060user\u0060.\n",
         "example": "artist",
         "x-ms-enum": {

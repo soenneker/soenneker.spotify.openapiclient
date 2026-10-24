@@ -82,6 +82,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If `true`, the track is playable in the given market. Otherwise `false`.</summary>
         public bool? IsPlayable { get; set; }
         /// <summary>Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the `linked_from` object contains information about the originally requested track.</summary>
+        [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
         public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectLinkedFromProperty? LinkedFrom { get; set; }
