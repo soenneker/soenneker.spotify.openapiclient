@@ -17,8 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
-            if (parseNode.GetChildNode("timestamped_ids") is { } nullNodeTimestampedIds && nullNodeTimestampedIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampedIds = null;
+            if (parseNode.GetChildNode("ids") is null) { _explicitNullValueIds = default!; _explicitNullProperties?.Remove("ids"); }
+            else if (parseNode.GetChildNode("ids") is { } nullNodeIds && nullNodeIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ids = null;
+            if (parseNode.GetChildNode("timestamped_ids") is null) { _explicitNullValueTimestampedIds = default!; _explicitNullProperties?.Remove("timestamped_ids"); }
+            else if (parseNode.GetChildNode("timestamped_ids") is { } nullNodeTimestampedIds && nullNodeTimestampedIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimestampedIds = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>A JSON array of the [Spotify IDs](/documentation/web-api/concepts/spotify-uris-ids). For example: `[&quot;4iV5W9uYEdYUVa79Axb7Rh&quot;, &quot;1301WleyT98MSxVHPZCA6M&quot;]`&lt;br/&gt;A maximum of 50 items can be specified in one request. _**Note**: if the `timestamped_ids` is present in the body, any IDs listed in the query parameters (deprecated) or the `ids` field in the body will be ignored._</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public List<string>? Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private List<string>? _explicitNullValueIds = default!;
 #nullable restore
 #else
-        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
+        public List<string> Ids { get => _explicitNullValueIds; set { _explicitNullValueIds = value; AdditionalData?.Remove("ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ids"); else _explicitNullProperties?.Remove("ids"); } }
         private List<string> _explicitNullValueIds = default!;
 #endif
         /// <summary>A JSON array of objects containing track IDs with their corresponding timestamps. Each object must include a track ID and an `added_at` timestamp. This allows you to specify when tracks were added to maintain a specific chronological order in the user&apos;s library.&lt;br/&gt;A maximum of 50 items can be specified in one request. _**Note**: if the `timestamped_ids` is present in the body, any IDs listed in the query parameters (deprecated) or the `ids` field in the body will be ignored._</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SaveTracksUserRequestTimestampedIdsItem>? TimestampedIds { get => _explicitNullValueTimestampedIds; set { _explicitNullValueTimestampedIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamped_ids"); else _explicitNullProperties?.Remove("timestamped_ids"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SaveTracksUserRequestTimestampedIdsItem>? TimestampedIds { get => _explicitNullValueTimestampedIds; set { _explicitNullValueTimestampedIds = value; AdditionalData?.Remove("timestamped_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamped_ids"); else _explicitNullProperties?.Remove("timestamped_ids"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SaveTracksUserRequestTimestampedIdsItem>? _explicitNullValueTimestampedIds = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SaveTracksUserRequestTimestampedIdsItem> TimestampedIds { get => _explicitNullValueTimestampedIds; set { _explicitNullValueTimestampedIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamped_ids"); else _explicitNullProperties?.Remove("timestamped_ids"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SaveTracksUserRequestTimestampedIdsItem> TimestampedIds { get => _explicitNullValueTimestampedIds; set { _explicitNullValueTimestampedIds = value; AdditionalData?.Remove("timestamped_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamped_ids"); else _explicitNullProperties?.Remove("timestamped_ids"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SaveTracksUserRequestTimestampedIdsItem> _explicitNullValueTimestampedIds = default!;
 #endif
         /// <summary>

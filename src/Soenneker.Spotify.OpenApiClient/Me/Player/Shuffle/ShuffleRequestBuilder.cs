@@ -75,7 +75,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Shuffle
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Shuffle.ShuffleRequestBuilder.ShuffleRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/player/shuffle", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

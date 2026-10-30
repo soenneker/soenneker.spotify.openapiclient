@@ -17,23 +17,25 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
-            if (parseNode.GetChildNode("album") is { } nullNodeAlbum && nullNodeAlbum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Album = null;
+            if (parseNode.GetChildNode("added_at") is null) { _explicitNullValueAddedAt = default!; _explicitNullProperties?.Remove("added_at"); }
+            else if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
+            if (parseNode.GetChildNode("album") is null) { _explicitNullValueAlbum = default!; _explicitNullProperties?.Remove("album"); }
+            else if (parseNode.GetChildNode("album") is { } nullNodeAlbum && nullNodeAlbum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Album = null;
         }
 
         /// <summary>The date and time the album was savedTimestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.If the time is imprecise (for example, the date/time of an album release), an additional field indicates the precision; see for example, release_date in an album object.</summary>
-        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
+        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; AdditionalData?.Remove("added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
         private DateTimeOffset? _explicitNullValueAddedAt = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum? Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum? Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; AdditionalData?.Remove("album"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum? _explicitNullValueAlbum = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; AdditionalData?.Remove("album"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.SavedAlbumObjectAlbum _explicitNullValueAlbum = default!;
 #endif
         /// <summary>

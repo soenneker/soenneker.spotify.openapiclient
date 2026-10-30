@@ -17,7 +17,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audiobooks") is { } nullNodeAudiobooks && nullNodeAudiobooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audiobooks = null;
+            if (parseNode.GetChildNode("audiobooks") is null) { _explicitNullValueAudiobooks = default!; _explicitNullProperties?.Remove("audiobooks"); }
+            else if (parseNode.GetChildNode("audiobooks") is { } nullNodeAudiobooks && nullNodeAudiobooks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Audiobooks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The audiobooks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject>? Audiobooks { get => _explicitNullValueAudiobooks; set { _explicitNullValueAudiobooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audiobooks"); else _explicitNullProperties?.Remove("audiobooks"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject>? Audiobooks { get => _explicitNullValueAudiobooks; set { _explicitNullValueAudiobooks = value; AdditionalData?.Remove("audiobooks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audiobooks"); else _explicitNullProperties?.Remove("audiobooks"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject>? _explicitNullValueAudiobooks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject> Audiobooks { get => _explicitNullValueAudiobooks; set { _explicitNullValueAudiobooks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audiobooks"); else _explicitNullProperties?.Remove("audiobooks"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject> Audiobooks { get => _explicitNullValueAudiobooks; set { _explicitNullValueAudiobooks = value; AdditionalData?.Remove("audiobooks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audiobooks"); else _explicitNullProperties?.Remove("audiobooks"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.AudiobookObject> _explicitNullValueAudiobooks = default!;
 #endif
         /// <summary>

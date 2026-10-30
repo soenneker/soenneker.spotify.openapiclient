@@ -17,26 +17,36 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
-            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
-            if (parseNode.GetChildNode("currently_playing_type") is { } nullNodeCurrentlyPlayingType && nullNodeCurrentlyPlayingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentlyPlayingType = null;
-            if (parseNode.GetChildNode("device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
-            if (parseNode.GetChildNode("is_playing") is { } nullNodeIsPlaying && nullNodeIsPlaying.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPlaying = null;
-            if (parseNode.GetChildNode("item") is { } nullNodeItem && nullNodeItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Item = null;
-            if (parseNode.GetChildNode("progress_ms") is { } nullNodeProgressMs && nullNodeProgressMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgressMs = null;
-            if (parseNode.GetChildNode("repeat_state") is { } nullNodeRepeatState && nullNodeRepeatState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatState = null;
-            if (parseNode.GetChildNode("shuffle_state") is { } nullNodeShuffleState && nullNodeShuffleState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShuffleState = null;
-            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+            if (parseNode.GetChildNode("actions") is null) { _explicitNullValueActions = default!; _explicitNullProperties?.Remove("actions"); }
+            else if (parseNode.GetChildNode("actions") is { } nullNodeActions && nullNodeActions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Actions = null;
+            if (parseNode.GetChildNode("context") is null) { _explicitNullValueContext = default!; _explicitNullProperties?.Remove("context"); }
+            else if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("currently_playing_type") is null) { _explicitNullValueCurrentlyPlayingType = default!; _explicitNullProperties?.Remove("currently_playing_type"); }
+            else if (parseNode.GetChildNode("currently_playing_type") is { } nullNodeCurrentlyPlayingType && nullNodeCurrentlyPlayingType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentlyPlayingType = null;
+            if (parseNode.GetChildNode("device") is null) { _explicitNullValueDevice = default!; _explicitNullProperties?.Remove("device"); }
+            else if (parseNode.GetChildNode("device") is { } nullNodeDevice && nullNodeDevice.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Device = null;
+            if (parseNode.GetChildNode("is_playing") is null) { _explicitNullValueIsPlaying = default!; _explicitNullProperties?.Remove("is_playing"); }
+            else if (parseNode.GetChildNode("is_playing") is { } nullNodeIsPlaying && nullNodeIsPlaying.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPlaying = null;
+            if (parseNode.GetChildNode("item") is null) { _explicitNullValueItem = default!; _explicitNullProperties?.Remove("item"); }
+            else if (parseNode.GetChildNode("item") is { } nullNodeItem && nullNodeItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Item = null;
+            if (parseNode.GetChildNode("progress_ms") is null) { _explicitNullValueProgressMs = default!; _explicitNullProperties?.Remove("progress_ms"); }
+            else if (parseNode.GetChildNode("progress_ms") is { } nullNodeProgressMs && nullNodeProgressMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ProgressMs = null;
+            if (parseNode.GetChildNode("repeat_state") is null) { _explicitNullValueRepeatState = default!; _explicitNullProperties?.Remove("repeat_state"); }
+            else if (parseNode.GetChildNode("repeat_state") is { } nullNodeRepeatState && nullNodeRepeatState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RepeatState = null;
+            if (parseNode.GetChildNode("shuffle_state") is null) { _explicitNullValueShuffleState = default!; _explicitNullProperties?.Remove("shuffle_state"); }
+            else if (parseNode.GetChildNode("shuffle_state") is { } nullNodeShuffleState && nullNodeShuffleState.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ShuffleState = null;
+            if (parseNode.GetChildNode("timestamp") is null) { _explicitNullValueTimestamp = default!; _explicitNullProperties?.Remove("timestamp"); }
+            else if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
         }
 
         /// <summary>Allows to update the user interface based on which playback actions are available within the current context.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions? Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions? _explicitNullValueActions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions Actions { get => _explicitNullValueActions; set { _explicitNullValueActions = value; AdditionalData?.Remove("actions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("actions"); else _explicitNullProperties?.Remove("actions"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions _explicitNullValueActions = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -44,64 +54,64 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>A Context Object. Can be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; AdditionalData?.Remove("context"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext _explicitNullValueContext = default!;
 #endif
         /// <summary>The object type of the currently playing item. Can be one of `track`, `episode`, `ad` or `unknown`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? CurrentlyPlayingType { get => _explicitNullValueCurrentlyPlayingType; set { _explicitNullValueCurrentlyPlayingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing_type"); else _explicitNullProperties?.Remove("currently_playing_type"); } }
+        public string? CurrentlyPlayingType { get => _explicitNullValueCurrentlyPlayingType; set { _explicitNullValueCurrentlyPlayingType = value; AdditionalData?.Remove("currently_playing_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing_type"); else _explicitNullProperties?.Remove("currently_playing_type"); } }
         private string? _explicitNullValueCurrentlyPlayingType = default!;
 #nullable restore
 #else
-        public string CurrentlyPlayingType { get => _explicitNullValueCurrentlyPlayingType; set { _explicitNullValueCurrentlyPlayingType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing_type"); else _explicitNullProperties?.Remove("currently_playing_type"); } }
+        public string CurrentlyPlayingType { get => _explicitNullValueCurrentlyPlayingType; set { _explicitNullValueCurrentlyPlayingType = value; AdditionalData?.Remove("currently_playing_type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing_type"); else _explicitNullProperties?.Remove("currently_playing_type"); } }
         private string _explicitNullValueCurrentlyPlayingType = default!;
 #endif
         /// <summary>The device that is currently active.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectDevice? Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectDevice? _explicitNullValueDevice = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectDevice Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectDevice Device { get => _explicitNullValueDevice; set { _explicitNullValueDevice = value; AdditionalData?.Remove("device"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device"); else _explicitNullProperties?.Remove("device"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectDevice _explicitNullValueDevice = default!;
 #endif
         /// <summary>If something is currently playing, return `true`.</summary>
-        public bool? IsPlaying { get => _explicitNullValueIsPlaying; set { _explicitNullValueIsPlaying = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_playing"); else _explicitNullProperties?.Remove("is_playing"); } }
+        public bool? IsPlaying { get => _explicitNullValueIsPlaying; set { _explicitNullValueIsPlaying = value; AdditionalData?.Remove("is_playing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_playing"); else _explicitNullProperties?.Remove("is_playing"); } }
         private bool? _explicitNullValueIsPlaying = default!;
         /// <summary>The currently playing track or episode. Can be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem? Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem? Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; AdditionalData?.Remove("item"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem? _explicitNullValueItem = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; AdditionalData?.Remove("item"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem _explicitNullValueItem = default!;
 #endif
         /// <summary>Progress into the currently playing track or episode. Can be `null`.</summary>
-        public int? ProgressMs { get => _explicitNullValueProgressMs; set { _explicitNullValueProgressMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress_ms"); else _explicitNullProperties?.Remove("progress_ms"); } }
+        public int? ProgressMs { get => _explicitNullValueProgressMs; set { _explicitNullValueProgressMs = value; AdditionalData?.Remove("progress_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("progress_ms"); else _explicitNullProperties?.Remove("progress_ms"); } }
         private int? _explicitNullValueProgressMs = default!;
         /// <summary>off, track, context</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? RepeatState { get => _explicitNullValueRepeatState; set { _explicitNullValueRepeatState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat_state"); else _explicitNullProperties?.Remove("repeat_state"); } }
+        public string? RepeatState { get => _explicitNullValueRepeatState; set { _explicitNullValueRepeatState = value; AdditionalData?.Remove("repeat_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat_state"); else _explicitNullProperties?.Remove("repeat_state"); } }
         private string? _explicitNullValueRepeatState = default!;
 #nullable restore
 #else
-        public string RepeatState { get => _explicitNullValueRepeatState; set { _explicitNullValueRepeatState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat_state"); else _explicitNullProperties?.Remove("repeat_state"); } }
+        public string RepeatState { get => _explicitNullValueRepeatState; set { _explicitNullValueRepeatState = value; AdditionalData?.Remove("repeat_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("repeat_state"); else _explicitNullProperties?.Remove("repeat_state"); } }
         private string _explicitNullValueRepeatState = default!;
 #endif
         /// <summary>If shuffle is on or off.</summary>
-        public bool? ShuffleState { get => _explicitNullValueShuffleState; set { _explicitNullValueShuffleState = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shuffle_state"); else _explicitNullProperties?.Remove("shuffle_state"); } }
+        public bool? ShuffleState { get => _explicitNullValueShuffleState; set { _explicitNullValueShuffleState = value; AdditionalData?.Remove("shuffle_state"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shuffle_state"); else _explicitNullProperties?.Remove("shuffle_state"); } }
         private bool? _explicitNullValueShuffleState = default!;
         /// <summary>Unix Millisecond Timestamp when playback state was last changed (play, pause, skip, scrub, new song, etc.).</summary>
-        public int? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        public int? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; AdditionalData?.Remove("timestamp"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
         private int? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObject"/> and sets the default values.

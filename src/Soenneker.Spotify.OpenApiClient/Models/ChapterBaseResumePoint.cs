@@ -18,17 +18,19 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("fully_played") is { } nullNodeFullyPlayed && nullNodeFullyPlayed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullyPlayed = null;
-            if (parseNode.GetChildNode("resume_position_ms") is { } nullNodeResumePositionMs && nullNodeResumePositionMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumePositionMs = null;
+            if (parseNode.GetChildNode("fully_played") is null) { _explicitNullValueFullyPlayed = default!; _explicitNullProperties?.Remove("fully_played"); }
+            else if (parseNode.GetChildNode("fully_played") is { } nullNodeFullyPlayed && nullNodeFullyPlayed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullyPlayed = null;
+            if (parseNode.GetChildNode("resume_position_ms") is null) { _explicitNullValueResumePositionMs = default!; _explicitNullProperties?.Remove("resume_position_ms"); }
+            else if (parseNode.GetChildNode("resume_position_ms") is { } nullNodeResumePositionMs && nullNodeResumePositionMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumePositionMs = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not the episode has been fully played by the user.</summary>
-        public bool? FullyPlayed { get => _explicitNullValueFullyPlayed; set { _explicitNullValueFullyPlayed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fully_played"); else _explicitNullProperties?.Remove("fully_played"); } }
+        public bool? FullyPlayed { get => _explicitNullValueFullyPlayed; set { _explicitNullValueFullyPlayed = value; AdditionalData?.Remove("fully_played"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fully_played"); else _explicitNullProperties?.Remove("fully_played"); } }
         private bool? _explicitNullValueFullyPlayed = default!;
         /// <summary>The user&apos;s most recent position in the episode in milliseconds.</summary>
-        public int? ResumePositionMs { get => _explicitNullValueResumePositionMs; set { _explicitNullValueResumePositionMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_position_ms"); else _explicitNullProperties?.Remove("resume_position_ms"); } }
+        public int? ResumePositionMs { get => _explicitNullValueResumePositionMs; set { _explicitNullValueResumePositionMs = value; AdditionalData?.Remove("resume_position_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_position_ms"); else _explicitNullProperties?.Remove("resume_position_ms"); } }
         private int? _explicitNullValueResumePositionMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.ChapterBaseResumePoint"/> and sets the default values.

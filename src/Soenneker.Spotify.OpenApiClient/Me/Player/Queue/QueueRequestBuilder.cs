@@ -104,7 +104,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Queue
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<DefaultQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/player/queue", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -123,7 +123,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Queue
         public RequestInformation ToPostRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Queue.QueueRequestBuilder.QueueRequestBuilderPostQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.POST, "{+baseurl}/me/player/queue?uri={uri}{&device_id*}", PathParameters);
+            var requestInfo = new RequestInformation(Method.POST, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/me/player/queue?uri={uri}{&device_id*}", RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/player/queue", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

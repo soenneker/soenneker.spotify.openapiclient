@@ -17,13 +17,20 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("bars") is { } nullNodeBars && nullNodeBars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bars = null;
-            if (parseNode.GetChildNode("beats") is { } nullNodeBeats && nullNodeBeats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Beats = null;
-            if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
-            if (parseNode.GetChildNode("sections") is { } nullNodeSections && nullNodeSections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sections = null;
-            if (parseNode.GetChildNode("segments") is { } nullNodeSegments && nullNodeSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segments = null;
-            if (parseNode.GetChildNode("tatums") is { } nullNodeTatums && nullNodeTatums.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tatums = null;
-            if (parseNode.GetChildNode("track") is { } nullNodeTrack && nullNodeTrack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Track = null;
+            if (parseNode.GetChildNode("bars") is null) { _explicitNullValueBars = default!; _explicitNullProperties?.Remove("bars"); }
+            else if (parseNode.GetChildNode("bars") is { } nullNodeBars && nullNodeBars.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Bars = null;
+            if (parseNode.GetChildNode("beats") is null) { _explicitNullValueBeats = default!; _explicitNullProperties?.Remove("beats"); }
+            else if (parseNode.GetChildNode("beats") is { } nullNodeBeats && nullNodeBeats.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Beats = null;
+            if (parseNode.GetChildNode("meta") is null) { _explicitNullValueMeta = default!; _explicitNullProperties?.Remove("meta"); }
+            else if (parseNode.GetChildNode("meta") is { } nullNodeMeta && nullNodeMeta.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Meta = null;
+            if (parseNode.GetChildNode("sections") is null) { _explicitNullValueSections = default!; _explicitNullProperties?.Remove("sections"); }
+            else if (parseNode.GetChildNode("sections") is { } nullNodeSections && nullNodeSections.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Sections = null;
+            if (parseNode.GetChildNode("segments") is null) { _explicitNullValueSegments = default!; _explicitNullProperties?.Remove("segments"); }
+            else if (parseNode.GetChildNode("segments") is { } nullNodeSegments && nullNodeSegments.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Segments = null;
+            if (parseNode.GetChildNode("tatums") is null) { _explicitNullValueTatums = default!; _explicitNullProperties?.Remove("tatums"); }
+            else if (parseNode.GetChildNode("tatums") is { } nullNodeTatums && nullNodeTatums.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tatums = null;
+            if (parseNode.GetChildNode("track") is null) { _explicitNullValueTrack = default!; _explicitNullProperties?.Remove("track"); }
+            else if (parseNode.GetChildNode("track") is { } nullNodeTrack && nullNodeTrack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Track = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -31,71 +38,71 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The time intervals of the bars throughout the track. A bar (or measure) is a segment of time defined as a given number of beats.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? Bars { get => _explicitNullValueBars; set { _explicitNullValueBars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bars"); else _explicitNullProperties?.Remove("bars"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? Bars { get => _explicitNullValueBars; set { _explicitNullValueBars = value; AdditionalData?.Remove("bars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bars"); else _explicitNullProperties?.Remove("bars"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? _explicitNullValueBars = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> Bars { get => _explicitNullValueBars; set { _explicitNullValueBars = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bars"); else _explicitNullProperties?.Remove("bars"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> Bars { get => _explicitNullValueBars; set { _explicitNullValueBars = value; AdditionalData?.Remove("bars"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("bars"); else _explicitNullProperties?.Remove("bars"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> _explicitNullValueBars = default!;
 #endif
         /// <summary>The time intervals of beats throughout the track. A beat is the basic time unit of a piece of music; for example, each tick of a metronome. Beats are typically multiples of tatums.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? Beats { get => _explicitNullValueBeats; set { _explicitNullValueBeats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beats"); else _explicitNullProperties?.Remove("beats"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? Beats { get => _explicitNullValueBeats; set { _explicitNullValueBeats = value; AdditionalData?.Remove("beats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beats"); else _explicitNullProperties?.Remove("beats"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? _explicitNullValueBeats = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> Beats { get => _explicitNullValueBeats; set { _explicitNullValueBeats = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beats"); else _explicitNullProperties?.Remove("beats"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> Beats { get => _explicitNullValueBeats; set { _explicitNullValueBeats = value; AdditionalData?.Remove("beats"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("beats"); else _explicitNullProperties?.Remove("beats"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> _explicitNullValueBeats = default!;
 #endif
         /// <summary>The meta property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta? Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta? _explicitNullValueMeta = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta Meta { get => _explicitNullValueMeta; set { _explicitNullValueMeta = value; AdditionalData?.Remove("meta"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("meta"); else _explicitNullProperties?.Remove("meta"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta _explicitNullValueMeta = default!;
 #endif
         /// <summary>Sections are defined by large variations in rhythm or timbre, e.g. chorus, verse, bridge, guitar solo, etc. Each section contains its own descriptions of tempo, key, mode, time_signature, and loudness.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SectionObject>? Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SectionObject>? Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; AdditionalData?.Remove("sections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SectionObject>? _explicitNullValueSections = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SectionObject> Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SectionObject> Sections { get => _explicitNullValueSections; set { _explicitNullValueSections = value; AdditionalData?.Remove("sections"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("sections"); else _explicitNullProperties?.Remove("sections"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SectionObject> _explicitNullValueSections = default!;
 #endif
         /// <summary>Each segment contains a roughly conisistent sound throughout its duration.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject>? Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject>? Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; AdditionalData?.Remove("segments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject>? _explicitNullValueSegments = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject> Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject> Segments { get => _explicitNullValueSegments; set { _explicitNullValueSegments = value; AdditionalData?.Remove("segments"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("segments"); else _explicitNullProperties?.Remove("segments"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject> _explicitNullValueSegments = default!;
 #endif
         /// <summary>A tatum represents the lowest regular pulse train that a listener intuitively infers from the timing of perceived musical events (segments).</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? Tatums { get => _explicitNullValueTatums; set { _explicitNullValueTatums = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tatums"); else _explicitNullProperties?.Remove("tatums"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? Tatums { get => _explicitNullValueTatums; set { _explicitNullValueTatums = value; AdditionalData?.Remove("tatums"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tatums"); else _explicitNullProperties?.Remove("tatums"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject>? _explicitNullValueTatums = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> Tatums { get => _explicitNullValueTatums; set { _explicitNullValueTatums = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tatums"); else _explicitNullProperties?.Remove("tatums"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> Tatums { get => _explicitNullValueTatums; set { _explicitNullValueTatums = value; AdditionalData?.Remove("tatums"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tatums"); else _explicitNullProperties?.Remove("tatums"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TimeIntervalObject> _explicitNullValueTatums = default!;
 #endif
         /// <summary>The track property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectTrack? Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectTrack? Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; AdditionalData?.Remove("track"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectTrack? _explicitNullValueTrack = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectTrack Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectTrack Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; AdditionalData?.Remove("track"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectTrack _explicitNullValueTrack = default!;
 #endif
         /// <summary>

@@ -85,7 +85,7 @@ namespace Soenneker.Spotify.OpenApiClient.Recommendations
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Recommendations.RecommendationsRequestBuilder.RecommendationsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/recommendations", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

@@ -18,26 +18,46 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("album") is { } nullNodeAlbum && nullNodeAlbum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Album = null;
-            if (parseNode.GetChildNode("artists") is { } nullNodeArtists && nullNodeArtists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Artists = null;
-            if (parseNode.GetChildNode("available_markets") is { } nullNodeAvailableMarkets && nullNodeAvailableMarkets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableMarkets = null;
-            if (parseNode.GetChildNode("disc_number") is { } nullNodeDiscNumber && nullNodeDiscNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscNumber = null;
-            if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
-            if (parseNode.GetChildNode("explicit") is { } nullNodeExplicit && nullNodeExplicit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Explicit = null;
-            if (parseNode.GetChildNode("external_ids") is { } nullNodeExternalIds && nullNodeExternalIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalIds = null;
-            if (parseNode.GetChildNode("external_urls") is { } nullNodeExternalUrls && nullNodeExternalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalUrls = null;
-            if (parseNode.GetChildNode("href") is { } nullNodeHref && nullNodeHref.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Href = null;
-            if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
-            if (parseNode.GetChildNode("is_local") is { } nullNodeIsLocal && nullNodeIsLocal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLocal = null;
-            if (parseNode.GetChildNode("is_playable") is { } nullNodeIsPlayable && nullNodeIsPlayable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPlayable = null;
-            if (parseNode.GetChildNode("linked_from") is { } nullNodeLinkedFrom && nullNodeLinkedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedFrom = null;
-            if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
-            if (parseNode.GetChildNode("popularity") is { } nullNodePopularity && nullNodePopularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Popularity = null;
-            if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
-            if (parseNode.GetChildNode("restrictions") is { } nullNodeRestrictions && nullNodeRestrictions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restrictions = null;
-            if (parseNode.GetChildNode("track_number") is { } nullNodeTrackNumber && nullNodeTrackNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackNumber = null;
-            if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
-            if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
+            if (parseNode.GetChildNode("album") is null) { _explicitNullValueAlbum = default!; _explicitNullProperties?.Remove("album"); }
+            else if (parseNode.GetChildNode("album") is { } nullNodeAlbum && nullNodeAlbum.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Album = null;
+            if (parseNode.GetChildNode("artists") is null) { _explicitNullValueArtists = default!; _explicitNullProperties?.Remove("artists"); }
+            else if (parseNode.GetChildNode("artists") is { } nullNodeArtists && nullNodeArtists.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Artists = null;
+            if (parseNode.GetChildNode("available_markets") is null) { _explicitNullValueAvailableMarkets = default!; _explicitNullProperties?.Remove("available_markets"); }
+            else if (parseNode.GetChildNode("available_markets") is { } nullNodeAvailableMarkets && nullNodeAvailableMarkets.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AvailableMarkets = null;
+            if (parseNode.GetChildNode("disc_number") is null) { _explicitNullValueDiscNumber = default!; _explicitNullProperties?.Remove("disc_number"); }
+            else if (parseNode.GetChildNode("disc_number") is { } nullNodeDiscNumber && nullNodeDiscNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DiscNumber = null;
+            if (parseNode.GetChildNode("duration_ms") is null) { _explicitNullValueDurationMs = default!; _explicitNullProperties?.Remove("duration_ms"); }
+            else if (parseNode.GetChildNode("duration_ms") is { } nullNodeDurationMs && nullNodeDurationMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DurationMs = null;
+            if (parseNode.GetChildNode("explicit") is null) { _explicitNullValueExplicit = default!; _explicitNullProperties?.Remove("explicit"); }
+            else if (parseNode.GetChildNode("explicit") is { } nullNodeExplicit && nullNodeExplicit.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Explicit = null;
+            if (parseNode.GetChildNode("external_ids") is null) { _explicitNullValueExternalIds = default!; _explicitNullProperties?.Remove("external_ids"); }
+            else if (parseNode.GetChildNode("external_ids") is { } nullNodeExternalIds && nullNodeExternalIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalIds = null;
+            if (parseNode.GetChildNode("external_urls") is null) { _explicitNullValueExternalUrls = default!; _explicitNullProperties?.Remove("external_urls"); }
+            else if (parseNode.GetChildNode("external_urls") is { } nullNodeExternalUrls && nullNodeExternalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalUrls = null;
+            if (parseNode.GetChildNode("href") is null) { _explicitNullValueHref = default!; _explicitNullProperties?.Remove("href"); }
+            else if (parseNode.GetChildNode("href") is { } nullNodeHref && nullNodeHref.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Href = null;
+            if (parseNode.GetChildNode("id") is null) { _explicitNullValueId = default!; _explicitNullProperties?.Remove("id"); }
+            else if (parseNode.GetChildNode("id") is { } nullNodeId && nullNodeId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Id = null;
+            if (parseNode.GetChildNode("is_local") is null) { _explicitNullValueIsLocal = default!; _explicitNullProperties?.Remove("is_local"); }
+            else if (parseNode.GetChildNode("is_local") is { } nullNodeIsLocal && nullNodeIsLocal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLocal = null;
+            if (parseNode.GetChildNode("is_playable") is null) { _explicitNullValueIsPlayable = default!; _explicitNullProperties?.Remove("is_playable"); }
+            else if (parseNode.GetChildNode("is_playable") is { } nullNodeIsPlayable && nullNodeIsPlayable.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsPlayable = null;
+            if (parseNode.GetChildNode("linked_from") is null) { _explicitNullValueLinkedFrom = default!; _explicitNullProperties?.Remove("linked_from"); }
+            else if (parseNode.GetChildNode("linked_from") is { } nullNodeLinkedFrom && nullNodeLinkedFrom.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LinkedFrom = null;
+            if (parseNode.GetChildNode("name") is null) { _explicitNullValueName = default!; _explicitNullProperties?.Remove("name"); }
+            else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
+            if (parseNode.GetChildNode("popularity") is null) { _explicitNullValuePopularity = default!; _explicitNullProperties?.Remove("popularity"); }
+            else if (parseNode.GetChildNode("popularity") is { } nullNodePopularity && nullNodePopularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Popularity = null;
+            if (parseNode.GetChildNode("preview_url") is null) { _explicitNullValuePreviewUrl = default!; _explicitNullProperties?.Remove("preview_url"); }
+            else if (parseNode.GetChildNode("preview_url") is { } nullNodePreviewUrl && nullNodePreviewUrl.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PreviewUrl = null;
+            if (parseNode.GetChildNode("restrictions") is null) { _explicitNullValueRestrictions = default!; _explicitNullProperties?.Remove("restrictions"); }
+            else if (parseNode.GetChildNode("restrictions") is { } nullNodeRestrictions && nullNodeRestrictions.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Restrictions = null;
+            if (parseNode.GetChildNode("track_number") is null) { _explicitNullValueTrackNumber = default!; _explicitNullProperties?.Remove("track_number"); }
+            else if (parseNode.GetChildNode("track_number") is { } nullNodeTrackNumber && nullNodeTrackNumber.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TrackNumber = null;
+            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
+            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
+            if (parseNode.GetChildNode("uri") is null) { _explicitNullValueUri = default!; _explicitNullProperties?.Remove("uri"); }
+            else if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -45,149 +65,149 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The album on which the track appears. The album object includes a link in `href` to full information about the album.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum? Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum? Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; AdditionalData?.Remove("album"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum? _explicitNullValueAlbum = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum Album { get => _explicitNullValueAlbum; set { _explicitNullValueAlbum = value; AdditionalData?.Remove("album"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("album"); else _explicitNullProperties?.Remove("album"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum _explicitNullValueAlbum = default!;
 #endif
         /// <summary>The artists who performed the track. Each artist object includes a link in `href` to more detailed information about the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>? Artists { get => _explicitNullValueArtists; set { _explicitNullValueArtists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artists"); else _explicitNullProperties?.Remove("artists"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>? Artists { get => _explicitNullValueArtists; set { _explicitNullValueArtists = value; AdditionalData?.Remove("artists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artists"); else _explicitNullProperties?.Remove("artists"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>? _explicitNullValueArtists = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject> Artists { get => _explicitNullValueArtists; set { _explicitNullValueArtists = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artists"); else _explicitNullProperties?.Remove("artists"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject> Artists { get => _explicitNullValueArtists; set { _explicitNullValueArtists = value; AdditionalData?.Remove("artists"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("artists"); else _explicitNullProperties?.Remove("artists"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject> _explicitNullValueArtists = default!;
 #endif
         /// <summary>A list of the countries in which the track can be played, identified by their [ISO 3166-1 alpha-2](http://en.wikipedia.org/wiki/ISO_3166-1_alpha-2) code.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? AvailableMarkets { get => _explicitNullValueAvailableMarkets; set { _explicitNullValueAvailableMarkets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_markets"); else _explicitNullProperties?.Remove("available_markets"); } }
+        public List<string>? AvailableMarkets { get => _explicitNullValueAvailableMarkets; set { _explicitNullValueAvailableMarkets = value; AdditionalData?.Remove("available_markets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_markets"); else _explicitNullProperties?.Remove("available_markets"); } }
         private List<string>? _explicitNullValueAvailableMarkets = default!;
 #nullable restore
 #else
-        public List<string> AvailableMarkets { get => _explicitNullValueAvailableMarkets; set { _explicitNullValueAvailableMarkets = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_markets"); else _explicitNullProperties?.Remove("available_markets"); } }
+        public List<string> AvailableMarkets { get => _explicitNullValueAvailableMarkets; set { _explicitNullValueAvailableMarkets = value; AdditionalData?.Remove("available_markets"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("available_markets"); else _explicitNullProperties?.Remove("available_markets"); } }
         private List<string> _explicitNullValueAvailableMarkets = default!;
 #endif
         /// <summary>The disc number (usually `1` unless the album consists of more than one disc).</summary>
-        public int? DiscNumber { get => _explicitNullValueDiscNumber; set { _explicitNullValueDiscNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disc_number"); else _explicitNullProperties?.Remove("disc_number"); } }
+        public int? DiscNumber { get => _explicitNullValueDiscNumber; set { _explicitNullValueDiscNumber = value; AdditionalData?.Remove("disc_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("disc_number"); else _explicitNullProperties?.Remove("disc_number"); } }
         private int? _explicitNullValueDiscNumber = default!;
         /// <summary>The track length in milliseconds.</summary>
-        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
+        public int? DurationMs { get => _explicitNullValueDurationMs; set { _explicitNullValueDurationMs = value; AdditionalData?.Remove("duration_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration_ms"); else _explicitNullProperties?.Remove("duration_ms"); } }
         private int? _explicitNullValueDurationMs = default!;
         /// <summary>Whether or not the track has explicit lyrics ( `true` = yes it does; `false` = no it does not OR unknown).</summary>
-        public bool? Explicit { get => _explicitNullValueExplicit; set { _explicitNullValueExplicit = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explicit"); else _explicitNullProperties?.Remove("explicit"); } }
+        public bool? Explicit { get => _explicitNullValueExplicit; set { _explicitNullValueExplicit = value; AdditionalData?.Remove("explicit"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("explicit"); else _explicitNullProperties?.Remove("explicit"); } }
         private bool? _explicitNullValueExplicit = default!;
         /// <summary>Known external IDs for the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds? ExternalIds { get => _explicitNullValueExternalIds; set { _explicitNullValueExternalIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_ids"); else _explicitNullProperties?.Remove("external_ids"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds? ExternalIds { get => _explicitNullValueExternalIds; set { _explicitNullValueExternalIds = value; AdditionalData?.Remove("external_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_ids"); else _explicitNullProperties?.Remove("external_ids"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds? _explicitNullValueExternalIds = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds ExternalIds { get => _explicitNullValueExternalIds; set { _explicitNullValueExternalIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_ids"); else _explicitNullProperties?.Remove("external_ids"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds ExternalIds { get => _explicitNullValueExternalIds; set { _explicitNullValueExternalIds = value; AdditionalData?.Remove("external_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_ids"); else _explicitNullProperties?.Remove("external_ids"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds _explicitNullValueExternalIds = default!;
 #endif
         /// <summary>Known external URLs for this track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls? ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls? ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; AdditionalData?.Remove("external_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls? _explicitNullValueExternalUrls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; AdditionalData?.Remove("external_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalUrls _explicitNullValueExternalUrls = default!;
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
+        public string? Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; AdditionalData?.Remove("href"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
         private string? _explicitNullValueHref = default!;
 #nullable restore
 #else
-        public string Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
+        public string Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; AdditionalData?.Remove("href"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
         private string _explicitNullValueHref = default!;
 #endif
         /// <summary>The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Whether or not the track is from a local file.</summary>
-        public bool? IsLocal { get => _explicitNullValueIsLocal; set { _explicitNullValueIsLocal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_local"); else _explicitNullProperties?.Remove("is_local"); } }
+        public bool? IsLocal { get => _explicitNullValueIsLocal; set { _explicitNullValueIsLocal = value; AdditionalData?.Remove("is_local"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_local"); else _explicitNullProperties?.Remove("is_local"); } }
         private bool? _explicitNullValueIsLocal = default!;
         /// <summary>Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied. If `true`, the track is playable in the given market. Otherwise `false`.</summary>
-        public bool? IsPlayable { get => _explicitNullValueIsPlayable; set { _explicitNullValueIsPlayable = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_playable"); else _explicitNullProperties?.Remove("is_playable"); } }
+        public bool? IsPlayable { get => _explicitNullValueIsPlayable; set { _explicitNullValueIsPlayable = value; AdditionalData?.Remove("is_playable"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_playable"); else _explicitNullProperties?.Remove("is_playable"); } }
         private bool? _explicitNullValueIsPlayable = default!;
         /// <summary>Part of the response when [Track Relinking](/documentation/web-api/concepts/track-relinking) is applied, and the requested track has been replaced with different track. The track in the `linked_from` object contains information about the originally requested track.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrackLinkedFrom? LinkedFrom { get => _explicitNullValueLinkedFrom; set { _explicitNullValueLinkedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_from"); else _explicitNullProperties?.Remove("linked_from"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrackLinkedFrom? LinkedFrom { get => _explicitNullValueLinkedFrom; set { _explicitNullValueLinkedFrom = value; AdditionalData?.Remove("linked_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_from"); else _explicitNullProperties?.Remove("linked_from"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrackLinkedFrom? _explicitNullValueLinkedFrom = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrackLinkedFrom LinkedFrom { get => _explicitNullValueLinkedFrom; set { _explicitNullValueLinkedFrom = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_from"); else _explicitNullProperties?.Remove("linked_from"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrackLinkedFrom LinkedFrom { get => _explicitNullValueLinkedFrom; set { _explicitNullValueLinkedFrom = value; AdditionalData?.Remove("linked_from"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("linked_from"); else _explicitNullProperties?.Remove("linked_from"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.SavedTrackObjectTrackLinkedFrom _explicitNullValueLinkedFrom = default!;
 #endif
         /// <summary>The name of the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The popularity of the track. The value will be between 0 and 100, with 100 being the most popular.&lt;br/&gt;The popularity of a track is a value between 0 and 100, with 100 being the most popular. The popularity is calculated by algorithm and is based, in the most part, on the total number of plays the track has had and how recent those plays are.&lt;br/&gt;Generally speaking, songs that are being played a lot now will have a higher popularity than songs that were played a lot in the past. Duplicate tracks (e.g. the same track from a single and an album) are rated independently. Artist and album popularity is derived mathematically from track popularity. _**Note**: the popularity value may lag actual popularity by a few days: the value is not updated in real time._</summary>
         [Obsolete("")]
-        public int? Popularity { get => _explicitNullValuePopularity; set { _explicitNullValuePopularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity"); else _explicitNullProperties?.Remove("popularity"); } }
+        public int? Popularity { get => _explicitNullValuePopularity; set { _explicitNullValuePopularity = value; AdditionalData?.Remove("popularity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity"); else _explicitNullProperties?.Remove("popularity"); } }
         private int? _explicitNullValuePopularity = default!;
         /// <summary>A link to a 30 second preview (MP3 format) of the track. Can be `null`</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string? PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string? _explicitNullValuePreviewUrl = default!;
 #nullable restore
 #else
-        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
+        public string PreviewUrl { get => _explicitNullValuePreviewUrl; set { _explicitNullValuePreviewUrl = value; AdditionalData?.Remove("preview_url"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("preview_url"); else _explicitNullProperties?.Remove("preview_url"); } }
         private string _explicitNullValuePreviewUrl = default!;
 #endif
         /// <summary>Included in the response when a content restriction is applied.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions? Restrictions { get => _explicitNullValueRestrictions; set { _explicitNullValueRestrictions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictions"); else _explicitNullProperties?.Remove("restrictions"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions? Restrictions { get => _explicitNullValueRestrictions; set { _explicitNullValueRestrictions = value; AdditionalData?.Remove("restrictions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictions"); else _explicitNullProperties?.Remove("restrictions"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions? _explicitNullValueRestrictions = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions Restrictions { get => _explicitNullValueRestrictions; set { _explicitNullValueRestrictions = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictions"); else _explicitNullProperties?.Remove("restrictions"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions Restrictions { get => _explicitNullValueRestrictions; set { _explicitNullValueRestrictions = value; AdditionalData?.Remove("restrictions"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("restrictions"); else _explicitNullProperties?.Remove("restrictions"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions _explicitNullValueRestrictions = default!;
 #endif
         /// <summary>The number of the track. If an album has several discs, the track number is the number on the specified disc.</summary>
-        public int? TrackNumber { get => _explicitNullValueTrackNumber; set { _explicitNullValueTrackNumber = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track_number"); else _explicitNullProperties?.Remove("track_number"); } }
+        public int? TrackNumber { get => _explicitNullValueTrackNumber; set { _explicitNullValueTrackNumber = value; AdditionalData?.Remove("track_number"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track_number"); else _explicitNullProperties?.Remove("track_number"); } }
         private int? _explicitNullValueTrackNumber = default!;
         /// <summary>The object type: &quot;track&quot;.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.TrackType? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.TrackType? _explicitNullValueType = default!;
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
@@ -233,7 +253,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "preview_url", n => { PreviewUrl = n.GetStringValue(); } },
                 { "restrictions", n => { Restrictions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectRestrictions.CreateFromDiscriminatorValue); } },
                 { "track_number", n => { TrackNumber = n.GetIntValue(); } },
-                { "type", n => { Type = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackType>(); } },
+                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }

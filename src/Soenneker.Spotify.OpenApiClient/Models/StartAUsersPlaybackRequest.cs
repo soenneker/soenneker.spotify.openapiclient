@@ -17,10 +17,14 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("context_uri") is { } nullNodeContextUri && nullNodeContextUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextUri = null;
-            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
-            if (parseNode.GetChildNode("position_ms") is { } nullNodePositionMs && nullNodePositionMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionMs = null;
-            if (parseNode.GetChildNode("uris") is { } nullNodeUris && nullNodeUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uris = null;
+            if (parseNode.GetChildNode("context_uri") is null) { _explicitNullValueContextUri = default!; _explicitNullProperties?.Remove("context_uri"); }
+            else if (parseNode.GetChildNode("context_uri") is { } nullNodeContextUri && nullNodeContextUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextUri = null;
+            if (parseNode.GetChildNode("offset") is null) { _explicitNullValueOffset = default!; _explicitNullProperties?.Remove("offset"); }
+            else if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+            if (parseNode.GetChildNode("position_ms") is null) { _explicitNullValuePositionMs = default!; _explicitNullProperties?.Remove("position_ms"); }
+            else if (parseNode.GetChildNode("position_ms") is { } nullNodePositionMs && nullNodePositionMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionMs = null;
+            if (parseNode.GetChildNode("uris") is null) { _explicitNullValueUris = default!; _explicitNullProperties?.Remove("uris"); }
+            else if (parseNode.GetChildNode("uris") is { } nullNodeUris && nullNodeUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uris = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -28,34 +32,34 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>Optional. Spotify URI of the context to play.Valid contexts are albums, artists &amp; playlists.`{context_uri:&quot;spotify:album:1Je1IMUlBXcx1Fz0WE7oPT&quot;}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContextUri { get => _explicitNullValueContextUri; set { _explicitNullValueContextUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_uri"); else _explicitNullProperties?.Remove("context_uri"); } }
+        public string? ContextUri { get => _explicitNullValueContextUri; set { _explicitNullValueContextUri = value; AdditionalData?.Remove("context_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_uri"); else _explicitNullProperties?.Remove("context_uri"); } }
         private string? _explicitNullValueContextUri = default!;
 #nullable restore
 #else
-        public string ContextUri { get => _explicitNullValueContextUri; set { _explicitNullValueContextUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_uri"); else _explicitNullProperties?.Remove("context_uri"); } }
+        public string ContextUri { get => _explicitNullValueContextUri; set { _explicitNullValueContextUri = value; AdditionalData?.Remove("context_uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_uri"); else _explicitNullProperties?.Remove("context_uri"); } }
         private string _explicitNullValueContextUri = default!;
 #endif
         /// <summary>Optional. Indicates from where in the context playback should start. Only available when context_uri corresponds to an album or playlist object&quot;position&quot; is zero based and can’t be negative. Example: `&quot;offset&quot;: {&quot;position&quot;: 5}`&quot;uri&quot; is a string representing the uri of the item to start at. Example: `&quot;offset&quot;: {&quot;uri&quot;: &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; AdditionalData?.Remove("offset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? _explicitNullValueOffset = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; AdditionalData?.Remove("offset"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset _explicitNullValueOffset = default!;
 #endif
         /// <summary>integer</summary>
-        public int? PositionMs { get => _explicitNullValuePositionMs; set { _explicitNullValuePositionMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_ms"); else _explicitNullProperties?.Remove("position_ms"); } }
+        public int? PositionMs { get => _explicitNullValuePositionMs; set { _explicitNullValuePositionMs = value; AdditionalData?.Remove("position_ms"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_ms"); else _explicitNullProperties?.Remove("position_ms"); } }
         private int? _explicitNullValuePositionMs = default!;
         /// <summary>Optional. A JSON array of the Spotify track URIs to play.For example: `{&quot;uris&quot;: [&quot;spotify:track:4iV5W9uYEdYUVa79Axb7Rh&quot;, &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;]}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
+        public List<string>? Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; AdditionalData?.Remove("uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
         private List<string>? _explicitNullValueUris = default!;
 #nullable restore
 #else
-        public List<string> Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
+        public List<string> Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; AdditionalData?.Remove("uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
         private List<string> _explicitNullValueUris = default!;
 #endif
         /// <summary>

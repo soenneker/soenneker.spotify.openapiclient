@@ -17,8 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("currently_playing") is { } nullNodeCurrentlyPlaying && nullNodeCurrentlyPlaying.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentlyPlaying = null;
-            if (parseNode.GetChildNode("queue") is { } nullNodeQueue && nullNodeQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queue = null;
+            if (parseNode.GetChildNode("currently_playing") is null) { _explicitNullValueCurrentlyPlaying = default!; _explicitNullProperties?.Remove("currently_playing"); }
+            else if (parseNode.GetChildNode("currently_playing") is { } nullNodeCurrentlyPlaying && nullNodeCurrentlyPlaying.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) CurrentlyPlaying = null;
+            if (parseNode.GetChildNode("queue") is null) { _explicitNullValueQueue = default!; _explicitNullProperties?.Remove("queue"); }
+            else if (parseNode.GetChildNode("queue") is { } nullNodeQueue && nullNodeQueue.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Queue = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,21 +28,21 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The currently playing track or episode. Can be `null`.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectCurrentlyPlaying? CurrentlyPlaying { get => _explicitNullValueCurrentlyPlaying; set { _explicitNullValueCurrentlyPlaying = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing"); else _explicitNullProperties?.Remove("currently_playing"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectCurrentlyPlaying? CurrentlyPlaying { get => _explicitNullValueCurrentlyPlaying; set { _explicitNullValueCurrentlyPlaying = value; AdditionalData?.Remove("currently_playing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing"); else _explicitNullProperties?.Remove("currently_playing"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectCurrentlyPlaying? _explicitNullValueCurrentlyPlaying = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectCurrentlyPlaying CurrentlyPlaying { get => _explicitNullValueCurrentlyPlaying; set { _explicitNullValueCurrentlyPlaying = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing"); else _explicitNullProperties?.Remove("currently_playing"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectCurrentlyPlaying CurrentlyPlaying { get => _explicitNullValueCurrentlyPlaying; set { _explicitNullValueCurrentlyPlaying = value; AdditionalData?.Remove("currently_playing"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("currently_playing"); else _explicitNullProperties?.Remove("currently_playing"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectCurrentlyPlaying _explicitNullValueCurrentlyPlaying = default!;
 #endif
         /// <summary>The tracks or episodes in the queue. Can be empty.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectQueueItem>? Queue { get => _explicitNullValueQueue; set { _explicitNullValueQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue"); else _explicitNullProperties?.Remove("queue"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectQueueItem>? Queue { get => _explicitNullValueQueue; set { _explicitNullValueQueue = value; AdditionalData?.Remove("queue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue"); else _explicitNullProperties?.Remove("queue"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectQueueItem>? _explicitNullValueQueue = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectQueueItem> Queue { get => _explicitNullValueQueue; set { _explicitNullValueQueue = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue"); else _explicitNullProperties?.Remove("queue"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectQueueItem> Queue { get => _explicitNullValueQueue; set { _explicitNullValueQueue = value; AdditionalData?.Remove("queue"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("queue"); else _explicitNullProperties?.Remove("queue"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.QueueObjectQueueItem> _explicitNullValueQueue = default!;
 #endif
         /// <summary>

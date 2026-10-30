@@ -19,17 +19,19 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("filter_enabled") is { } nullNodeFilterEnabled && nullNodeFilterEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterEnabled = null;
-            if (parseNode.GetChildNode("filter_locked") is { } nullNodeFilterLocked && nullNodeFilterLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterLocked = null;
+            if (parseNode.GetChildNode("filter_enabled") is null) { _explicitNullValueFilterEnabled = default!; _explicitNullProperties?.Remove("filter_enabled"); }
+            else if (parseNode.GetChildNode("filter_enabled") is { } nullNodeFilterEnabled && nullNodeFilterEnabled.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterEnabled = null;
+            if (parseNode.GetChildNode("filter_locked") is null) { _explicitNullValueFilterLocked = default!; _explicitNullProperties?.Remove("filter_locked"); }
+            else if (parseNode.GetChildNode("filter_locked") is { } nullNodeFilterLocked && nullNodeFilterLocked.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FilterLocked = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>When `true`, indicates that explicit content should not be played.</summary>
-        public bool? FilterEnabled { get => _explicitNullValueFilterEnabled; set { _explicitNullValueFilterEnabled = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_enabled"); else _explicitNullProperties?.Remove("filter_enabled"); } }
+        public bool? FilterEnabled { get => _explicitNullValueFilterEnabled; set { _explicitNullValueFilterEnabled = value; AdditionalData?.Remove("filter_enabled"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_enabled"); else _explicitNullProperties?.Remove("filter_enabled"); } }
         private bool? _explicitNullValueFilterEnabled = default!;
         /// <summary>When `true`, indicates that the explicit content setting is locked and can&apos;t be changed by the user.</summary>
-        public bool? FilterLocked { get => _explicitNullValueFilterLocked; set { _explicitNullValueFilterLocked = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_locked"); else _explicitNullProperties?.Remove("filter_locked"); } }
+        public bool? FilterLocked { get => _explicitNullValueFilterLocked; set { _explicitNullValueFilterLocked = value; AdditionalData?.Remove("filter_locked"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("filter_locked"); else _explicitNullProperties?.Remove("filter_locked"); } }
         private bool? _explicitNullValueFilterLocked = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PrivateUserObjectExplicitContent"/> and sets the default values.

@@ -17,7 +17,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("shows") is { } nullNodeShows && nullNodeShows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shows = null;
+            if (parseNode.GetChildNode("shows") is null) { _explicitNullValueShows = default!; _explicitNullProperties?.Remove("shows"); }
+            else if (parseNode.GetChildNode("shows") is { } nullNodeShows && nullNodeShows.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Shows = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The shows property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject>? Shows { get => _explicitNullValueShows; set { _explicitNullValueShows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shows"); else _explicitNullProperties?.Remove("shows"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject>? Shows { get => _explicitNullValueShows; set { _explicitNullValueShows = value; AdditionalData?.Remove("shows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shows"); else _explicitNullProperties?.Remove("shows"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject>? _explicitNullValueShows = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject> Shows { get => _explicitNullValueShows; set { _explicitNullValueShows = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shows"); else _explicitNullProperties?.Remove("shows"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject> Shows { get => _explicitNullValueShows; set { _explicitNullValueShows = value; AdditionalData?.Remove("shows"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("shows"); else _explicitNullProperties?.Remove("shows"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedShowObject> _explicitNullValueShows = default!;
 #endif
         /// <summary>

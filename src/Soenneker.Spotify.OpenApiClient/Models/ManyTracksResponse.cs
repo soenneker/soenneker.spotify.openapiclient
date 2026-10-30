@@ -17,7 +17,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("tracks") is { } nullNodeTracks && nullNodeTracks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tracks = null;
+            if (parseNode.GetChildNode("tracks") is null) { _explicitNullValueTracks = default!; _explicitNullProperties?.Remove("tracks"); }
+            else if (parseNode.GetChildNode("tracks") is { } nullNodeTracks && nullNodeTracks.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tracks = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The tracks property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>? Tracks { get => _explicitNullValueTracks; set { _explicitNullValueTracks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracks"); else _explicitNullProperties?.Remove("tracks"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>? Tracks { get => _explicitNullValueTracks; set { _explicitNullValueTracks = value; AdditionalData?.Remove("tracks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracks"); else _explicitNullProperties?.Remove("tracks"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>? _explicitNullValueTracks = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject> Tracks { get => _explicitNullValueTracks; set { _explicitNullValueTracks = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracks"); else _explicitNullProperties?.Remove("tracks"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject> Tracks { get => _explicitNullValueTracks; set { _explicitNullValueTracks = value; AdditionalData?.Remove("tracks"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tracks"); else _explicitNullProperties?.Remove("tracks"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject> _explicitNullValueTracks = default!;
 #endif
         /// <summary>

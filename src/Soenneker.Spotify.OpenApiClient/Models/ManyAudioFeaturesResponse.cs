@@ -17,7 +17,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("audio_features") is { } nullNodeAudioFeatures && nullNodeAudioFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioFeatures = null;
+            if (parseNode.GetChildNode("audio_features") is null) { _explicitNullValueAudioFeatures = default!; _explicitNullProperties?.Remove("audio_features"); }
+            else if (parseNode.GetChildNode("audio_features") is { } nullNodeAudioFeatures && nullNodeAudioFeatures.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AudioFeatures = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -25,11 +26,11 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The audio_features property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudioFeaturesObject>? AudioFeatures { get => _explicitNullValueAudioFeatures; set { _explicitNullValueAudioFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_features"); else _explicitNullProperties?.Remove("audio_features"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudioFeaturesObject>? AudioFeatures { get => _explicitNullValueAudioFeatures; set { _explicitNullValueAudioFeatures = value; AdditionalData?.Remove("audio_features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_features"); else _explicitNullProperties?.Remove("audio_features"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.AudioFeaturesObject>? _explicitNullValueAudioFeatures = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudioFeaturesObject> AudioFeatures { get => _explicitNullValueAudioFeatures; set { _explicitNullValueAudioFeatures = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_features"); else _explicitNullProperties?.Remove("audio_features"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.AudioFeaturesObject> AudioFeatures { get => _explicitNullValueAudioFeatures; set { _explicitNullValueAudioFeatures = value; AdditionalData?.Remove("audio_features"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("audio_features"); else _explicitNullProperties?.Remove("audio_features"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.AudioFeaturesObject> _explicitNullValueAudioFeatures = default!;
 #endif
         /// <summary>

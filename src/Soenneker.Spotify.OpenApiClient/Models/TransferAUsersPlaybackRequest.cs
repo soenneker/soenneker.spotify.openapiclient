@@ -17,8 +17,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("device_ids") is { } nullNodeDeviceIds && nullNodeDeviceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceIds = null;
-            if (parseNode.GetChildNode("play") is { } nullNodePlay && nullNodePlay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Play = null;
+            if (parseNode.GetChildNode("device_ids") is null) { _explicitNullValueDeviceIds = default!; _explicitNullProperties?.Remove("device_ids"); }
+            else if (parseNode.GetChildNode("device_ids") is { } nullNodeDeviceIds && nullNodeDeviceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceIds = null;
+            if (parseNode.GetChildNode("play") is null) { _explicitNullValuePlay = default!; _explicitNullProperties?.Remove("play"); }
+            else if (parseNode.GetChildNode("play") is { } nullNodePlay && nullNodePlay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Play = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,15 +28,15 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>A JSON array containing the ID of the device on which playback should be started/transferred.&lt;br/&gt;For example:`{device_ids:[&quot;74ASZWbe4lXaubB36ztrGX&quot;]}`&lt;br/&gt;_**Note**: Although an array is accepted, only a single device_id is currently supported. Supplying more than one will return `400 Bad Request`_</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceIds { get => _explicitNullValueDeviceIds; set { _explicitNullValueDeviceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_ids"); else _explicitNullProperties?.Remove("device_ids"); } }
+        public List<string>? DeviceIds { get => _explicitNullValueDeviceIds; set { _explicitNullValueDeviceIds = value; AdditionalData?.Remove("device_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_ids"); else _explicitNullProperties?.Remove("device_ids"); } }
         private List<string>? _explicitNullValueDeviceIds = default!;
 #nullable restore
 #else
-        public List<string> DeviceIds { get => _explicitNullValueDeviceIds; set { _explicitNullValueDeviceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_ids"); else _explicitNullProperties?.Remove("device_ids"); } }
+        public List<string> DeviceIds { get => _explicitNullValueDeviceIds; set { _explicitNullValueDeviceIds = value; AdditionalData?.Remove("device_ids"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_ids"); else _explicitNullProperties?.Remove("device_ids"); } }
         private List<string> _explicitNullValueDeviceIds = default!;
 #endif
         /// <summary>**true**: ensure playback happens on new device.&lt;br/&gt;**false** or not provided: keep the current playback state.</summary>
-        public bool? Play { get => _explicitNullValuePlay; set { _explicitNullValuePlay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play"); else _explicitNullProperties?.Remove("play"); } }
+        public bool? Play { get => _explicitNullValuePlay; set { _explicitNullValuePlay = value; AdditionalData?.Remove("play"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play"); else _explicitNullProperties?.Remove("play"); } }
         private bool? _explicitNullValuePlay = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TransferAUsersPlaybackRequest"/> and sets the default values.

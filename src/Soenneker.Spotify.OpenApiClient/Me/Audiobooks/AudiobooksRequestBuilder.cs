@@ -144,7 +144,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Audiobooks.AudiobooksRequestBuilder.AudiobooksRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/audiobooks?ids={ids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/me/audiobooks?ids={ids}", RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/audiobooks", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -163,7 +163,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Audiobooks.AudiobooksRequestBuilder.AudiobooksRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/audiobooks", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -183,7 +183,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Audiobooks.AudiobooksRequestBuilder.AudiobooksRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/audiobooks?ids={ids}", PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/me/audiobooks?ids={ids}", RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/audiobooks", PathParameters.ContainsKey("request-raw-url")), PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

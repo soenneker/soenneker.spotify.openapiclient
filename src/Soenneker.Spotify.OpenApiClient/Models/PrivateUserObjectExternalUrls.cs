@@ -18,7 +18,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("spotify") is { } nullNodeSpotify && nullNodeSpotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spotify = null;
+            if (parseNode.GetChildNode("spotify") is null) { _explicitNullValueSpotify = default!; _explicitNullProperties?.Remove("spotify"); }
+            else if (parseNode.GetChildNode("spotify") is { } nullNodeSpotify && nullNodeSpotify.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Spotify = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
@@ -26,11 +27,11 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <summary>The [Spotify URL](/documentation/web-api/concepts/spotify-uris-ids) for the object.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Spotify { get => _explicitNullValueSpotify; set { _explicitNullValueSpotify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spotify"); else _explicitNullProperties?.Remove("spotify"); } }
+        public string? Spotify { get => _explicitNullValueSpotify; set { _explicitNullValueSpotify = value; AdditionalData?.Remove("spotify"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spotify"); else _explicitNullProperties?.Remove("spotify"); } }
         private string? _explicitNullValueSpotify = default!;
 #nullable restore
 #else
-        public string Spotify { get => _explicitNullValueSpotify; set { _explicitNullValueSpotify = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spotify"); else _explicitNullProperties?.Remove("spotify"); } }
+        public string Spotify { get => _explicitNullValueSpotify; set { _explicitNullValueSpotify = value; AdditionalData?.Remove("spotify"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("spotify"); else _explicitNullProperties?.Remove("spotify"); } }
         private string _explicitNullValueSpotify = default!;
 #endif
         /// <summary>

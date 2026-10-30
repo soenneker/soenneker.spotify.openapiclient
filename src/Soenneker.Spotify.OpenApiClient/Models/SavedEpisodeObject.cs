@@ -17,23 +17,25 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
-            if (parseNode.GetChildNode("episode") is { } nullNodeEpisode && nullNodeEpisode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Episode = null;
+            if (parseNode.GetChildNode("added_at") is null) { _explicitNullValueAddedAt = default!; _explicitNullProperties?.Remove("added_at"); }
+            else if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
+            if (parseNode.GetChildNode("episode") is null) { _explicitNullValueEpisode = default!; _explicitNullProperties?.Remove("episode"); }
+            else if (parseNode.GetChildNode("episode") is { } nullNodeEpisode && nullNodeEpisode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Episode = null;
         }
 
         /// <summary>The date and time the episode was saved.Timestamps are returned in ISO 8601 format as Coordinated Universal Time (UTC) with a zero offset: YYYY-MM-DDTHH:MM:SSZ.</summary>
-        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
+        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; AdditionalData?.Remove("added_at"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
         private DateTimeOffset? _explicitNullValueAddedAt = default!;
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Information about the episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode? Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode? Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; AdditionalData?.Remove("episode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode? _explicitNullValueEpisode = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode Episode { get => _explicitNullValueEpisode; set { _explicitNullValueEpisode = value; AdditionalData?.Remove("episode"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("episode"); else _explicitNullProperties?.Remove("episode"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.SavedEpisodeObjectEpisode _explicitNullValueEpisode = default!;
 #endif
         /// <summary>

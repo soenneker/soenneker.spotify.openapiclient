@@ -17,42 +17,47 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 
         public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
-            if (parseNode.GetChildNode("insert_before") is { } nullNodeInsertBefore && nullNodeInsertBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertBefore = null;
-            if (parseNode.GetChildNode("range_length") is { } nullNodeRangeLength && nullNodeRangeLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeLength = null;
-            if (parseNode.GetChildNode("range_start") is { } nullNodeRangeStart && nullNodeRangeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeStart = null;
-            if (parseNode.GetChildNode("snapshot_id") is { } nullNodeSnapshotId && nullNodeSnapshotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotId = null;
-            if (parseNode.GetChildNode("uris") is { } nullNodeUris && nullNodeUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uris = null;
+            if (parseNode.GetChildNode("insert_before") is null) { _explicitNullValueInsertBefore = default!; _explicitNullProperties?.Remove("insert_before"); }
+            else if (parseNode.GetChildNode("insert_before") is { } nullNodeInsertBefore && nullNodeInsertBefore.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InsertBefore = null;
+            if (parseNode.GetChildNode("range_length") is null) { _explicitNullValueRangeLength = default!; _explicitNullProperties?.Remove("range_length"); }
+            else if (parseNode.GetChildNode("range_length") is { } nullNodeRangeLength && nullNodeRangeLength.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeLength = null;
+            if (parseNode.GetChildNode("range_start") is null) { _explicitNullValueRangeStart = default!; _explicitNullProperties?.Remove("range_start"); }
+            else if (parseNode.GetChildNode("range_start") is { } nullNodeRangeStart && nullNodeRangeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) RangeStart = null;
+            if (parseNode.GetChildNode("snapshot_id") is null) { _explicitNullValueSnapshotId = default!; _explicitNullProperties?.Remove("snapshot_id"); }
+            else if (parseNode.GetChildNode("snapshot_id") is { } nullNodeSnapshotId && nullNodeSnapshotId.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SnapshotId = null;
+            if (parseNode.GetChildNode("uris") is null) { _explicitNullValueUris = default!; _explicitNullProperties?.Remove("uris"); }
+            else if (parseNode.GetChildNode("uris") is { } nullNodeUris && nullNodeUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uris = null;
         }
 
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The position where the items should be inserted.&lt;br/&gt;To reorder the items to the end of the playlist, simply set _insert_before_ to the position after the last item.&lt;br/&gt;Examples:&lt;br/&gt;To reorder the first item to the last position in a playlist with 10 items, set _range_start_ to 0, and _insert_before_ to 10.&lt;br/&gt;To reorder the last item in a playlist with 10 items to the start of the playlist, set _range_start_ to 9, and _insert_before_ to 0.</summary>
-        public int? InsertBefore { get => _explicitNullValueInsertBefore; set { _explicitNullValueInsertBefore = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert_before"); else _explicitNullProperties?.Remove("insert_before"); } }
+        public int? InsertBefore { get => _explicitNullValueInsertBefore; set { _explicitNullValueInsertBefore = value; AdditionalData?.Remove("insert_before"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("insert_before"); else _explicitNullProperties?.Remove("insert_before"); } }
         private int? _explicitNullValueInsertBefore = default!;
         /// <summary>The amount of items to be reordered. Defaults to 1 if not set.&lt;br/&gt;The range of items to be reordered begins from the _range_start_ position, and includes the _range_length_ subsequent items.&lt;br/&gt;Example:&lt;br/&gt;To move the items at index 9-10 to the start of the playlist, _range_start_ is set to 9, and _range_length_ is set to 2.</summary>
-        public int? RangeLength { get => _explicitNullValueRangeLength; set { _explicitNullValueRangeLength = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range_length"); else _explicitNullProperties?.Remove("range_length"); } }
+        public int? RangeLength { get => _explicitNullValueRangeLength; set { _explicitNullValueRangeLength = value; AdditionalData?.Remove("range_length"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range_length"); else _explicitNullProperties?.Remove("range_length"); } }
         private int? _explicitNullValueRangeLength = default!;
         /// <summary>The position of the first item to be reordered.</summary>
-        public int? RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range_start"); else _explicitNullProperties?.Remove("range_start"); } }
+        public int? RangeStart { get => _explicitNullValueRangeStart; set { _explicitNullValueRangeStart = value; AdditionalData?.Remove("range_start"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("range_start"); else _explicitNullProperties?.Remove("range_start"); } }
         private int? _explicitNullValueRangeStart = default!;
         /// <summary>The playlist&apos;s snapshot ID against which you want to make the changes.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
+        public string? SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
         private string? _explicitNullValueSnapshotId = default!;
 #nullable restore
 #else
-        public string SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
+        public string SnapshotId { get => _explicitNullValueSnapshotId; set { _explicitNullValueSnapshotId = value; AdditionalData?.Remove("snapshot_id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("snapshot_id"); else _explicitNullProperties?.Remove("snapshot_id"); } }
         private string _explicitNullValueSnapshotId = default!;
 #endif
         /// <summary>The uris property</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
+        public List<string>? Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; AdditionalData?.Remove("uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
         private List<string>? _explicitNullValueUris = default!;
 #nullable restore
 #else
-        public List<string> Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
+        public List<string> Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; AdditionalData?.Remove("uris"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
         private List<string> _explicitNullValueUris = default!;
 #endif
         /// <summary>
