@@ -12,13 +12,24 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class EpisodeBaseResumePoint : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("fully_played") is { } nullNodeFullyPlayed && nullNodeFullyPlayed.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) FullyPlayed = null;
+            if (parseNode.GetChildNode("resume_position_ms") is { } nullNodeResumePositionMs && nullNodeResumePositionMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ResumePositionMs = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether or not the episode has been fully played by the user.</summary>
-        public bool? FullyPlayed { get; set; }
+        public bool? FullyPlayed { get => _explicitNullValueFullyPlayed; set { _explicitNullValueFullyPlayed = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("fully_played"); else _explicitNullProperties?.Remove("fully_played"); } }
+        private bool? _explicitNullValueFullyPlayed = default!;
         /// <summary>The user&apos;s most recent position in the episode in milliseconds.</summary>
-        public int? ResumePositionMs { get; set; }
+        public int? ResumePositionMs { get => _explicitNullValueResumePositionMs; set { _explicitNullValueResumePositionMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resume_position_ms"); else _explicitNullProperties?.Remove("resume_position_ms"); } }
+        private int? _explicitNullValueResumePositionMs = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint"/> and sets the default values.
         /// </summary>
@@ -34,7 +45,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.EpisodeBaseResumePoint(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -57,6 +68,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteBoolValue("fully_played", FullyPlayed);
             writer.WriteIntValue("resume_position_ms", ResumePositionMs);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

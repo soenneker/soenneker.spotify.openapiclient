@@ -18,16 +18,19 @@ namespace Soenneker.Spotify.OpenApiClient.Browse
     public partial class BrowseRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The categories property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder Categories
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Browse.Categories.CategoriesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The featuredPlaylists property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Browse.FeaturedPlaylists.FeaturedPlaylistsRequestBuilder FeaturedPlaylists
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Browse.FeaturedPlaylists.FeaturedPlaylistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The newReleases property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Browse.NewReleases.NewReleasesRequestBuilder NewReleases
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Browse.NewReleases.NewReleasesRequestBuilder(PathParameters, RequestAdapter);

@@ -11,33 +11,64 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SectionObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("key") is { } nullNodeKey && nullNodeKey.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Key = null;
+            if (parseNode.GetChildNode("key_confidence") is { } nullNodeKeyConfidence && nullNodeKeyConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) KeyConfidence = null;
+            if (parseNode.GetChildNode("loudness") is { } nullNodeLoudness && nullNodeLoudness.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Loudness = null;
+            if (parseNode.GetChildNode("mode") is { } nullNodeMode && nullNodeMode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Mode = null;
+            if (parseNode.GetChildNode("mode_confidence") is { } nullNodeModeConfidence && nullNodeModeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ModeConfidence = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("tempo") is { } nullNodeTempo && nullNodeTempo.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Tempo = null;
+            if (parseNode.GetChildNode("tempo_confidence") is { } nullNodeTempoConfidence && nullNodeTempoConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TempoConfidence = null;
+            if (parseNode.GetChildNode("time_signature") is { } nullNodeTimeSignature && nullNodeTimeSignature.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeSignature = null;
+            if (parseNode.GetChildNode("time_signature_confidence") is { } nullNodeTimeSignatureConfidence && nullNodeTimeSignatureConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TimeSignatureConfidence = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confidence, from 0.0 to 1.0, of the reliability of the section&apos;s &quot;designation&quot;.</summary>
-        public double? Confidence { get; set; }
+        public double? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private double? _explicitNullValueConfidence = default!;
         /// <summary>The duration (in seconds) of the section.</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The estimated overall key of the section. The values in this field ranging from 0 to 11 mapping to pitches using standard Pitch Class notation (E.g. 0 = C, 1 = C♯/D♭, 2 = D, and so on). If no key was detected, the value is -1.</summary>
-        public int? Key { get; set; }
+        public int? Key { get => _explicitNullValueKey; set { _explicitNullValueKey = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key"); else _explicitNullProperties?.Remove("key"); } }
+        private int? _explicitNullValueKey = default!;
         /// <summary>The confidence, from 0.0 to 1.0, of the reliability of the key. Songs with many key changes may correspond to low values in this field.</summary>
-        public double? KeyConfidence { get; set; }
+        public double? KeyConfidence { get => _explicitNullValueKeyConfidence; set { _explicitNullValueKeyConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("key_confidence"); else _explicitNullProperties?.Remove("key_confidence"); } }
+        private double? _explicitNullValueKeyConfidence = default!;
         /// <summary>The overall loudness of the section in decibels (dB). Loudness values are useful for comparing relative loudness of sections within tracks.</summary>
-        public double? Loudness { get; set; }
+        public double? Loudness { get => _explicitNullValueLoudness; set { _explicitNullValueLoudness = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loudness"); else _explicitNullProperties?.Remove("loudness"); } }
+        private double? _explicitNullValueLoudness = default!;
         /// <summary>Indicates the modality (major or minor) of a section, the type of scale from which its melodic content is derived. This field will contain a 0 for &quot;minor&quot;, a 1 for &quot;major&quot;, or a -1 for no result. Note that the major key (e.g. C major) could more likely be confused with the minor key at 3 semitones lower (e.g. A minor) as both keys carry the same pitches.</summary>
-        public double? Mode { get; set; }
+        public double? Mode { get => _explicitNullValueMode; set { _explicitNullValueMode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode"); else _explicitNullProperties?.Remove("mode"); } }
+        private double? _explicitNullValueMode = default!;
         /// <summary>The confidence, from 0.0 to 1.0, of the reliability of the `mode`.</summary>
-        public double? ModeConfidence { get; set; }
+        public double? ModeConfidence { get => _explicitNullValueModeConfidence; set { _explicitNullValueModeConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("mode_confidence"); else _explicitNullProperties?.Remove("mode_confidence"); } }
+        private double? _explicitNullValueModeConfidence = default!;
         /// <summary>The starting point (in seconds) of the section.</summary>
-        public double? Start { get; set; }
+        public double? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private double? _explicitNullValueStart = default!;
         /// <summary>The overall estimated tempo of the section in beats per minute (BPM). In musical terminology, tempo is the speed or pace of a given piece and derives directly from the average beat duration.</summary>
-        public double? Tempo { get; set; }
+        public double? Tempo { get => _explicitNullValueTempo; set { _explicitNullValueTempo = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempo"); else _explicitNullProperties?.Remove("tempo"); } }
+        private double? _explicitNullValueTempo = default!;
         /// <summary>The confidence, from 0.0 to 1.0, of the reliability of the tempo. Some tracks contain tempo changes or sounds which don&apos;t contain tempo (like pure speech) which would correspond to a low value in this field.</summary>
-        public double? TempoConfidence { get; set; }
+        public double? TempoConfidence { get => _explicitNullValueTempoConfidence; set { _explicitNullValueTempoConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("tempo_confidence"); else _explicitNullProperties?.Remove("tempo_confidence"); } }
+        private double? _explicitNullValueTempoConfidence = default!;
         /// <summary>An estimated time signature. The time signature (meter) is a notational convention to specify how many beats are in each bar (or measure). The time signature ranges from 3 to 7 indicating time signatures of &quot;3/4&quot;, to &quot;7/4&quot;.</summary>
-        public int? TimeSignature { get; set; }
+        public int? TimeSignature { get => _explicitNullValueTimeSignature; set { _explicitNullValueTimeSignature = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_signature"); else _explicitNullProperties?.Remove("time_signature"); } }
+        private int? _explicitNullValueTimeSignature = default!;
         /// <summary>The confidence, from 0.0 to 1.0, of the reliability of the `time_signature`. Sections with time signature changes may correspond to low values in this field.</summary>
-        public double? TimeSignatureConfidence { get; set; }
+        public double? TimeSignatureConfidence { get => _explicitNullValueTimeSignatureConfidence; set { _explicitNullValueTimeSignatureConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("time_signature_confidence"); else _explicitNullProperties?.Remove("time_signature_confidence"); } }
+        private double? _explicitNullValueTimeSignatureConfidence = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SectionObject"/> and sets the default values.
         /// </summary>
@@ -53,7 +84,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.SectionObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.SectionObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.SectionObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +127,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteDoubleValue("tempo_confidence", TempoConfidence);
             writer.WriteIntValue("time_signature", TimeSignature);
             writer.WriteDoubleValue("time_signature_confidence", TimeSignatureConfidence);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

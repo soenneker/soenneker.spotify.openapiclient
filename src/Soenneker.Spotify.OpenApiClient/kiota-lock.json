@@ -1,8 +1,8 @@
 {
-  "descriptionHash": "A944A0B37BA5DAA37DA6ADE48B8691DFD466B2C90757FD06067BD5D7CC95971D75443ADE40FA83BADE438FEF1A0EA69A35ADC50BECF90588B3C29D722259778F",
+  "descriptionHash": "5E6331A0CA26F1AE4485F4F7A4A3AA6B3FDFBB74BA31BEE882400DE514AB96B79E145784E070196D467ACBAA6ED1152D5DE822B50720DA627C530F101B4AA868",
   "descriptionLocation": "../../fixed.json",
   "lockFileVersion": "1.0.0",
-  "kiotaVersion": "1.36.1",
+  "kiotaVersion": "1.37.0",
   "clientClassName": "SpotifyOpenApiClient",
   "typeAccessModifier": "Public",
   "clientNamespaceName": "Soenneker.Spotify.OpenApiClient",

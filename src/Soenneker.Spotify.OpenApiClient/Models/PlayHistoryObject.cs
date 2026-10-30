@@ -11,26 +11,41 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PlayHistoryObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("context") is { } nullNodeContext && nullNodeContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Context = null;
+            if (parseNode.GetChildNode("played_at") is { } nullNodePlayedAt && nullNodePlayedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PlayedAt = null;
+            if (parseNode.GetChildNode("track") is { } nullNodeTrack && nullNodeTrack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Track = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The context the track was played from.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext? Context { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext? Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext? _explicitNullValueContext = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext Context { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext Context { get => _explicitNullValueContext; set { _explicitNullValueContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context"); else _explicitNullProperties?.Remove("context"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext _explicitNullValueContext = default!;
 #endif
         /// <summary>The date and time the track was played.</summary>
-        public DateTimeOffset? PlayedAt { get; set; }
+        public DateTimeOffset? PlayedAt { get => _explicitNullValuePlayedAt; set { _explicitNullValuePlayedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("played_at"); else _explicitNullProperties?.Remove("played_at"); } }
+        private DateTimeOffset? _explicitNullValuePlayedAt = default!;
         /// <summary>The track the user listened to.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack? Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack? Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack? _explicitNullValueTrack = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack _explicitNullValueTrack = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject"/> and sets the default values.
@@ -47,7 +62,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -72,6 +87,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectContext>("context", Context);
             writer.WriteDateTimeOffsetValue("played_at", PlayedAt);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlayHistoryObjectTrack>("track", Track);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

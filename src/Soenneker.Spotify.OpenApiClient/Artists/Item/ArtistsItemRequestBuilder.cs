@@ -26,11 +26,13 @@ namespace Soenneker.Spotify.OpenApiClient.Artists.Item
             get => new global::Soenneker.Spotify.OpenApiClient.Artists.Item.Albums.AlbumsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The relatedArtists property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsRequestBuilder RelatedArtists
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Artists.Item.RelatedArtists.RelatedArtistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The topTracks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Artists.Item.TopTracks.TopTracksRequestBuilder TopTracks
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Artists.Item.TopTracks.TopTracksRequestBuilder(PathParameters, RequestAdapter);
@@ -75,6 +77,8 @@ namespace Soenneker.Spotify.OpenApiClient.Artists.Item
                 { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.ArtistObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }

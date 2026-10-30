@@ -11,47 +11,72 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class AudioAnalysisObjectMeta : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("analysis_time") is { } nullNodeAnalysisTime && nullNodeAnalysisTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalysisTime = null;
+            if (parseNode.GetChildNode("analyzer_version") is { } nullNodeAnalyzerVersion && nullNodeAnalyzerVersion.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AnalyzerVersion = null;
+            if (parseNode.GetChildNode("detailed_status") is { } nullNodeDetailedStatus && nullNodeDetailedStatus.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DetailedStatus = null;
+            if (parseNode.GetChildNode("input_process") is { } nullNodeInputProcess && nullNodeInputProcess.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InputProcess = null;
+            if (parseNode.GetChildNode("platform") is { } nullNodePlatform && nullNodePlatform.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Platform = null;
+            if (parseNode.GetChildNode("status_code") is { } nullNodeStatusCode && nullNodeStatusCode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) StatusCode = null;
+            if (parseNode.GetChildNode("timestamp") is { } nullNodeTimestamp && nullNodeTimestamp.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timestamp = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The amount of time taken to analyze this track.</summary>
-        public double? AnalysisTime { get; set; }
+        public double? AnalysisTime { get => _explicitNullValueAnalysisTime; set { _explicitNullValueAnalysisTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analysis_time"); else _explicitNullProperties?.Remove("analysis_time"); } }
+        private double? _explicitNullValueAnalysisTime = default!;
         /// <summary>The version of the Analyzer used to analyze this track.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? AnalyzerVersion { get; set; }
+        public string? AnalyzerVersion { get => _explicitNullValueAnalyzerVersion; set { _explicitNullValueAnalyzerVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyzer_version"); else _explicitNullProperties?.Remove("analyzer_version"); } }
+        private string? _explicitNullValueAnalyzerVersion = default!;
 #nullable restore
 #else
-        public string AnalyzerVersion { get; set; }
+        public string AnalyzerVersion { get => _explicitNullValueAnalyzerVersion; set { _explicitNullValueAnalyzerVersion = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("analyzer_version"); else _explicitNullProperties?.Remove("analyzer_version"); } }
+        private string _explicitNullValueAnalyzerVersion = default!;
 #endif
         /// <summary>A detailed status code for this track. If analysis data is missing, this code may explain why.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? DetailedStatus { get; set; }
+        public string? DetailedStatus { get => _explicitNullValueDetailedStatus; set { _explicitNullValueDetailedStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detailed_status"); else _explicitNullProperties?.Remove("detailed_status"); } }
+        private string? _explicitNullValueDetailedStatus = default!;
 #nullable restore
 #else
-        public string DetailedStatus { get; set; }
+        public string DetailedStatus { get => _explicitNullValueDetailedStatus; set { _explicitNullValueDetailedStatus = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("detailed_status"); else _explicitNullProperties?.Remove("detailed_status"); } }
+        private string _explicitNullValueDetailedStatus = default!;
 #endif
         /// <summary>The method used to read the track&apos;s audio data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? InputProcess { get; set; }
+        public string? InputProcess { get => _explicitNullValueInputProcess; set { _explicitNullValueInputProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_process"); else _explicitNullProperties?.Remove("input_process"); } }
+        private string? _explicitNullValueInputProcess = default!;
 #nullable restore
 #else
-        public string InputProcess { get; set; }
+        public string InputProcess { get => _explicitNullValueInputProcess; set { _explicitNullValueInputProcess = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("input_process"); else _explicitNullProperties?.Remove("input_process"); } }
+        private string _explicitNullValueInputProcess = default!;
 #endif
         /// <summary>The platform used to read the track&apos;s audio data.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Platform { get; set; }
+        public string? Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string? _explicitNullValuePlatform = default!;
 #nullable restore
 #else
-        public string Platform { get; set; }
+        public string Platform { get => _explicitNullValuePlatform; set { _explicitNullValuePlatform = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("platform"); else _explicitNullProperties?.Remove("platform"); } }
+        private string _explicitNullValuePlatform = default!;
 #endif
         /// <summary>The return code of the analyzer process. 0 if successful, 1 if any errors occurred.</summary>
-        public int? StatusCode { get; set; }
+        public int? StatusCode { get => _explicitNullValueStatusCode; set { _explicitNullValueStatusCode = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("status_code"); else _explicitNullProperties?.Remove("status_code"); } }
+        private int? _explicitNullValueStatusCode = default!;
         /// <summary>The Unix timestamp (in seconds) at which this track was analyzed.</summary>
-        public int? Timestamp { get; set; }
+        public int? Timestamp { get => _explicitNullValueTimestamp; set { _explicitNullValueTimestamp = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timestamp"); else _explicitNullProperties?.Remove("timestamp"); } }
+        private int? _explicitNullValueTimestamp = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta"/> and sets the default values.
         /// </summary>
@@ -67,7 +92,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.AudioAnalysisObjectMeta(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -100,6 +125,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("platform", Platform);
             writer.WriteIntValue("status_code", StatusCode);
             writer.WriteIntValue("timestamp", Timestamp);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

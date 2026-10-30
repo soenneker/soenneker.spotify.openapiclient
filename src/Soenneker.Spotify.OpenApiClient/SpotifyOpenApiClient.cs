@@ -35,11 +35,13 @@ namespace Soenneker.Spotify.OpenApiClient
     public partial class SpotifyOpenApiClient : BaseRequestBuilder
     {
         /// <summary>The albums property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Albums.AlbumsRequestBuilder Albums
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Albums.AlbumsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The artists property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Artists.ArtistsRequestBuilder Artists
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Artists.ArtistsRequestBuilder(PathParameters, RequestAdapter);
@@ -50,11 +52,13 @@ namespace Soenneker.Spotify.OpenApiClient
             get => new global::Soenneker.Spotify.OpenApiClient.AudioAnalysis.AudioAnalysisRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The audiobooks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Audiobooks.AudiobooksRequestBuilder Audiobooks
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Audiobooks.AudiobooksRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The audioFeatures property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.AudioFeatures.AudioFeaturesRequestBuilder AudioFeatures
         {
             get => new global::Soenneker.Spotify.OpenApiClient.AudioFeatures.AudioFeaturesRequestBuilder(PathParameters, RequestAdapter);
@@ -65,16 +69,19 @@ namespace Soenneker.Spotify.OpenApiClient
             get => new global::Soenneker.Spotify.OpenApiClient.Browse.BrowseRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The chapters property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Chapters.ChaptersRequestBuilder Chapters
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Chapters.ChaptersRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The episodes property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Episodes.EpisodesRequestBuilder Episodes
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Episodes.EpisodesRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The markets property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Markets.MarketsRequestBuilder Markets
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Markets.MarketsRequestBuilder(PathParameters, RequestAdapter);
@@ -90,6 +97,7 @@ namespace Soenneker.Spotify.OpenApiClient
             get => new global::Soenneker.Spotify.OpenApiClient.Playlists.PlaylistsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The recommendations property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Recommendations.RecommendationsRequestBuilder Recommendations
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Recommendations.RecommendationsRequestBuilder(PathParameters, RequestAdapter);
@@ -100,11 +108,13 @@ namespace Soenneker.Spotify.OpenApiClient
             get => new global::Soenneker.Spotify.OpenApiClient.Search.SearchRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The shows property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Shows.ShowsRequestBuilder Shows
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Shows.ShowsRequestBuilder(PathParameters, RequestAdapter);
         }
         /// <summary>The tracks property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Tracks.TracksRequestBuilder Tracks
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Tracks.TracksRequestBuilder(PathParameters, RequestAdapter);

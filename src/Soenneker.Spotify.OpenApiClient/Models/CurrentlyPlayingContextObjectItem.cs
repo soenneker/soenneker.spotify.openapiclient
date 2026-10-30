@@ -8,11 +8,24 @@ using System;
 namespace Soenneker.Spotify.OpenApiClient.Models
 {
     /// <summary>
-    /// Composed type wrapper for classes <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/>, <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObject"/>
+    /// Composed type wrapper for classes <see cref="global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItemOneOf1"/>, <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/>
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CurrentlyPlayingContextObjectItem : IComposedTypeWrapper, IParsable
-    {
+    , global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder {
+        // Preserve ambiguous union payloads without inventing a discriminator.
+        /// <summary>The complete payload when no unique typed union branch can be selected.</summary>
+        public global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode UnrecognizedValue { get; set; } = null!;
+        public global::System.Collections.Generic.IDictionary<string, object> AdditionalData { get; set; } = new global::System.Collections.Generic.Dictionary<string, object>();
+
+        /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItemOneOf1"/></summary>
+#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
+#nullable enable
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItemOneOf1? CurrentlyPlayingContextObjectItemOneOf1 { get; set; }
+#nullable restore
+#else
+        public global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItemOneOf1 CurrentlyPlayingContextObjectItemOneOf1 { get; set; }
+#endif
         /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject"/></summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
@@ -20,14 +33,6 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 #nullable restore
 #else
         public global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject EpisodeObject { get; set; }
-#endif
-        /// <summary>Composed type representation for type <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObject"/></summary>
-#if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
-#nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject? TrackObject { get; set; }
-#nullable restore
-#else
-        public global::Soenneker.Spotify.OpenApiClient.Models.TrackObject TrackObject { get; set; }
 #endif
         /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
@@ -37,17 +42,24 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
+            var mappingValue = parseNode.GetChildNode("")?.GetStringValue();
             var result = new global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItem();
-            if("EpisodeObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            if("CurrentlyPlayingContextObjectItemOneOf1".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.EpisodeObject = new global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject();
+                
             }
-            else if("TrackObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
+            else if("EpisodeObject".Equals(mappingValue, StringComparison.OrdinalIgnoreCase))
             {
-                result.TrackObject = new global::Soenneker.Spotify.OpenApiClient.Models.TrackObject();
+                
             }
-            return result;
+            
+            var unionPayload = parseNode.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue);
+            bool matchesUnionBranch0 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag1 && ("track".Equals(tag1.GetValue(), global::System.StringComparison.Ordinal)))))();
+            bool matchesUnionBranch1 = unionPayload is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject && ((global::System.Func<bool>)(() => parseNode.GetChildNode("audio_preview_url") != null && parseNode.GetChildNode("description") != null && parseNode.GetChildNode("html_description") != null && parseNode.GetChildNode("duration_ms") != null && parseNode.GetChildNode("explicit") != null && parseNode.GetChildNode("external_urls") != null && parseNode.GetChildNode("href") != null && parseNode.GetChildNode("id") != null && parseNode.GetChildNode("images") != null && parseNode.GetChildNode("is_externally_hosted") != null && parseNode.GetChildNode("is_playable") != null && parseNode.GetChildNode("languages") != null && parseNode.GetChildNode("name") != null && parseNode.GetChildNode("release_date") != null && parseNode.GetChildNode("release_date_precision") != null && (parseNode.GetChildNode("release_date_precision")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag15 && ("year".Equals(tag15.GetValue(), global::System.StringComparison.Ordinal) || "month".Equals(tag15.GetValue(), global::System.StringComparison.Ordinal) || "day".Equals(tag15.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("type") != null && (parseNode.GetChildNode("type")?.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is global::Microsoft.Kiota.Abstractions.Serialization.UntypedString tag17 && ("episode".Equals(tag17.GetValue(), global::System.StringComparison.Ordinal))) && parseNode.GetChildNode("uri") != null && parseNode.GetChildNode("show") != null))();
+            if (result.CurrentlyPlayingContextObjectItemOneOf1 == null && result.EpisodeObject == null && matchesUnionBranch0 && !matchesUnionBranch1) result.CurrentlyPlayingContextObjectItemOneOf1 = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItemOneOf1(), parseNode);
+            if (result.CurrentlyPlayingContextObjectItemOneOf1 == null && result.EpisodeObject == null && matchesUnionBranch1 && !matchesUnionBranch0) result.EpisodeObject = global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject(), parseNode);
+            if (result.CurrentlyPlayingContextObjectItemOneOf1 == null && result.EpisodeObject == null) result.UnrecognizedValue = unionPayload;
+return result;
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -55,13 +67,13 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            if(EpisodeObject != null)
+            if(CurrentlyPlayingContextObjectItemOneOf1 != null)
+            {
+                return CurrentlyPlayingContextObjectItemOneOf1.GetFieldDeserializers();
+            }
+            else if(EpisodeObject != null)
             {
                 return EpisodeObject.GetFieldDeserializers();
-            }
-            else if(TrackObject != null)
-            {
-                return TrackObject.GetFieldDeserializers();
             }
             return new Dictionary<string, Action<IParseNode>>();
         }
@@ -71,14 +83,21 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <param name="writer">Serialization writer to use to serialize this model</param>
         public virtual void Serialize(ISerializationWriter writer)
         {
+            if (global::System.Object.ReferenceEquals(writer, null)) throw new global::System.ArgumentNullException(nameof(writer));
+            if (CurrentlyPlayingContextObjectItemOneOf1 == null && EpisodeObject == null) { if (UnrecognizedValue is global::Microsoft.Kiota.Abstractions.Serialization.UntypedObject rawObject) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData, rawObject)); else if (UnrecognizedValue != null) writer.WriteObjectValue(null, UnrecognizedValue); else if (AdditionalData.Count > 0) writer.WriteObjectValue(null, new global::Soenneker.OpenApi.Generated.OpenApiUnionAdditionalData(AdditionalData)); else writer.WriteNullValue(null); return; }
+            if (CurrentlyPlayingContextObjectItemOneOf1 != null && EpisodeObject == null) { if (CurrentlyPlayingContextObjectItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, CurrentlyPlayingContextObjectItemOneOf1); return; }
+            if (EpisodeObject != null && CurrentlyPlayingContextObjectItemOneOf1 == null) { if (EpisodeObject is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder selectedData) foreach (var entry in AdditionalData) selectedData.AdditionalData[entry.Key] = entry.Value; writer.WriteObjectValue(null, EpisodeObject); return; }
+
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
-            if(EpisodeObject != null)
+            if(CurrentlyPlayingContextObjectItemOneOf1 != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject>(null, EpisodeObject);
+                if (CurrentlyPlayingContextObjectItemOneOf1 is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectItemOneOf1>(null, CurrentlyPlayingContextObjectItemOneOf1);
             }
-            else if(TrackObject != null)
+            else if(EpisodeObject != null)
             {
-                writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObject>(null, TrackObject);
+                if (EpisodeObject is global::Microsoft.Kiota.Abstractions.Serialization.IAdditionalDataHolder unionData) foreach (var entry in AdditionalData) unionData.AdditionalData[entry.Key] = entry.Value;
+                writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.EpisodeObject>(null, EpisodeObject);
             }
         }
     }

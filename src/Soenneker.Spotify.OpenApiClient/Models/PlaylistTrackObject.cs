@@ -11,37 +11,57 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class PlaylistTrackObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("added_at") is { } nullNodeAddedAt && nullNodeAddedAt.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedAt = null;
+            if (parseNode.GetChildNode("added_by") is { } nullNodeAddedBy && nullNodeAddedBy.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) AddedBy = null;
+            if (parseNode.GetChildNode("is_local") is { } nullNodeIsLocal && nullNodeIsLocal.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) IsLocal = null;
+            if (parseNode.GetChildNode("item") is { } nullNodeItem && nullNodeItem.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Item = null;
+            if (parseNode.GetChildNode("track") is { } nullNodeTrack && nullNodeTrack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Track = null;
+        }
+
         /// <summary>The date and time the track or episode was added. _**Note**: some very old playlists may return `null` in this field._</summary>
-        public DateTimeOffset? AddedAt { get; set; }
+        public DateTimeOffset? AddedAt { get => _explicitNullValueAddedAt; set { _explicitNullValueAddedAt = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_at"); else _explicitNullProperties?.Remove("added_at"); } }
+        private DateTimeOffset? _explicitNullValueAddedAt = default!;
         /// <summary>The Spotify user who added the track or episode. _**Note**: some very old playlists may return `null` in this field._</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy? AddedBy { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy? AddedBy { get => _explicitNullValueAddedBy; set { _explicitNullValueAddedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_by"); else _explicitNullProperties?.Remove("added_by"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy? _explicitNullValueAddedBy = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy AddedBy { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy AddedBy { get => _explicitNullValueAddedBy; set { _explicitNullValueAddedBy = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("added_by"); else _explicitNullProperties?.Remove("added_by"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy _explicitNullValueAddedBy = default!;
 #endif
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Whether this track or episode is a [local file](/documentation/web-api/concepts/playlists/#local-files) or not.</summary>
-        public bool? IsLocal { get; set; }
+        public bool? IsLocal { get => _explicitNullValueIsLocal; set { _explicitNullValueIsLocal = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("is_local"); else _explicitNullProperties?.Remove("is_local"); } }
+        private bool? _explicitNullValueIsLocal = default!;
         /// <summary>Information about the track or episode.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem? Item { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem? Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem? _explicitNullValueItem = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem Item { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem Item { get => _explicitNullValueItem; set { _explicitNullValueItem = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("item"); else _explicitNullProperties?.Remove("item"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem _explicitNullValueItem = default!;
 #endif
         /// <summary>**Deprecated:** Use `item` instead. Information about the track or episode.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack? Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack? Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack? _explicitNullValueTrack = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack Track { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack Track { get => _explicitNullValueTrack; set { _explicitNullValueTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("track"); else _explicitNullProperties?.Remove("track"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack _explicitNullValueTrack = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject"/> and sets the default values.
@@ -58,7 +78,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -87,6 +107,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteBoolValue("is_local", IsLocal);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem>("item", Item);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectTrack>("track", Track);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

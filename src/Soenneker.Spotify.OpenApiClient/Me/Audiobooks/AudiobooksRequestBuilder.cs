@@ -19,6 +19,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
     public partial class AudiobooksRequestBuilder : BaseRequestBuilder
     {
         /// <summary>The contains property</summary>
+        [Obsolete("")]
         public global::Soenneker.Spotify.OpenApiClient.Me.Audiobooks.Contains.ContainsRequestBuilder Contains
         {
             get => new global::Soenneker.Spotify.OpenApiClient.Me.Audiobooks.Contains.ContainsRequestBuilder(PathParameters, RequestAdapter);
@@ -64,6 +65,8 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
                 { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -91,6 +94,8 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
                 { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendAsync<global::Soenneker.Spotify.OpenApiClient.Models.PagingSimplifiedAudiobookObject>(requestInfo, global::Soenneker.Spotify.OpenApiClient.Models.PagingSimplifiedAudiobookObject.CreateFromDiscriminatorValue, errorMapping, cancellationToken).ConfigureAwait(false);
         }
@@ -119,6 +124,8 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Audiobooks
                 { "401", global::Soenneker.Spotify.OpenApiClient.Models.UnauthorizedResponse.CreateFromDiscriminatorValue },
                 { "403", global::Soenneker.Spotify.OpenApiClient.Models.ForbiddenResponse.CreateFromDiscriminatorValue },
                 { "429", global::Soenneker.Spotify.OpenApiClient.Models.TooManyRequestsResponse.CreateFromDiscriminatorValue },
+                { "4XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
+                { "5XX", global::Soenneker.OpenApi.Generated.OpenApiRawError.CreateFromDiscriminatorValue },
             };
             return await RequestAdapter.SendPrimitiveAsync<Stream>(requestInfo, errorMapping, cancellationToken).ConfigureAwait(false);
         }

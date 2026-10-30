@@ -11,19 +11,31 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class TransferAUsersPlaybackRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("device_ids") is { } nullNodeDeviceIds && nullNodeDeviceIds.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) DeviceIds = null;
+            if (parseNode.GetChildNode("play") is { } nullNodePlay && nullNodePlay.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Play = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>A JSON array containing the ID of the device on which playback should be started/transferred.&lt;br/&gt;For example:`{device_ids:[&quot;74ASZWbe4lXaubB36ztrGX&quot;]}`&lt;br/&gt;_**Note**: Although an array is accepted, only a single device_id is currently supported. Supplying more than one will return `400 Bad Request`_</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? DeviceIds { get; set; }
+        public List<string>? DeviceIds { get => _explicitNullValueDeviceIds; set { _explicitNullValueDeviceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_ids"); else _explicitNullProperties?.Remove("device_ids"); } }
+        private List<string>? _explicitNullValueDeviceIds = default!;
 #nullable restore
 #else
-        public List<string> DeviceIds { get; set; }
+        public List<string> DeviceIds { get => _explicitNullValueDeviceIds; set { _explicitNullValueDeviceIds = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("device_ids"); else _explicitNullProperties?.Remove("device_ids"); } }
+        private List<string> _explicitNullValueDeviceIds = default!;
 #endif
         /// <summary>**true**: ensure playback happens on new device.&lt;br/&gt;**false** or not provided: keep the current playback state.</summary>
-        public bool? Play { get; set; }
+        public bool? Play { get => _explicitNullValuePlay; set { _explicitNullValuePlay = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("play"); else _explicitNullProperties?.Remove("play"); } }
+        private bool? _explicitNullValuePlay = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TransferAUsersPlaybackRequest"/> and sets the default values.
         /// </summary>
@@ -39,7 +51,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.TransferAUsersPlaybackRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.TransferAUsersPlaybackRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.TransferAUsersPlaybackRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -62,6 +74,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
             writer.WriteCollectionOfPrimitiveValues<string>("device_ids", DeviceIds);
             writer.WriteBoolValue("play", Play);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

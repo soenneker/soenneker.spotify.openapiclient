@@ -12,29 +12,56 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class CurrentlyPlayingContextObjectActions : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("interrupting_playback") is { } nullNodeInterruptingPlayback && nullNodeInterruptingPlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) InterruptingPlayback = null;
+            if (parseNode.GetChildNode("pausing") is { } nullNodePausing && nullNodePausing.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pausing = null;
+            if (parseNode.GetChildNode("resuming") is { } nullNodeResuming && nullNodeResuming.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Resuming = null;
+            if (parseNode.GetChildNode("seeking") is { } nullNodeSeeking && nullNodeSeeking.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Seeking = null;
+            if (parseNode.GetChildNode("skipping_next") is { } nullNodeSkippingNext && nullNodeSkippingNext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippingNext = null;
+            if (parseNode.GetChildNode("skipping_prev") is { } nullNodeSkippingPrev && nullNodeSkippingPrev.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) SkippingPrev = null;
+            if (parseNode.GetChildNode("toggling_repeat_context") is { } nullNodeTogglingRepeatContext && nullNodeTogglingRepeatContext.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TogglingRepeatContext = null;
+            if (parseNode.GetChildNode("toggling_repeat_track") is { } nullNodeTogglingRepeatTrack && nullNodeTogglingRepeatTrack.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TogglingRepeatTrack = null;
+            if (parseNode.GetChildNode("toggling_shuffle") is { } nullNodeTogglingShuffle && nullNodeTogglingShuffle.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TogglingShuffle = null;
+            if (parseNode.GetChildNode("transferring_playback") is { } nullNodeTransferringPlayback && nullNodeTransferringPlayback.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) TransferringPlayback = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Interrupting playback. Optional field.</summary>
-        public bool? InterruptingPlayback { get; set; }
+        public bool? InterruptingPlayback { get => _explicitNullValueInterruptingPlayback; set { _explicitNullValueInterruptingPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("interrupting_playback"); else _explicitNullProperties?.Remove("interrupting_playback"); } }
+        private bool? _explicitNullValueInterruptingPlayback = default!;
         /// <summary>Pausing. Optional field.</summary>
-        public bool? Pausing { get; set; }
+        public bool? Pausing { get => _explicitNullValuePausing; set { _explicitNullValuePausing = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pausing"); else _explicitNullProperties?.Remove("pausing"); } }
+        private bool? _explicitNullValuePausing = default!;
         /// <summary>Resuming. Optional field.</summary>
-        public bool? Resuming { get; set; }
+        public bool? Resuming { get => _explicitNullValueResuming; set { _explicitNullValueResuming = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("resuming"); else _explicitNullProperties?.Remove("resuming"); } }
+        private bool? _explicitNullValueResuming = default!;
         /// <summary>Seeking playback location. Optional field.</summary>
-        public bool? Seeking { get; set; }
+        public bool? Seeking { get => _explicitNullValueSeeking; set { _explicitNullValueSeeking = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("seeking"); else _explicitNullProperties?.Remove("seeking"); } }
+        private bool? _explicitNullValueSeeking = default!;
         /// <summary>Skipping to the next context. Optional field.</summary>
-        public bool? SkippingNext { get; set; }
+        public bool? SkippingNext { get => _explicitNullValueSkippingNext; set { _explicitNullValueSkippingNext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipping_next"); else _explicitNullProperties?.Remove("skipping_next"); } }
+        private bool? _explicitNullValueSkippingNext = default!;
         /// <summary>Skipping to the previous context. Optional field.</summary>
-        public bool? SkippingPrev { get; set; }
+        public bool? SkippingPrev { get => _explicitNullValueSkippingPrev; set { _explicitNullValueSkippingPrev = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("skipping_prev"); else _explicitNullProperties?.Remove("skipping_prev"); } }
+        private bool? _explicitNullValueSkippingPrev = default!;
         /// <summary>Toggling repeat context flag. Optional field.</summary>
-        public bool? TogglingRepeatContext { get; set; }
+        public bool? TogglingRepeatContext { get => _explicitNullValueTogglingRepeatContext; set { _explicitNullValueTogglingRepeatContext = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggling_repeat_context"); else _explicitNullProperties?.Remove("toggling_repeat_context"); } }
+        private bool? _explicitNullValueTogglingRepeatContext = default!;
         /// <summary>Toggling repeat track flag. Optional field.</summary>
-        public bool? TogglingRepeatTrack { get; set; }
+        public bool? TogglingRepeatTrack { get => _explicitNullValueTogglingRepeatTrack; set { _explicitNullValueTogglingRepeatTrack = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggling_repeat_track"); else _explicitNullProperties?.Remove("toggling_repeat_track"); } }
+        private bool? _explicitNullValueTogglingRepeatTrack = default!;
         /// <summary>Toggling shuffle flag. Optional field.</summary>
-        public bool? TogglingShuffle { get; set; }
+        public bool? TogglingShuffle { get => _explicitNullValueTogglingShuffle; set { _explicitNullValueTogglingShuffle = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("toggling_shuffle"); else _explicitNullProperties?.Remove("toggling_shuffle"); } }
+        private bool? _explicitNullValueTogglingShuffle = default!;
         /// <summary>Transfering playback between devices. Optional field.</summary>
-        public bool? TransferringPlayback { get; set; }
+        public bool? TransferringPlayback { get => _explicitNullValueTransferringPlayback; set { _explicitNullValueTransferringPlayback = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("transferring_playback"); else _explicitNullProperties?.Remove("transferring_playback"); } }
+        private bool? _explicitNullValueTransferringPlayback = default!;
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions"/> and sets the default values.
         /// </summary>
@@ -50,7 +77,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -89,6 +116,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteBoolValue("toggling_repeat_track", TogglingRepeatTrack);
             writer.WriteBoolValue("toggling_shuffle", TogglingShuffle);
             writer.WriteBoolValue("transferring_playback", TransferringPlayback);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

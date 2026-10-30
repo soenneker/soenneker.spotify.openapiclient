@@ -12,32 +12,48 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     /// </summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     public partial class TrackObjectExternalIds : IAdditionalDataHolder, IParsable
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("ean") is { } nullNodeEan && nullNodeEan.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Ean = null;
+            if (parseNode.GetChildNode("isrc") is { } nullNodeIsrc && nullNodeIsrc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Isrc = null;
+            if (parseNode.GetChildNode("upc") is { } nullNodeUpc && nullNodeUpc.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Upc = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>[International Article Number](http://en.wikipedia.org/wiki/International_Article_Number_%28EAN%29)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Ean { get; set; }
+        public string? Ean { get => _explicitNullValueEan; set { _explicitNullValueEan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ean"); else _explicitNullProperties?.Remove("ean"); } }
+        private string? _explicitNullValueEan = default!;
 #nullable restore
 #else
-        public string Ean { get; set; }
+        public string Ean { get => _explicitNullValueEan; set { _explicitNullValueEan = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("ean"); else _explicitNullProperties?.Remove("ean"); } }
+        private string _explicitNullValueEan = default!;
 #endif
         /// <summary>[International Standard Recording Code](http://en.wikipedia.org/wiki/International_Standard_Recording_Code)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Isrc { get; set; }
+        public string? Isrc { get => _explicitNullValueIsrc; set { _explicitNullValueIsrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isrc"); else _explicitNullProperties?.Remove("isrc"); } }
+        private string? _explicitNullValueIsrc = default!;
 #nullable restore
 #else
-        public string Isrc { get; set; }
+        public string Isrc { get => _explicitNullValueIsrc; set { _explicitNullValueIsrc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("isrc"); else _explicitNullProperties?.Remove("isrc"); } }
+        private string _explicitNullValueIsrc = default!;
 #endif
         /// <summary>[Universal Product Code](http://en.wikipedia.org/wiki/Universal_Product_Code)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Upc { get; set; }
+        public string? Upc { get => _explicitNullValueUpc; set { _explicitNullValueUpc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upc"); else _explicitNullProperties?.Remove("upc"); } }
+        private string? _explicitNullValueUpc = default!;
 #nullable restore
 #else
-        public string Upc { get; set; }
+        public string Upc { get => _explicitNullValueUpc; set { _explicitNullValueUpc = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("upc"); else _explicitNullProperties?.Remove("upc"); } }
+        private string _explicitNullValueUpc = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds"/> and sets the default values.
@@ -54,7 +70,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectExternalIds(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -79,6 +95,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteStringValue("ean", Ean);
             writer.WriteStringValue("isrc", Isrc);
             writer.WriteStringValue("upc", Upc);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,34 +11,52 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class StartAUsersPlaybackRequest : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("context_uri") is { } nullNodeContextUri && nullNodeContextUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ContextUri = null;
+            if (parseNode.GetChildNode("offset") is { } nullNodeOffset && nullNodeOffset.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Offset = null;
+            if (parseNode.GetChildNode("position_ms") is { } nullNodePositionMs && nullNodePositionMs.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) PositionMs = null;
+            if (parseNode.GetChildNode("uris") is { } nullNodeUris && nullNodeUris.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uris = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Optional. Spotify URI of the context to play.Valid contexts are albums, artists &amp; playlists.`{context_uri:&quot;spotify:album:1Je1IMUlBXcx1Fz0WE7oPT&quot;}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? ContextUri { get; set; }
+        public string? ContextUri { get => _explicitNullValueContextUri; set { _explicitNullValueContextUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_uri"); else _explicitNullProperties?.Remove("context_uri"); } }
+        private string? _explicitNullValueContextUri = default!;
 #nullable restore
 #else
-        public string ContextUri { get; set; }
+        public string ContextUri { get => _explicitNullValueContextUri; set { _explicitNullValueContextUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("context_uri"); else _explicitNullProperties?.Remove("context_uri"); } }
+        private string _explicitNullValueContextUri = default!;
 #endif
         /// <summary>Optional. Indicates from where in the context playback should start. Only available when context_uri corresponds to an album or playlist object&quot;position&quot; is zero based and can’t be negative. Example: `&quot;offset&quot;: {&quot;position&quot;: 5}`&quot;uri&quot; is a string representing the uri of the item to start at. Example: `&quot;offset&quot;: {&quot;uri&quot;: &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? Offset { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset? _explicitNullValueOffset = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset Offset { get; set; }
+        public global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset Offset { get => _explicitNullValueOffset; set { _explicitNullValueOffset = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("offset"); else _explicitNullProperties?.Remove("offset"); } }
+        private global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset _explicitNullValueOffset = default!;
 #endif
         /// <summary>integer</summary>
-        public int? PositionMs { get; set; }
+        public int? PositionMs { get => _explicitNullValuePositionMs; set { _explicitNullValuePositionMs = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("position_ms"); else _explicitNullProperties?.Remove("position_ms"); } }
+        private int? _explicitNullValuePositionMs = default!;
         /// <summary>Optional. A JSON array of the Spotify track URIs to play.For example: `{&quot;uris&quot;: [&quot;spotify:track:4iV5W9uYEdYUVa79Axb7Rh&quot;, &quot;spotify:track:1301WleyT98MSxVHPZCA6M&quot;]}`</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Uris { get; set; }
+        public List<string>? Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
+        private List<string>? _explicitNullValueUris = default!;
 #nullable restore
 #else
-        public List<string> Uris { get; set; }
+        public List<string> Uris { get => _explicitNullValueUris; set { _explicitNullValueUris = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uris"); else _explicitNullProperties?.Remove("uris"); } }
+        private List<string> _explicitNullValueUris = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest"/> and sets the default values.
@@ -55,7 +73,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequest(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -82,6 +100,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.StartAUsersPlaybackRequestOffset>("offset", Offset);
             writer.WriteIntValue("position_ms", PositionMs);
             writer.WriteCollectionOfPrimitiveValues<string>("uris", Uris);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }

@@ -11,38 +11,65 @@ namespace Soenneker.Spotify.OpenApiClient.Models
     #pragma warning disable CS1591
     public partial class SegmentObject : IAdditionalDataHolder, IParsable
     #pragma warning restore CS1591
-    {
+    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+        // Track explicitly assigned nulls separately from absent properties.
+        private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
+
+        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        {
+            if (parseNode.GetChildNode("confidence") is { } nullNodeConfidence && nullNodeConfidence.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Confidence = null;
+            if (parseNode.GetChildNode("duration") is { } nullNodeDuration && nullNodeDuration.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Duration = null;
+            if (parseNode.GetChildNode("loudness_end") is { } nullNodeLoudnessEnd && nullNodeLoudnessEnd.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoudnessEnd = null;
+            if (parseNode.GetChildNode("loudness_max") is { } nullNodeLoudnessMax && nullNodeLoudnessMax.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoudnessMax = null;
+            if (parseNode.GetChildNode("loudness_max_time") is { } nullNodeLoudnessMaxTime && nullNodeLoudnessMaxTime.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoudnessMaxTime = null;
+            if (parseNode.GetChildNode("loudness_start") is { } nullNodeLoudnessStart && nullNodeLoudnessStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) LoudnessStart = null;
+            if (parseNode.GetChildNode("pitches") is { } nullNodePitches && nullNodePitches.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Pitches = null;
+            if (parseNode.GetChildNode("start") is { } nullNodeStart && nullNodeStart.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Start = null;
+            if (parseNode.GetChildNode("timbre") is { } nullNodeTimbre && nullNodeTimbre.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Timbre = null;
+        }
+
         /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
         public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>The confidence, from 0.0 to 1.0, of the reliability of the segmentation. Segments of the song which are difficult to logically segment (e.g: noise) may correspond to low values in this field.</summary>
-        public double? Confidence { get; set; }
+        public double? Confidence { get => _explicitNullValueConfidence; set { _explicitNullValueConfidence = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("confidence"); else _explicitNullProperties?.Remove("confidence"); } }
+        private double? _explicitNullValueConfidence = default!;
         /// <summary>The duration (in seconds) of the segment.</summary>
-        public double? Duration { get; set; }
+        public double? Duration { get => _explicitNullValueDuration; set { _explicitNullValueDuration = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("duration"); else _explicitNullProperties?.Remove("duration"); } }
+        private double? _explicitNullValueDuration = default!;
         /// <summary>The offset loudness of the segment in decibels (dB). This value should be equivalent to the loudness_start of the following segment.</summary>
-        public double? LoudnessEnd { get; set; }
+        public double? LoudnessEnd { get => _explicitNullValueLoudnessEnd; set { _explicitNullValueLoudnessEnd = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loudness_end"); else _explicitNullProperties?.Remove("loudness_end"); } }
+        private double? _explicitNullValueLoudnessEnd = default!;
         /// <summary>The peak loudness of the segment in decibels (dB). Combined with `loudness_start` and `loudness_max_time`, these components can be used to describe the &quot;attack&quot; of the segment.</summary>
-        public double? LoudnessMax { get; set; }
+        public double? LoudnessMax { get => _explicitNullValueLoudnessMax; set { _explicitNullValueLoudnessMax = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loudness_max"); else _explicitNullProperties?.Remove("loudness_max"); } }
+        private double? _explicitNullValueLoudnessMax = default!;
         /// <summary>The segment-relative offset of the segment peak loudness in seconds. Combined with `loudness_start` and `loudness_max`, these components can be used to desctibe the &quot;attack&quot; of the segment.</summary>
-        public double? LoudnessMaxTime { get; set; }
+        public double? LoudnessMaxTime { get => _explicitNullValueLoudnessMaxTime; set { _explicitNullValueLoudnessMaxTime = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loudness_max_time"); else _explicitNullProperties?.Remove("loudness_max_time"); } }
+        private double? _explicitNullValueLoudnessMaxTime = default!;
         /// <summary>The onset loudness of the segment in decibels (dB). Combined with `loudness_max` and `loudness_max_time`, these components can be used to describe the &quot;attack&quot; of the segment.</summary>
-        public double? LoudnessStart { get; set; }
+        public double? LoudnessStart { get => _explicitNullValueLoudnessStart; set { _explicitNullValueLoudnessStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("loudness_start"); else _explicitNullProperties?.Remove("loudness_start"); } }
+        private double? _explicitNullValueLoudnessStart = default!;
         /// <summary>Pitch content is given by a “chroma” vector, corresponding to the 12 pitch classes C, C#, D to B, with values ranging from 0 to 1 that describe the relative dominance of every pitch in the chromatic scale. For example a C Major chord would likely be represented by large values of C, E and G (i.e. classes 0, 4, and 7).Vectors are normalized to 1 by their strongest dimension, therefore noisy sounds are likely represented by values that are all close to 1, while pure tones are described by one value at 1 (the pitch) and others near 0.As can be seen below, the 12 vector indices are a combination of low-power spectrum values at their respective pitch frequencies.![pitch vector](/assets/audio/Pitch_vector.png)</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Pitches { get; set; }
+        public List<double?>? Pitches { get => _explicitNullValuePitches; set { _explicitNullValuePitches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pitches"); else _explicitNullProperties?.Remove("pitches"); } }
+        private List<double?>? _explicitNullValuePitches = default!;
 #nullable restore
 #else
-        public List<double?> Pitches { get; set; }
+        public List<double?> Pitches { get => _explicitNullValuePitches; set { _explicitNullValuePitches = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("pitches"); else _explicitNullProperties?.Remove("pitches"); } }
+        private List<double?> _explicitNullValuePitches = default!;
 #endif
         /// <summary>The starting point (in seconds) of the segment.</summary>
-        public double? Start { get; set; }
+        public double? Start { get => _explicitNullValueStart; set { _explicitNullValueStart = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("start"); else _explicitNullProperties?.Remove("start"); } }
+        private double? _explicitNullValueStart = default!;
         /// <summary>Timbre is the quality of a musical note or sound that distinguishes different types of musical instruments, or voices. It is a complex notion also referred to as sound color, texture, or tone quality, and is derived from the shape of a segment’s spectro-temporal surface, independently of pitch and loudness. The timbre feature is a vector that includes 12 unbounded values roughly centered around 0. Those values are high level abstractions of the spectral surface, ordered by degree of importance.For completeness however, the first dimension represents the average loudness of the segment; second emphasizes brightness; third is more closely correlated to the flatness of a sound; fourth to sounds with a stronger attack; etc. See an image below representing the 12 basis functions (i.e. template segments).![timbre basis functions](/assets/audio/Timbre_basis_functions.png)The actual timbre of the segment is best described as a linear combination of these 12 basis functions weighted by the coefficient values: timbre = c1 x b1 + c2 x b2 + ... + c12 x b12, where c1 to c12 represent the 12 coefficients and b1 to b12 the 12 basis functions as displayed below. Timbre vectors are best used in comparison with each other.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<double?>? Timbre { get; set; }
+        public List<double?>? Timbre { get => _explicitNullValueTimbre; set { _explicitNullValueTimbre = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timbre"); else _explicitNullProperties?.Remove("timbre"); } }
+        private List<double?>? _explicitNullValueTimbre = default!;
 #nullable restore
 #else
-        public List<double?> Timbre { get; set; }
+        public List<double?> Timbre { get => _explicitNullValueTimbre; set { _explicitNullValueTimbre = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("timbre"); else _explicitNullProperties?.Remove("timbre"); } }
+        private List<double?> _explicitNullValueTimbre = default!;
 #endif
         /// <summary>
         /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject"/> and sets the default values.
@@ -59,7 +86,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         public static global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return new global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject();
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.SegmentObject(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
@@ -96,6 +123,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfPrimitiveValues<double?>("pitches", Pitches);
             writer.WriteDoubleValue("start", Start);
             writer.WriteCollectionOfPrimitiveValues<double?>("timbre", Timbre);
+            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
             writer.WriteAdditionalData(AdditionalData);
         }
     }
