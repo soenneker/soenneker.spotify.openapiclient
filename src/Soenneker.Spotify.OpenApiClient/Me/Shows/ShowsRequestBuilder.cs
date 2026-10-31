@@ -144,7 +144,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
         public RequestInformation ToDeleteRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderDeleteQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.DELETE, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/me/shows?ids={ids}{&market*}", RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/shows", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.DELETE, "{+baseurl}/me/shows?ids={ids}{&market*}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -163,7 +163,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
         public RequestInformation ToGetRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderGetQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.GET, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/shows", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.GET, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
@@ -183,7 +183,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Shows
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Shows.ShowsRequestBuilder.ShowsRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve("{+baseurl}/me/shows?ids={ids}", RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/shows", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, "{+baseurl}/me/shows?ids={ids}", PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;

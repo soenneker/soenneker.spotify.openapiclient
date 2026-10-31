@@ -75,7 +75,7 @@ namespace Soenneker.Spotify.OpenApiClient.Me.Player.Repeat
         public RequestInformation ToPutRequestInformation(Action<RequestConfiguration<global::Soenneker.Spotify.OpenApiClient.Me.Player.Repeat.RepeatRequestBuilder.RepeatRequestBuilderPutQueryParameters>> requestConfiguration = default)
         {
 #endif
-            var requestInfo = new RequestInformation(Method.PUT, global::Soenneker.OpenApi.Generated.OpenApiServiceRoutes.Resolve(UrlTemplate, RequestAdapter.BaseUrl, "https://api.spotify.com/v1", "/me/player/repeat", PathParameters.ContainsKey("request-raw-url")), PathParameters);
+            var requestInfo = new RequestInformation(Method.PUT, UrlTemplate, PathParameters);
             requestInfo.Configure(requestConfiguration);
             requestInfo.Headers.TryAdd("Accept", "application/json");
             return requestInfo;
