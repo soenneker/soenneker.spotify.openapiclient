@@ -1525,6 +1525,17 @@
           },
           "429": {
             "$ref": "#/components/responses/TooManyRequests"
+          },
+          "200": {
+            "description": "A snapshot ID for the playlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaylistSnapshotIdResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "deprecated": true,
@@ -1786,6 +1797,17 @@
           },
           "429": {
             "$ref": "#/components/responses/TooManyRequests"
+          },
+          "200": {
+            "description": "A snapshot ID for the playlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaylistSnapshotIdResponse"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -1989,6 +2011,17 @@
           },
           "429": {
             "$ref": "#/components/responses/TooManyRequests"
+          },
+          "200": {
+            "description": "A playlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaylistObject"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "security": [
@@ -3050,6 +3083,17 @@
           },
           "429": {
             "$ref": "#/components/responses/TooManyRequests"
+          },
+          "200": {
+            "description": "A playlist",
+            "content": {
+              "application/json": {
+                "schema": {
+                  "$ref": "#/components/schemas/PlaylistObject"
+                }
+              }
+            },
+            "x-client-success-response-status": "201"
           }
         },
         "deprecated": true,
