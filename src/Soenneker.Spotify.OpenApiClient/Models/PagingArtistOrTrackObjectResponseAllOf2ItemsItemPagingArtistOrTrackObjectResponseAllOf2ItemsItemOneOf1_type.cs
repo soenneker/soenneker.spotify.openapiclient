@@ -3,13 +3,13 @@ using System.Runtime.Serialization;
 using System;
 namespace Soenneker.Spotify.OpenApiClient.Models
 {
-    /// <summary>The object type: &quot;track&quot;.</summary>
+    /// <summary>The object type.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2_type
+    public enum PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1_type
     {
-        [EnumMember(Value = "track")]
+        [EnumMember(Value = "artist")]
         #pragma warning disable CS1591
-        Track,
+        Artist,
         #pragma warning restore CS1591
     }
 }

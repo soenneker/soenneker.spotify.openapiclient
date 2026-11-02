@@ -5,7 +5,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 {
     /// <summary>The object type: &quot;track&quot;.</summary>
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
-    public enum PlaylistTrackObjectItemOneOf1_type
+    public enum PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2_type
     {
         [EnumMember(Value = "track")]
         #pragma warning disable CS1591

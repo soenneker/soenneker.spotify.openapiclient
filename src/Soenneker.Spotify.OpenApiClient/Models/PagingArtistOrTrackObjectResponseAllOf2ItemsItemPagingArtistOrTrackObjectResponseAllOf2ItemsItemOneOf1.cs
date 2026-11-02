@@ -9,14 +9,15 @@ namespace Soenneker.Spotify.OpenApiClient.Models
 {
     [global::System.CodeDom.Compiler.GeneratedCode("Kiota", "1.0.0")]
     #pragma warning disable CS1591
-    public partial class PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1 : IAdditionalDataHolder, IParsable
+    public partial class PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1 : global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItem, IParsable
     #pragma warning restore CS1591
-    , global::Soenneker.OpenApi.Generated.IOpenApiExplicitNulls {
+    {
         // Track explicitly assigned nulls separately from absent properties.
         private global::System.Collections.Generic.HashSet<string> _explicitNullProperties = null!;
 
-        public virtual void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
+        public override void CaptureExplicitNulls(global::Microsoft.Kiota.Abstractions.Serialization.IParseNode parseNode)
         {
+            base.CaptureExplicitNulls(parseNode);
             if (parseNode.GetChildNode("external_urls") is null) { _explicitNullValueExternalUrls = default!; _explicitNullProperties?.Remove("external_urls"); }
             else if (parseNode.GetChildNode("external_urls") is { } nullNodeExternalUrls && nullNodeExternalUrls.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) ExternalUrls = null;
             if (parseNode.GetChildNode("followers") is null) { _explicitNullValueFollowers = default!; _explicitNullProperties?.Remove("followers"); }
@@ -33,127 +34,113 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             else if (parseNode.GetChildNode("name") is { } nullNodeName && nullNodeName.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Name = null;
             if (parseNode.GetChildNode("popularity") is null) { _explicitNullValuePopularity = default!; _explicitNullProperties?.Remove("popularity"); }
             else if (parseNode.GetChildNode("popularity") is { } nullNodePopularity && nullNodePopularity.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Popularity = null;
-            if (parseNode.GetChildNode("type") is null) { _explicitNullValueType = default!; _explicitNullProperties?.Remove("type"); }
-            else if (parseNode.GetChildNode("type") is { } nullNodeType && nullNodeType.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Type = null;
             if (parseNode.GetChildNode("uri") is null) { _explicitNullValueUri = default!; _explicitNullProperties?.Remove("uri"); }
             else if (parseNode.GetChildNode("uri") is { } nullNodeUri && nullNodeUri.GetObjectValue<global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode>(global::Microsoft.Kiota.Abstractions.Serialization.UntypedNode.CreateFromDiscriminatorValue) is null or global::Microsoft.Kiota.Abstractions.Serialization.UntypedNull) Uri = null;
         }
 
-        /// <summary>Stores additional data not described in the OpenAPI description found when deserializing. Can be used for serialization as well.</summary>
-        public IDictionary<string, object> AdditionalData { get; set; }
         /// <summary>Known external URLs for this artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls? ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; AdditionalData?.Remove("external_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls? ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls? _explicitNullValueExternalUrls = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; AdditionalData?.Remove("external_urls"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls ExternalUrls { get => _explicitNullValueExternalUrls; set { _explicitNullValueExternalUrls = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("external_urls"); else _explicitNullProperties?.Remove("external_urls"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls _explicitNullValueExternalUrls = default!;
 #endif
         /// <summary>Information about the followers of the artist.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers? Followers { get => _explicitNullValueFollowers; set { _explicitNullValueFollowers = value; AdditionalData?.Remove("followers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followers"); else _explicitNullProperties?.Remove("followers"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers? Followers { get => _explicitNullValueFollowers; set { _explicitNullValueFollowers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followers"); else _explicitNullProperties?.Remove("followers"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers? _explicitNullValueFollowers = default!;
 #nullable restore
 #else
-        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers Followers { get => _explicitNullValueFollowers; set { _explicitNullValueFollowers = value; AdditionalData?.Remove("followers"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followers"); else _explicitNullProperties?.Remove("followers"); } }
+        public global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers Followers { get => _explicitNullValueFollowers; set { _explicitNullValueFollowers = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("followers"); else _explicitNullProperties?.Remove("followers"); } }
         private global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers _explicitNullValueFollowers = default!;
 #endif
         /// <summary>A list of the genres the artist is associated with. If not yet classified, the array is empty.</summary>
         [Obsolete("")]
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<string>? Genres { get => _explicitNullValueGenres; set { _explicitNullValueGenres = value; AdditionalData?.Remove("genres"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("genres"); else _explicitNullProperties?.Remove("genres"); } }
+        public List<string>? Genres { get => _explicitNullValueGenres; set { _explicitNullValueGenres = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("genres"); else _explicitNullProperties?.Remove("genres"); } }
         private List<string>? _explicitNullValueGenres = default!;
 #nullable restore
 #else
-        public List<string> Genres { get => _explicitNullValueGenres; set { _explicitNullValueGenres = value; AdditionalData?.Remove("genres"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("genres"); else _explicitNullProperties?.Remove("genres"); } }
+        public List<string> Genres { get => _explicitNullValueGenres; set { _explicitNullValueGenres = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("genres"); else _explicitNullProperties?.Remove("genres"); } }
         private List<string> _explicitNullValueGenres = default!;
 #endif
         /// <summary>A link to the Web API endpoint providing full details of the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; AdditionalData?.Remove("href"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
+        public string? Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
         private string? _explicitNullValueHref = default!;
 #nullable restore
 #else
-        public string Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; AdditionalData?.Remove("href"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
+        public string Href { get => _explicitNullValueHref; set { _explicitNullValueHref = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("href"); else _explicitNullProperties?.Remove("href"); } }
         private string _explicitNullValueHref = default!;
 #endif
         /// <summary>The [Spotify ID](/documentation/web-api/concepts/spotify-uris-ids) for the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string? Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string? _explicitNullValueId = default!;
 #nullable restore
 #else
-        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; AdditionalData?.Remove("id"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
+        public string Id { get => _explicitNullValueId; set { _explicitNullValueId = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("id"); else _explicitNullProperties?.Remove("id"); } }
         private string _explicitNullValueId = default!;
 #endif
         /// <summary>Images of the artist in various sizes, widest first.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>? Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>? _explicitNullValueImages = default!;
 #nullable restore
 #else
-        public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; AdditionalData?.Remove("images"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
+        public List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject> Images { get => _explicitNullValueImages; set { _explicitNullValueImages = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("images"); else _explicitNullProperties?.Remove("images"); } }
         private List<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject> _explicitNullValueImages = default!;
 #endif
         /// <summary>The name of the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string? Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string? _explicitNullValueName = default!;
 #nullable restore
 #else
-        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; AdditionalData?.Remove("name"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
+        public string Name { get => _explicitNullValueName; set { _explicitNullValueName = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("name"); else _explicitNullProperties?.Remove("name"); } }
         private string _explicitNullValueName = default!;
 #endif
         /// <summary>The popularity of the artist. The value will be between 0 and 100, with 100 being the most popular. The artist&apos;s popularity is calculated from the popularity of all the artist&apos;s tracks.</summary>
         [Obsolete("")]
-        public int? Popularity { get => _explicitNullValuePopularity; set { _explicitNullValuePopularity = value; AdditionalData?.Remove("popularity"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity"); else _explicitNullProperties?.Remove("popularity"); } }
+        public int? Popularity { get => _explicitNullValuePopularity; set { _explicitNullValuePopularity = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("popularity"); else _explicitNullProperties?.Remove("popularity"); } }
         private int? _explicitNullValuePopularity = default!;
-        /// <summary>The object type.</summary>
-        public global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1_type? Type { get => _explicitNullValueType; set { _explicitNullValueType = value; AdditionalData?.Remove("type"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("type"); else _explicitNullProperties?.Remove("type"); } }
-        private global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1_type? _explicitNullValueType = default!;
         /// <summary>The [Spotify URI](/documentation/web-api/concepts/spotify-uris-ids) for the artist.</summary>
 #if NETSTANDARD2_1_OR_GREATER || NETCOREAPP3_1_OR_GREATER
 #nullable enable
-        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string? Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string? _explicitNullValueUri = default!;
 #nullable restore
 #else
-        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; AdditionalData?.Remove("uri"); if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
+        public string Uri { get => _explicitNullValueUri; set { _explicitNullValueUri = value; if (value is null) (_explicitNullProperties ??= new global::System.Collections.Generic.HashSet<string>()).Add("uri"); else _explicitNullProperties?.Remove("uri"); } }
         private string _explicitNullValueUri = default!;
 #endif
         /// <summary>
-        /// Instantiates a new <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1"/> and sets the default values.
-        /// </summary>
-        public PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1()
-        {
-            AdditionalData = new Dictionary<string, object>();
-        }
-        /// <summary>
         /// Creates a new instance of the appropriate class based on discriminator value
         /// </summary>
-        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1"/></returns>
+        /// <returns>A <see cref="global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1"/></returns>
         /// <param name="parseNode">The parse node to use to read the discriminator value and create the object</param>
-        public static global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
+        public static new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1 CreateFromDiscriminatorValue(IParseNode parseNode)
         {
             if(ReferenceEquals(parseNode, null)) throw new ArgumentNullException(nameof(parseNode));
-            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1(), parseNode);
+            return global::Soenneker.OpenApi.Generated.OpenApiNullTracking.Capture(new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1(), parseNode);
         }
         /// <summary>
         /// The deserialization information for the current model
         /// </summary>
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
-        public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
+        public override IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(base.GetFieldDeserializers())
             {
                 { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls.CreateFromDiscriminatorValue); } },
                 { "followers", n => { Followers = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers>(global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers.CreateFromDiscriminatorValue); } },
@@ -163,7 +150,6 @@ namespace Soenneker.Spotify.OpenApiClient.Models
                 { "images", n => { Images = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>(global::Soenneker.Spotify.OpenApiClient.Models.ImageObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "name", n => { Name = n.GetStringValue(); } },
                 { "popularity", n => { Popularity = n.GetIntValue(); } },
-                { "type", n => { var parsed = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1_type>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueType = default; _explicitNullProperties?.Remove("type"); AdditionalData["type"] = unknown; } else { Type = parsed; AdditionalData.Remove("type"); } } },
                 { "uri", n => { Uri = n.GetStringValue(); } },
             };
         }
@@ -171,9 +157,10 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// Serializes information the current object
         /// </summary>
         /// <param name="writer">Serialization writer to use to serialize this model</param>
-        public virtual void Serialize(ISerializationWriter writer)
+        public override void Serialize(ISerializationWriter writer)
         {
             if(ReferenceEquals(writer, null)) throw new ArgumentNullException(nameof(writer));
+            base.Serialize(writer);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectExternalUrls>("external_urls", ExternalUrls);
             writer.WriteObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ArtistObjectFollowers>("followers", Followers);
             writer.WriteCollectionOfPrimitiveValues<string>("genres", Genres);
@@ -182,10 +169,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             writer.WriteCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.ImageObject>("images", Images);
             writer.WriteStringValue("name", Name);
             writer.WriteIntValue("popularity", Popularity);
-            writer.WriteEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1_type>("type", Type);
-            writer.WriteStringValue("uri", Uri);
-            if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
-            writer.WriteAdditionalData(AdditionalData);
+            writer.WriteStringValue("uri", Uri);if (_explicitNullProperties != null) foreach (string name in _explicitNullProperties) writer.WriteNullValue(name);
+            
         }
     }
 }
