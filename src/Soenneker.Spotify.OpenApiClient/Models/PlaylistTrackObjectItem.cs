@@ -53,7 +53,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             return mappingValue switch
             {
                 "episode" => new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItemEpisodeObject(),
-                "track" => new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItemPlaylistTrackObjectItemOneOf1(),
+                "track" => new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItemOneOf1Variant(),
                 _ => new global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectItem(),
             };
         }

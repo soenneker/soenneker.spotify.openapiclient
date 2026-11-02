@@ -9200,7 +9200,7 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "track": "#/components/schemas/PlaylistTrackObjectItemPlaylistTrackObjectItemOneOf1",
+            "track": "#/components/schemas/PlaylistTrackObjectItemOneOf1Variant",
             "episode": "#/components/schemas/PlaylistTrackObjectItemEpisodeObject"
           }
         },
@@ -10983,8 +10983,8 @@
         "discriminator": {
           "propertyName": "type",
           "mapping": {
-            "artist": "#/components/schemas/PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1",
-            "track": "#/components/schemas/PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2"
+            "artist": "#/components/schemas/PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1Variant",
+            "track": "#/components/schemas/PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2Variant"
           }
         },
         "x-client-original-tagged-union": {
@@ -12627,7 +12627,7 @@
           "type"
         ]
       },
-      "PlaylistTrackObjectItemPlaylistTrackObjectItemOneOf1": {
+      "PlaylistTrackObjectItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PlaylistTrackObjectItem"
@@ -12884,7 +12884,7 @@
           }
         ]
       },
-      "PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1": {
+      "PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PagingArtistOrTrackObjectResponseAllOf2ItemsItem"
@@ -12962,7 +12962,7 @@
           }
         ]
       },
-      "PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2": {
+      "PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2Variant": {
         "allOf": [
           {
             "$ref": "#/components/schemas/PagingArtistOrTrackObjectResponseAllOf2ItemsItem"

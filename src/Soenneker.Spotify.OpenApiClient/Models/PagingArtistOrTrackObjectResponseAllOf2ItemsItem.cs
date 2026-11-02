@@ -51,8 +51,8 @@ namespace Soenneker.Spotify.OpenApiClient.Models
             var mappingValue = parseNode.GetChildNode("type")?.GetStringValue();
             return mappingValue switch
             {
-                "artist" => new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1(),
-                "track" => new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemPagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2(),
+                "artist" => new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf1Variant(),
+                "track" => new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItemOneOf2Variant(),
                 _ => new global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistOrTrackObjectResponseAllOf2ItemsItem(),
             };
         }
