@@ -128,7 +128,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(7)
             {
                 { "albums", n => { Albums = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PagingSimplifiedAlbumObject>(global::Soenneker.Spotify.OpenApiClient.Models.PagingSimplifiedAlbumObject.CreateFromDiscriminatorValue); } },
                 { "artists", n => { Artists = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistObject>(global::Soenneker.Spotify.OpenApiClient.Models.PagingArtistObject.CreateFromDiscriminatorValue); } },

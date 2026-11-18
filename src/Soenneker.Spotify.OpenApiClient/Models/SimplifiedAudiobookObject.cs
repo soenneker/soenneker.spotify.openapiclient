@@ -253,7 +253,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(19)
             {
                 { "authors", n => { Authors = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.AuthorObject>(global::Soenneker.Spotify.OpenApiClient.Models.AuthorObject.CreateFromDiscriminatorValue)?.AsList(); } },
                 { "available_markets", n => { AvailableMarkets = n.GetCollectionOfPrimitiveValues<string>()?.AsList(); } },

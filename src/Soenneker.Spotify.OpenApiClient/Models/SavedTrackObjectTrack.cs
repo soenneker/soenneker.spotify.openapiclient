@@ -233,7 +233,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(20)
             {
                 { "album", n => { Album = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum>(global::Soenneker.Spotify.OpenApiClient.Models.TrackObjectAlbum.CreateFromDiscriminatorValue); } },
                 { "artists", n => { Artists = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject.CreateFromDiscriminatorValue)?.AsList(); } },

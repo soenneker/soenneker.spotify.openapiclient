@@ -186,7 +186,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(14)
             {
                 { "album_type", n => { var parsed = n.GetEnumValue<global::Soenneker.Spotify.OpenApiClient.Models.AlbumBaseAlbumType>(); if (parsed == null && n.GetStringValue() is string unknown) { _explicitNullValueAlbumType = default; _explicitNullProperties?.Remove("album_type"); AdditionalData["album_type"] = unknown; } else { AlbumType = parsed; AdditionalData.Remove("album_type"); } } },
                 { "artists", n => { Artists = n.GetCollectionOfObjectValues<global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject>(global::Soenneker.Spotify.OpenApiClient.Models.SimplifiedArtistObject.CreateFromDiscriminatorValue)?.AsList(); } },

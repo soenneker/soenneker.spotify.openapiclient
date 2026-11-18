@@ -91,7 +91,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(5)
             {
                 { "added_at", n => { AddedAt = n.GetDateTimeOffsetValue(); } },
                 { "added_by", n => { AddedBy = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy>(global::Soenneker.Spotify.OpenApiClient.Models.PlaylistTrackObjectAddedBy.CreateFromDiscriminatorValue); } },

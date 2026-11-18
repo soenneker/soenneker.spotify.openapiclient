@@ -136,7 +136,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(10)
             {
                 { "actions", n => { Actions = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions>(global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectActions.CreateFromDiscriminatorValue); } },
                 { "context", n => { Context = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext>(global::Soenneker.Spotify.OpenApiClient.Models.CurrentlyPlayingContextObjectContext.CreateFromDiscriminatorValue); } },

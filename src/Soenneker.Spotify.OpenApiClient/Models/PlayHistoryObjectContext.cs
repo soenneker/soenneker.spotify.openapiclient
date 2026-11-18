@@ -93,7 +93,7 @@ namespace Soenneker.Spotify.OpenApiClient.Models
         /// <returns>A IDictionary&lt;string, Action&lt;IParseNode&gt;&gt;</returns>
         public virtual IDictionary<string, Action<IParseNode>> GetFieldDeserializers()
         {
-            return new Dictionary<string, Action<IParseNode>>
+            return new Dictionary<string, Action<IParseNode>>(4)
             {
                 { "external_urls", n => { ExternalUrls = n.GetObjectValue<global::Soenneker.Spotify.OpenApiClient.Models.ContextObjectExternalUrls>(global::Soenneker.Spotify.OpenApiClient.Models.ContextObjectExternalUrls.CreateFromDiscriminatorValue); } },
                 { "href", n => { Href = n.GetStringValue(); } },
